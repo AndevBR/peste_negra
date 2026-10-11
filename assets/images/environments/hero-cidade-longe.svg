@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t">
+<title id="t">Silhueta distante de uma cidade medieval</title>
+<g fill="#3a2f3a">
+      <path d="M0 640 Q300 560 600 610 Q900 660 1200 590 Q1420 550 1600 600 L1600 900 L0 900 Z" opacity=".8"/>
+      <rect x="180" y="520" width="40" height="120" fill="#3a2f3a"/><path d="M174 520 L200 460 L226 520 Z" fill="#3a2f3a"/><rect x="260" y="580" width="70" height="70" fill="#3a2f3a"/><path d="M254 580 L295 540 L336 580 Z" fill="#3a2f3a"/><rect x="420" y="480" width="30" height="160" fill="#3a2f3a"/><path d="M414 480 L435 390 L456 480 Z" fill="#3a2f3a"/>
+      <rect x="560" y="520" width="200" height="140"/><rect x="580" y="420" width="40" height="120" fill="#3a2f3a"/><path d="M574 420 L600 280 L626 420 Z" fill="#3a2f3a"/><rect x="700" y="430" width="40" height="110" fill="#3a2f3a"/><path d="M694 430 L720 300 L746 430 Z" fill="#3a2f3a"/>
+      <path d="M560 520 L660 450 L760 520 Z"/>
+      <rect x="860" y="570" width="50" height="90" fill="#3a2f3a"/><path d="M854 570 L885 520 L916 570 Z" fill="#3a2f3a"/><rect x="960" y="510" width="30" height="140" fill="#3a2f3a"/><path d="M954 510 L975 430 L996 510 Z" fill="#3a2f3a"/><rect x="1080" y="600" width="90" height="60" fill="#3a2f3a"/><path d="M1074 600 L1125 550 L1176 600 Z" fill="#3a2f3a"/>
+      <rect x="1260" y="490" width="36" height="150" fill="#3a2f3a"/><path d="M1254 490 L1278 420 L1302 490 Z" fill="#3a2f3a"/><rect x="1340" y="570" width="80" height="80" fill="#3a2f3a"/><path d="M1334 570 L1380 530 L1426 570 Z" fill="#3a2f3a"/><rect x="1480" y="520" width="40" height="120" fill="#3a2f3a"/><path d="M1474 520 L1500 460 L1526 520 Z" fill="#3a2f3a"/>
+      <rect x="0" y="650" width="1600" height="250"/>
+    </g>
+    <rect x="600" y="590" width="6" height="10" fill="#e8a24a" opacity=".7"/><rect x="720" y="600" width="6" height="10" fill="#e8a24a" opacity=".7"/><rect x="980" y="600" width="6" height="10" fill="#e8a24a" opacity=".7"/><rect x="1280" y="590" width="6" height="10" fill="#e8a24a" opacity=".7"/>
+</svg>

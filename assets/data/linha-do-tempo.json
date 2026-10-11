@@ -1,0 +1,214 @@
+{
+  "marcos": [
+    {
+      "id": "issyk-kul",
+      "data": "1338–1339",
+      "titulo": "Sinais na Ásia Central",
+      "resumo": "Túmulos perto do lago Issyk-Kul registram mortes por uma “pestilência”.",
+      "categoria": "Antes da pandemia",
+      "detalhes": [
+        "Em cemitérios próximos ao lago Issyk-Kul, no atual Quirguistão, lápides dos anos 1338 e 1339 mencionam mortes causadas por uma pestilência.",
+        "Em 2022, cientistas recuperaram DNA da bactéria Yersinia pestis de pessoas sepultadas ali. O estudo apoia a hipótese de que a segunda pandemia de peste começou na Ásia Central, no início do século XIV."
+      ],
+      "natureza": "Evidência arqueológica e genética; a origem exata continua sendo pesquisada.",
+      "fontes": ["spyrou"]
+    },
+    {
+      "id": "rotas",
+      "data": "Década de 1340",
+      "titulo": "Pelas rotas de comércio",
+      "resumo": "Caravanas e navios ligavam a Ásia ao Mar Negro e ao Mediterrâneo.",
+      "categoria": "Antes da pandemia",
+      "detalhes": [
+        "As rotas comerciais terrestres (muitas vezes chamadas de Rota da Seda) e marítimas ligavam a Ásia Central ao Mar Negro, onde cidades italianas como Gênova mantinham portos de comércio.",
+        "Mercadorias, pessoas, animais e seus parasitas viajavam juntos. Por isso, a doença acompanhou os caminhos do comércio."
+      ],
+      "natureza": "Fato histórico amplamente aceito; os caminhos exatos da doença ainda são estudados.",
+      "fontes": ["britannica", "frith"]
+    },
+    {
+      "id": "caffa",
+      "data": "1346",
+      "titulo": "O cerco de Caffa",
+      "resumo": "A peste atinge o exército que cercava o porto genovês de Caffa, na Crimeia.",
+      "categoria": "Disseminação",
+      "detalhes": [
+        "Tropas da Horda Dourada cercavam Caffa (atual Feodósia, na Crimeia) quando a doença se espalhou entre os soldados.",
+        "Um relato da época, do notário Gabriele de’ Mussi, diz que cadáveres foram lançados para dentro das muralhas. Historiadores debatem se isso realmente aconteceu e se teve papel importante: ratos e pulgas também podiam atravessar as linhas do cerco."
+      ],
+      "natureza": "O cerco é um fato; o episódio dos cadáveres arremessados é um relato debatido.",
+      "fontes": ["britannica", "frith"]
+    },
+    {
+      "id": "messina",
+      "data": "Outubro de 1347",
+      "titulo": "Chegada à Sicília",
+      "resumo": "Navios vindos do Mar Negro aportam em Messina trazendo a doença.",
+      "categoria": "Disseminação",
+      "detalhes": [
+        "Em 1347 a peste já havia atingido Constantinopla. Em outubro, galés genovesas chegaram a Messina, na Sicília, e a doença se espalhou pela ilha.",
+        "Daí em diante, os portos do Mediterrâneo funcionaram como portas de entrada para o interior do continente."
+      ],
+      "natureza": "Fato histórico registrado em crônicas da época.",
+      "fontes": ["britannica"]
+    },
+    {
+      "id": "1348",
+      "data": "1348",
+      "titulo": "O grande ano da mortandade",
+      "resumo": "A peste se espalha pela Itália, França, Península Ibérica e Inglaterra.",
+      "categoria": "Disseminação",
+      "detalhes": [
+        "Em poucos meses a doença chegou a Gênova, Veneza, Florença, Marselha, Paris e a cidades da Península Ibérica. No verão, atingiu o sul da Inglaterra.",
+        "Em Florença, o escritor Giovanni Boccaccio descreveu a epidemia no início do livro Decamerão.",
+        "Em Paris, a Faculdade de Medicina atribuiu a doença a uma conjunção de planetas ocorrida em 1345 e à corrupção do ar — explicações que hoje sabemos estarem erradas."
+      ],
+      "natureza": "Datas aproximadas; variam conforme a cidade e a fonte.",
+      "fontes": ["britannica", "glatter"]
+    },
+    {
+      "id": "1349",
+      "data": "1349",
+      "titulo": "Medo, penitência e perseguição",
+      "resumo": "A peste avança para o centro e o norte da Europa; surgem procissões de flagelantes.",
+      "categoria": "Impactos sociais",
+      "detalhes": [
+        "A doença chegou a regiões da Europa Central, aos Países Baixos e à Escandinávia.",
+        "Grupos de flagelantes percorriam cidades fazendo penitência pública. Em 1349, o papa Clemente VI condenou o movimento.",
+        "Em muitas cidades, comunidades judaicas foram acusadas falsamente de envenenar poços e sofreram massacres. A busca por culpados é uma das faces mais trágicas da epidemia."
+      ],
+      "natureza": "Fatos históricos documentados; a intensidade variou muito entre as regiões.",
+      "fontes": ["britannica-efeitos", "britannica-flagelantes", "glatter"]
+    },
+    {
+      "id": "trabalho",
+      "data": "1349–1351",
+      "titulo": "Faltam braços para trabalhar",
+      "resumo": "Com tantas mortes, trabalhadores passam a exigir salários maiores.",
+      "categoria": "Impactos sociais",
+      "detalhes": [
+        "A queda da população deixou campos sem cultivo e oficinas sem trabalhadores. Os sobreviventes puderam negociar melhores pagamentos.",
+        "Na Inglaterra, leis de 1349 e 1351 tentaram congelar os salários nos níveis anteriores à peste, o que gerou conflitos entre trabalhadores e senhores de terras."
+      ],
+      "natureza": "Interpretação apoiada por fontes econômicas; os efeitos variaram entre regiões.",
+      "fontes": ["britannica-efeitos"]
+    },
+    {
+      "id": "fim-onda",
+      "data": "1351–1353",
+      "titulo": "Fim da primeira onda",
+      "resumo": "A epidemia chega ao leste europeu e perde força.",
+      "categoria": "Disseminação",
+      "detalhes": [
+        "A primeira grande onda alcançou o território russo no início da década de 1350.",
+        "As estimativas mais citadas indicam que entre um terço e metade da população europeia morreu entre 1347 e 1351, mas os números variam conforme a região e o método dos pesquisadores."
+      ],
+      "natureza": "Estimativas — não existem números exatos.",
+      "fontes": ["britannica", "glatter"]
+    },
+    {
+      "id": "ragusa",
+      "data": "1377",
+      "titulo": "Nasce a quarentena",
+      "resumo": "Ragusa (atual Dubrovnik) isola quem chega de regiões com peste.",
+      "categoria": "Saúde pública",
+      "detalhes": [
+        "A cidade portuária de Ragusa, no mar Adriático, determinou que navios e viajantes vindos de áreas atingidas ficassem isolados por 30 dias antes de entrar.",
+        "Mais tarde o prazo passou a 40 dias — em italiano, quaranta giorni —, origem da palavra quarentena."
+      ],
+      "natureza": "Fato histórico documentado.",
+      "fontes": ["gensini"]
+    },
+    {
+      "id": "lazareto",
+      "data": "1423",
+      "titulo": "O primeiro lazareto",
+      "resumo": "Veneza cria um hospital de isolamento em uma ilha da lagoa.",
+      "categoria": "Saúde pública",
+      "detalhes": [
+        "Veneza destinou uma ilha da lagoa para isolar doentes e pessoas suspeitas de carregar a peste. Esses locais ficaram conhecidos como lazaretos.",
+        "Outras cidades portuárias adotaram medidas semelhantes nos séculos seguintes."
+      ],
+      "natureza": "Fato histórico documentado.",
+      "fontes": ["gensini"]
+    },
+    {
+      "id": "retornos",
+      "data": "Séculos XIV–XVIII",
+      "titulo": "A peste volta muitas vezes",
+      "resumo": "Novos surtos atingem a Europa por cerca de quatro séculos.",
+      "categoria": "Saúde pública",
+      "detalhes": [
+        "A Peste Negra foi apenas a primeira e mais devastadora onda da chamada segunda pandemia de peste. Novos surtos voltaram a atingir cidades europeias até o século XVIII.",
+        "Exemplos conhecidos são a Grande Peste de Londres, em 1665, e a de Marselha, em 1720."
+      ],
+      "natureza": "Fato histórico amplamente aceito.",
+      "fontes": ["frith", "glatter"]
+    },
+    {
+      "id": "mascara",
+      "data": "Século XVII",
+      "titulo": "Surge a máscara de bico",
+      "resumo": "O famoso traje do “doutor da peste” aparece cerca de 300 anos depois da Peste Negra.",
+      "categoria": "Medicina",
+      "detalhes": [
+        "A roupa com máscara em forma de bico, chapéu, casaco encerado, luvas e bastão é tradicionalmente atribuída ao médico francês Charles de Lorme, por volta de 1619. A principal descrição desse traje, porém, só foi publicada décadas depois.",
+        "O bico era recheado com ervas e substâncias aromáticas, porque se acreditava que a doença vinha do “ar ruim” (miasma). Esse traje foi usado sobretudo na Itália e na França e não existia em 1348."
+      ],
+      "natureza": "Atribuição tradicional, com base documental limitada.",
+      "fontes": ["natgeo-medicos"]
+    },
+    {
+      "id": "yersin",
+      "data": "1894",
+      "titulo": "A bactéria é descoberta",
+      "resumo": "Alexandre Yersin isola o bacilo da peste em Hong Kong.",
+      "categoria": "Ciência",
+      "detalhes": [
+        "Durante a terceira pandemia de peste, o médico Alexandre Yersin, do Instituto Pasteur, identificou a bactéria em Hong Kong. Ela recebeu depois o nome de Yersinia pestis em sua homenagem.",
+        "Em 1898, Paul-Louis Simond realizou experimentos indicando que pulgas transmitem a doença entre ratos. A ideia levou alguns anos para ser plenamente aceita."
+      ],
+      "natureza": "Fatos científicos documentados.",
+      "fontes": ["pasteur-ficha", "pasteur-yersin", "pasteur-simond"]
+    },
+    {
+      "id": "antibioticos",
+      "data": "Século XX",
+      "titulo": "Chegam os antibióticos",
+      "resumo": "A peste passa a ter tratamento eficaz.",
+      "categoria": "Ciência",
+      "detalhes": [
+        "Com o desenvolvimento dos antibióticos no século XX, a peste deixou de ser uma sentença de morte. O tratamento precoce salva a maioria dos doentes.",
+        "Sem tratamento, porém, a doença continua grave: a forma pneumônica é sempre fatal se não for tratada."
+      ],
+      "natureza": "Conhecimento médico atual.",
+      "fontes": ["oms", "cdc-sobre"]
+    },
+    {
+      "id": "dna",
+      "data": "2011–2022",
+      "titulo": "O DNA conta a história",
+      "resumo": "Cientistas confirmam a bactéria em esqueletos de vítimas medievais.",
+      "categoria": "Ciência",
+      "detalhes": [
+        "Em 2011, pesquisadores reconstruíram o genoma da Yersinia pestis a partir de dentes de vítimas da Peste Negra sepultadas em Londres, confirmando a causa da epidemia.",
+        "Novas análises investigam a origem da pandemia e os caminhos da transmissão. Algumas pesquisas sugerem que pulgas humanas e piolhos também tiveram papel importante — uma hipótese ainda debatida."
+      ],
+      "natureza": "Pesquisa científica recente; parte das conclusões ainda está em debate.",
+      "fontes": ["bos", "spyrou", "dean"]
+    },
+    {
+      "id": "hoje",
+      "data": "Hoje",
+      "titulo": "A peste ainda existe",
+      "resumo": "A doença continua presente em roedores silvestres de várias regiões do mundo.",
+      "categoria": "Ciência",
+      "detalhes": [
+        "Casos humanos ainda acontecem, principalmente em alguns países da África, da Ásia e das Américas. Madagascar e a República Democrática do Congo estão entre os locais com mais registros nas últimas décadas.",
+        "No Brasil, o Ministério da Saúde mantém vigilância sobre focos naturais da doença em roedores."
+      ],
+      "natureza": "Situação epidemiológica atual.",
+      "fontes": ["oms", "ms-brasil", "cdc-sobre"]
+    }
+  ]
+}

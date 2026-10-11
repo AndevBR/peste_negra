@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t">
+<title id="t">Casas medievais em primeiro plano</title>
+<g fill="#211a1e">
+      <rect x="0" y="590" width="150" height="370"/><path d="M-10 590 L75 496.5 L160 590 Z"/><rect x="150" y="640" width="130" height="340"/><path d="M140 640 L215 563 L290 640 Z"/><rect x="280" y="610" width="120" height="360"/><path d="M270 610 L340 522 L410 610 Z"/><rect x="1180" y="610" width="140" height="360"/><path d="M1170 610 L1250 522 L1330 610 Z"/><rect x="1320" y="580" width="130" height="380"/><path d="M1310 580 L1385 481 L1460 580 Z"/><rect x="1450" y="630" width="160" height="350"/><path d="M1440 630 L1530 547.5 L1620 630 Z"/>
+      <path d="M0 820 Q400 790 800 805 Q1200 820 1600 795 L1600 900 L0 900 Z"/>
+    </g>
+    <rect x="30" y="641" width="27" height="30.599999999999998" fill="#ffbe5c" opacity="0.6"/><rect x="176" y="682" width="23.4" height="25.2" fill="#ffbe5c" opacity="0.85"/><rect x="304" y="658" width="21.599999999999998" height="28.799999999999997" fill="#ffbe5c" opacity="0.6"/><rect x="1208" y="658" width="25.2" height="28.799999999999997" fill="#ffbe5c" opacity="0.85"/><rect x="1346" y="634" width="23.4" height="32.4" fill="#ffbe5c" opacity="0.6"/><rect x="1482" y="675" width="28.799999999999997" height="27" fill="#ffbe5c" opacity="0.85"/>
+    <g stroke="#3a2c30" stroke-width="5"><path d="M0 683.5 L150 683.5" /><path d="M150 717 L280 717" /><path d="M280 698 L400 698" /><path d="M1180 698 L1320 698" /><path d="M1320 679 L1450 679" /><path d="M1450 712.5 L1610 712.5" /></g>
+</svg>

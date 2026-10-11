@@ -1,0 +1,74 @@
+{
+  "afirmacoes": [
+    {
+      "id": "bacteria",
+      "afirmacao": "A Peste Negra foi causada por uma bactéria.",
+      "veredito": "verdade",
+      "explicacao": "A causa foi a bactéria Yersinia pestis. Isso foi confirmado por análises de DNA antigo extraído de dentes de vítimas medievais, como as sepultadas em um cemitério de emergência em Londres.",
+      "fontes": ["bos", "oms"]
+    },
+    {
+      "id": "mascaras",
+      "afirmacao": "Os médicos da peste sempre usavam máscaras com bico.",
+      "veredito": "mito",
+      "explicacao": "O traje com máscara de bico surgiu no século XVII, cerca de 300 anos depois da Peste Negra, e foi usado principalmente na Itália e na França. Os médicos de 1348 não usavam esse traje.",
+      "fontes": ["natgeo-medicos"]
+    },
+    {
+      "id": "transmissao",
+      "afirmacao": "A medicina medieval conhecia os mecanismos de transmissão da doença.",
+      "veredito": "mito",
+      "explicacao": "Os médicos explicavam a doença pelo “ar ruim” (miasma), pelo desequilíbrio dos humores do corpo ou pela posição dos astros. As bactérias só foram associadas às doenças no século XIX, e o papel das pulgas na peste só foi demonstrado no fim desse século.",
+      "fontes": ["pasteur-simond", "glatter"]
+    },
+    {
+      "id": "regioes",
+      "afirmacao": "Todas as regiões europeias foram atingidas da mesma maneira.",
+      "veredito": "mito",
+      "explicacao": "A mortalidade variou muito entre cidades, vilas e regiões. Fatores como rotas de comércio, densidade populacional, clima e época de chegada da doença influenciaram o impacto. Por isso, as estimativas falam em faixas, como “entre um terço e metade da população”.",
+      "fontes": ["britannica", "glatter"]
+    },
+    {
+      "id": "desapareceu",
+      "afirmacao": "A peste desapareceu completamente após a pandemia medieval.",
+      "veredito": "mito",
+      "explicacao": "A peste voltou à Europa muitas vezes até o século XVIII, causou uma terceira pandemia a partir do fim do século XIX e ainda existe hoje em roedores silvestres de várias regiões, com casos humanos registrados todos os anos.",
+      "fontes": ["oms", "cdc-sobre"]
+    },
+    {
+      "id": "ratos",
+      "afirmacao": "Os ratos foram os únicos responsáveis por espalhar a Peste Negra.",
+      "veredito": "em parte",
+      "explicacao": "Roedores e suas pulgas são importantes no ciclo da peste. Mas a forma pneumônica passa de pessoa para pessoa, e pesquisas sugerem que pulgas humanas e piolhos também podem ter tido papel importante na Europa. O peso de cada via ainda é debatido.",
+      "fontes": ["cdc-transmissao", "dean"]
+    },
+    {
+      "id": "quarentena",
+      "afirmacao": "A palavra “quarentena” vem de um período de 40 dias.",
+      "veredito": "verdade",
+      "explicacao": "Em 1377, Ragusa (atual Dubrovnik) passou a isolar viajantes por 30 dias. O prazo foi ampliado para 40 dias — quaranta giorni, em italiano —, que deu origem à palavra.",
+      "fontes": ["gensini"]
+    },
+    {
+      "id": "nome",
+      "afirmacao": "As pessoas de 1348 já chamavam a doença de “Peste Negra”.",
+      "veredito": "mito",
+      "explicacao": "Na época, a epidemia era chamada de “grande mortandade”, “pestilência” ou simplesmente “a peste”. O nome Peste Negra se popularizou séculos depois.",
+      "fontes": ["britannica"]
+    },
+    {
+      "id": "tratamento",
+      "afirmacao": "Hoje a peste tem tratamento.",
+      "veredito": "verdade",
+      "explicacao": "Antibióticos são eficazes contra a Yersinia pestis. O diagnóstico e o tratamento precoces salvam vidas; sem tratamento, a doença pode ser fatal.",
+      "fontes": ["oms", "cdc-sobre"]
+    },
+    {
+      "id": "pneumonica",
+      "afirmacao": "A peste pneumônica pode passar de uma pessoa para outra.",
+      "veredito": "verdade",
+      "explicacao": "Quando a infecção atinge os pulmões, a bactéria pode ser transmitida por gotículas respiratórias, sem a participação de pulgas.",
+      "fontes": ["oms", "cdc-transmissao"]
+    }
+  ]
+}

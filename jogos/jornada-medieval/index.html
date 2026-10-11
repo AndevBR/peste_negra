@@ -241,11 +241,20 @@
   #m-botoes .btn { font-size: 15px; padding: 12px 4px; white-space: normal; }
   #m-nota { margin: 12px 0 0; font-size: 14px; font-weight: normal; text-align: center; }
   @media (max-width: 560px) { #m-lista, #m-botoes { grid-template-columns: repeat(2, 1fr); } }
+  /* ---------- integração com o site Peste Negra ---------- */
+  .voltar-site { padding: 6px 12px; font-size: 14px; letter-spacing: 0.05em; color: #f4ead0; text-decoration: none; text-shadow: 0 2px 0 #17100a;
+    background: linear-gradient(#7d6a54, #4d3f31 60%, #3a2f24); border: 3px solid #17100a; border-radius: 8px; box-shadow: inset 0 2px 0 rgba(255,225,170,.3), 0 3px 0 #0f0a06; }
+  .voltar-site:focus-visible, .m-voltar a:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  .m-voltar { margin: 10px 0 0; text-align: center; font-size: 15px; }
+  .m-voltar a { color: #6b3a12; }
 </style>
+<meta name="description" content="Jogo de tabuleiro educativo sobre a Peste Negra: lance o dado, responda perguntas e enfrente cartas de Sorte ou Revés.">
+<link rel="icon" href="../../assets/images/icons/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
 <header class="topo">
+  <a class="voltar-site" href="../../" aria-label="Voltar ao site Peste Negra">&#8592; SITE</a>
   <h1 class="placa">A PESTE NEGRA — JORNADA MEDIEVAL</h1>
   <div class="chips">
     <span class="chip" id="chip-vez" hidden><i id="hud-cor"></i><b id="hud-vez"></b></span>
@@ -292,6 +301,7 @@
         <button class="btn" type="button">4 JOGADORES</button>
       </div>
       <p id="m-nota">Os jogadores se revezam no mesmo aparelho, na ordem acima. Vence quem chegar primeiro à CHEGADA.</p>
+      <p class="m-voltar"><a href="../../">&#8592; Voltar ao site Peste Negra</a></p>
     </div>
   </div>
 </div>

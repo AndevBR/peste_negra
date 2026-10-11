@@ -1,0 +1,125 @@
+{
+  "largura": 900,
+  "altura": 638,
+  "aviso": "Mapa esquemático. As datas são aproximadas e variam conforme a fonte.",
+  "fontes": [
+    "britannica",
+    "glatter",
+    "bos",
+    "natural-earth"
+  ],
+  "cidades": [
+    {
+      "id": "caffa",
+      "nome": "Caffa",
+      "data": "1346",
+      "texto": "Cerco do porto genovês pela Horda Dourada; a doença se espalha entre os sitiantes.",
+      "x": 710.7,
+      "y": 373.2
+    },
+    {
+      "id": "constantinopla",
+      "nome": "Constantinopla",
+      "data": "1347",
+      "texto": "A capital bizantina é atingida no verão de 1347.",
+      "x": 614.6,
+      "y": 461.7
+    },
+    {
+      "id": "messina",
+      "nome": "Messina",
+      "data": "Outubro de 1347",
+      "texto": "Galés genovesas chegam à Sicília trazendo a doença.",
+      "x": 413.3,
+      "y": 523.7
+    },
+    {
+      "id": "marselha",
+      "nome": "Marselha",
+      "data": "Novembro de 1347",
+      "texto": "Principal porta de entrada da peste na França.",
+      "x": 260.6,
+      "y": 411.3
+    },
+    {
+      "id": "veneza",
+      "nome": "Veneza",
+      "data": "Início de 1348",
+      "texto": "A república de Veneza cria comissões de saúde para enfrentar a epidemia.",
+      "x": 364.9,
+      "y": 364.2
+    },
+    {
+      "id": "florenca",
+      "nome": "Florença",
+      "data": "Primavera de 1348",
+      "texto": "Boccaccio descreve a epidemia no Decamerão.",
+      "x": 348.8,
+      "y": 401
+    },
+    {
+      "id": "barcelona",
+      "nome": "Barcelona",
+      "data": "Primavera de 1348",
+      "texto": "A doença se espalha pela Península Ibérica a partir dos portos.",
+      "x": 212.6,
+      "y": 453.3
+    },
+    {
+      "id": "paris",
+      "nome": "Paris",
+      "data": "Verão de 1348",
+      "texto": "A Faculdade de Medicina atribui a epidemia a uma conjunção de planetas.",
+      "x": 215.3,
+      "y": 289
+    },
+    {
+      "id": "melcombe",
+      "nome": "Melcombe (Inglaterra)",
+      "data": "Junho de 1348",
+      "texto": "Porto do sul da Inglaterra apontado como entrada da peste no país.",
+      "x": 143.1,
+      "y": 250.5
+    },
+    {
+      "id": "londres",
+      "nome": "Londres",
+      "data": "Outono de 1348",
+      "texto": "Cemitérios de emergência são abertos; um deles forneceu o DNA que confirmou a causa da doença.",
+      "x": 178.2,
+      "y": 230.7
+    },
+    {
+      "id": "viena",
+      "nome": "Viena",
+      "data": "1349",
+      "texto": "A peste avança pela Europa Central.",
+      "x": 425.6,
+      "y": 303.3
+    },
+    {
+      "id": "bergen",
+      "nome": "Bergen",
+      "data": "1349",
+      "texto": "Um navio leva a doença à Noruega.",
+      "x": 259.8,
+      "y": 35.4
+    },
+    {
+      "id": "lubeck",
+      "nome": "Lübeck",
+      "data": "1350",
+      "texto": "Grande porto comercial do Báltico é atingido.",
+      "x": 340.4,
+      "y": 178.8
+    },
+    {
+      "id": "novgorod",
+      "nome": "Novgorod",
+      "data": "1352",
+      "texto": "A primeira onda chega às terras russas.",
+      "x": 649,
+      "y": 76.5
+    }
+  ]
+}

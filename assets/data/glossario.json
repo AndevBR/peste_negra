@@ -1,0 +1,33 @@
+{
+  "categorias": ["Ciência", "Medicina", "História", "Sociedade"],
+  "termos": [
+    { "termo": "Antibiótico", "categoria": "Ciência", "definicao": "Medicamento que mata bactérias ou impede que elas se multipliquem. É o tratamento atual da peste." },
+    { "termo": "Apotecário", "categoria": "Medicina", "definicao": "Profissional medieval que preparava e vendia remédios, ervas e especiarias; antecessor do farmacêutico." },
+    { "termo": "Bactéria", "categoria": "Ciência", "definicao": "Ser vivo formado por uma única célula, sem núcleo organizado, visível apenas ao microscópio. Algumas causam doenças." },
+    { "termo": "Bubão", "categoria": "Medicina", "definicao": "Íngua (linfonodo) inchada e dolorida, típica da peste bubônica, geralmente na virilha, na axila ou no pescoço." },
+    { "termo": "Cirurgião-barbeiro", "categoria": "Medicina", "definicao": "Artesão que cortava cabelo e barba e também fazia sangrias, extrações de dentes e pequenas cirurgias." },
+    { "termo": "Contágio", "categoria": "Ciência", "definicao": "Transmissão de uma doença de um ser vivo para outro, direta ou indiretamente." },
+    { "termo": "Endêmico", "categoria": "Ciência", "definicao": "Diz-se de uma doença que existe de forma constante em uma determinada região." },
+    { "termo": "Epidemia", "categoria": "Ciência", "definicao": "Aumento rápido e fora do comum do número de casos de uma doença em uma região." },
+    { "termo": "Epidemiologia", "categoria": "Ciência", "definicao": "Área da ciência que estuda como as doenças se distribuem nas populações, suas causas e as formas de controlá-las." },
+    { "termo": "Flagelante", "categoria": "Sociedade", "definicao": "Membro de grupos religiosos que faziam penitência pública açoitando o próprio corpo, acreditando assim afastar o castigo divino." },
+    { "termo": "Humores (teoria dos)", "categoria": "Medicina", "definicao": "Teoria antiga segundo a qual a saúde dependia do equilíbrio de quatro líquidos do corpo: sangue, fleuma, bile amarela e bile negra." },
+    { "termo": "Idade Média", "categoria": "História", "definicao": "Período da história europeia geralmente situado entre os séculos V e XV. A Peste Negra ocorreu em sua fase final, a Baixa Idade Média." },
+    { "termo": "Lazareto", "categoria": "História", "definicao": "Local de isolamento para doentes e pessoas suspeitas de carregar doenças contagiosas, geralmente perto de portos ou em ilhas." },
+    { "termo": "Miasma", "categoria": "Medicina", "definicao": "“Ar ruim” ou vapor malcheiroso que, segundo uma teoria antiga, causaria doenças. Foi substituída pela teoria dos germes no século XIX." },
+    { "termo": "Mortandade", "categoria": "História", "definicao": "Grande número de mortes. “A grande mortandade” era um dos nomes dados à epidemia na época." },
+    { "termo": "Pandemia", "categoria": "Ciência", "definicao": "Epidemia que se espalha por vários países ou continentes." },
+    { "termo": "Peste bubônica", "categoria": "Medicina", "definicao": "Forma mais comum da peste, geralmente transmitida pela picada de pulgas infectadas; causa febre e bubões." },
+    { "termo": "Peste pneumônica", "categoria": "Medicina", "definicao": "Forma da peste que atinge os pulmões e pode ser transmitida de pessoa para pessoa por gotículas respiratórias. É a mais grave." },
+    { "termo": "Peste septicêmica", "categoria": "Medicina", "definicao": "Forma da peste em que a bactéria se multiplica na corrente sanguínea; pode surgir sozinha ou como complicação da bubônica." },
+    { "termo": "Pomander", "categoria": "Sociedade", "definicao": "Bola ou recipiente com ervas e substâncias perfumadas levado junto ao corpo para “proteger” do ar ruim." },
+    { "termo": "Pulga", "categoria": "Ciência", "definicao": "Pequeno inseto sem asas que se alimenta de sangue. Pulgas infectadas podem transmitir a Yersinia pestis." },
+    { "termo": "Quarentena", "categoria": "História", "definicao": "Isolamento de pessoas, animais ou mercadorias que podem transmitir uma doença. O nome vem de quaranta giorni, 40 dias em italiano." },
+    { "termo": "Reservatório", "categoria": "Ciência", "definicao": "Animal ou ambiente onde um micróbio vive e se mantém na natureza. Roedores silvestres são reservatórios da peste." },
+    { "termo": "Sangria", "categoria": "Medicina", "definicao": "Retirada de sangue do paciente para “equilibrar os humores”. Era comum, mas não curava e podia enfraquecer o doente." },
+    { "termo": "Teriaga", "categoria": "Medicina", "definicao": "Remédio antigo feito com dezenas de ingredientes, considerado na época um antídoto universal contra venenos e doenças." },
+    { "termo": "Vetor", "categoria": "Ciência", "definicao": "Ser vivo que transporta e transmite um agente causador de doença de um hospedeiro para outro. Na peste, a pulga é o principal vetor." },
+    { "termo": "Yersinia pestis", "categoria": "Ciência", "definicao": "Bactéria em forma de bastonete que causa a peste. Recebeu o nome em homenagem a Alexandre Yersin, que a isolou em 1894." },
+    { "termo": "Zoonose", "categoria": "Ciência", "definicao": "Doença que pode ser transmitida entre animais e seres humanos. A peste é uma zoonose." }
+  ]
+}

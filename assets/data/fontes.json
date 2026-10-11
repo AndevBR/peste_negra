@@ -1,0 +1,185 @@
+{
+  "observacao": "Cada referência indica o assunto que fundamenta no site. Endereços verificados em outubro de 2026. Fontes acadêmicas usam o DOI, que é um endereço permanente.",
+  "fontes": [
+    {
+      "id": "oms",
+      "titulo": "Plague — Fact sheet (Peste — ficha informativa)",
+      "autor": "Organização Mundial da Saúde (OMS/WHO)",
+      "ano": "2022",
+      "tipo": "Organização de saúde",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/plague",
+      "assunto": "Causa (Yersinia pestis), formas bubônica e pneumônica, transmissão, letalidade sem tratamento, eficácia dos antibióticos e países onde a peste ainda ocorre."
+    },
+    {
+      "id": "cdc-sobre",
+      "titulo": "About Plague (Sobre a peste)",
+      "autor": "Centers for Disease Control and Prevention (CDC), EUA",
+      "ano": "s.d.",
+      "tipo": "Organização de saúde",
+      "url": "https://www.cdc.gov/plague/about/index.html",
+      "assunto": "Visão geral da doença, presença atual em roedores silvestres e tratamento com antibióticos."
+    },
+    {
+      "id": "cdc-transmissao",
+      "titulo": "How Plague Spreads (Como a peste se espalha)",
+      "autor": "Centers for Disease Control and Prevention (CDC), EUA",
+      "ano": "s.d.",
+      "tipo": "Organização de saúde",
+      "url": "https://www.cdc.gov/plague/causes/index.html",
+      "assunto": "Transmissão por picada de pulgas, contato com animais infectados e gotículas respiratórias."
+    },
+    {
+      "id": "ms-brasil",
+      "titulo": "Peste — Saúde de A a Z",
+      "autor": "Ministério da Saúde (Brasil)",
+      "ano": "s.d.",
+      "tipo": "Organização de saúde",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/p/peste",
+      "assunto": "Definição da doença em português, formas clínicas (bubônica, septicêmica e pneumônica) e situação no Brasil."
+    },
+    {
+      "id": "ms-formas",
+      "titulo": "Peste — Formas clínicas",
+      "autor": "Ministério da Saúde (Brasil)",
+      "ano": "s.d.",
+      "tipo": "Organização de saúde",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/p/peste/formas-clinicas",
+      "assunto": "Diferenças entre peste bubônica, septicêmica e pneumônica."
+    },
+    {
+      "id": "ecdc",
+      "titulo": "Facts about plague (Fatos sobre a peste)",
+      "autor": "European Centre for Disease Prevention and Control (ECDC)",
+      "ano": "s.d.",
+      "tipo": "Organização de saúde",
+      "url": "https://www.ecdc.europa.eu/en/plague/facts",
+      "assunto": "Informações científicas sobre o agente, os reservatórios animais e as formas da doença."
+    },
+    {
+      "id": "pasteur-ficha",
+      "titulo": "Plague: symptoms, treatment, prevention (Peste: sintomas, tratamento, prevenção)",
+      "autor": "Institut Pasteur",
+      "ano": "s.d.",
+      "tipo": "Instituição de pesquisa",
+      "url": "https://www.pasteur.fr/en/medical-center/disease-sheets/plague",
+      "assunto": "Características da bactéria (bastonete de cerca de 1 a 3 µm) e isolamento por Alexandre Yersin em 1894."
+    },
+    {
+      "id": "pasteur-yersin",
+      "titulo": "Alexandre Yersin, the man who discovered the bacterium responsible for the plague",
+      "autor": "Institut Pasteur",
+      "ano": "s.d.",
+      "tipo": "Instituição de pesquisa",
+      "url": "https://www.pasteur.fr/en/whats-new/latest-news/news/alexandre-yersin-man-who-discovered-bacterium-responsible-plague",
+      "assunto": "Trabalho de Yersin em Hong Kong (1894) e a identificação do bacilo da peste."
+    },
+    {
+      "id": "pasteur-simond",
+      "titulo": "Paul-Louis Simond, world traveler working on multiple diseases",
+      "autor": "Institut Pasteur",
+      "ano": "s.d.",
+      "tipo": "Instituição de pesquisa",
+      "url": "https://www.pasteur.fr/en/institut-pasteur/history/paul-louis-simond-world-traveler-working-multiple-diseases",
+      "assunto": "Experimentos de 1898 sobre o papel das pulgas na transmissão da peste."
+    },
+    {
+      "id": "britannica",
+      "titulo": "Black Death (Peste Negra)",
+      "autor": "Encyclopaedia Britannica",
+      "ano": "s.d.",
+      "tipo": "Obra de referência",
+      "url": "https://www.britannica.com/event/Black-Death",
+      "assunto": "Cronologia de 1347 a 1351, chegada à Europa e estimativas de mortalidade."
+    },
+    {
+      "id": "britannica-efeitos",
+      "titulo": "Black Death — Effects and significance (Efeitos e importância)",
+      "autor": "Encyclopaedia Britannica",
+      "ano": "s.d.",
+      "tipo": "Obra de referência",
+      "url": "https://www.britannica.com/event/Black-Death/Effects-and-significance",
+      "assunto": "Consequências sociais, econômicas e religiosas, incluindo perseguições e mudanças no trabalho."
+    },
+    {
+      "id": "britannica-flagelantes",
+      "titulo": "Flagellants (Flagelantes)",
+      "autor": "Encyclopaedia Britannica",
+      "ano": "s.d.",
+      "tipo": "Obra de referência",
+      "url": "https://www.britannica.com/topic/flagellants",
+      "assunto": "Movimento dos flagelantes e sua condenação pelo papa Clemente VI em 1349."
+    },
+    {
+      "id": "natgeo-medicos",
+      "titulo": "Why plague doctors wore those strange beaked masks",
+      "autor": "National Geographic",
+      "ano": "s.d.",
+      "tipo": "Divulgação histórica",
+      "url": "https://www.nationalgeographic.com/history/reference/european-history/plague-doctors-beaked-masks/",
+      "assunto": "Origem do traje com máscara de bico no século XVII, atribuído a Charles de Lorme, e sua relação com a teoria dos miasmas."
+    },
+    {
+      "id": "frith",
+      "titulo": "The History of Plague – Part 1. The Three Great Pandemics",
+      "autor": "John Frith — Journal of Military and Veterans' Health, vol. 20, n. 2",
+      "ano": "2012",
+      "tipo": "Artigo científico",
+      "url": "https://jmvh.org/article/the-history-of-plague-part-1-the-three-great-pandemics/",
+      "assunto": "As três grandes pandemias de peste (541, 1347 e 1894) e as formas clínicas da doença."
+    },
+    {
+      "id": "spyrou",
+      "titulo": "The source of the Black Death in fourteenth-century central Eurasia",
+      "autor": "Maria A. Spyrou et al. — Nature, vol. 606, p. 718–724",
+      "ano": "2022",
+      "tipo": "Artigo científico revisado por pares",
+      "url": "https://doi.org/10.1038/s41586-022-04800-3",
+      "assunto": "DNA antigo de vítimas de 1338–1339 no lago Issyk-Kul (atual Quirguistão), que apoia a origem da segunda pandemia na Ásia Central."
+    },
+    {
+      "id": "bos",
+      "titulo": "A draft genome of Yersinia pestis from victims of the Black Death",
+      "autor": "Kirsten I. Bos et al. — Nature, vol. 478, p. 506–510",
+      "ano": "2011",
+      "tipo": "Artigo científico revisado por pares",
+      "url": "https://doi.org/10.1038/nature10549",
+      "assunto": "Confirmação, por DNA antigo de vítimas em Londres, de que a Yersinia pestis causou a Peste Negra."
+    },
+    {
+      "id": "dean",
+      "titulo": "Human ectoparasites and the spread of plague in Europe during the Second Pandemic",
+      "autor": "Katharine R. Dean et al. — PNAS, vol. 115, n. 6, p. 1304–1309",
+      "ano": "2018",
+      "tipo": "Artigo científico revisado por pares",
+      "url": "https://doi.org/10.1073/pnas.1715640115",
+      "assunto": "Hipótese, ainda debatida, de que pulgas humanas e piolhos tiveram papel importante na disseminação da peste na Europa."
+    },
+    {
+      "id": "glatter",
+      "titulo": "History of the Plague: An Ancient Pandemic for the Age of COVID-19",
+      "autor": "Kathryn A. Glatter e Paul Finkelman — The American Journal of Medicine, vol. 134, n. 2",
+      "ano": "2021",
+      "tipo": "Artigo científico revisado por pares",
+      "url": "https://doi.org/10.1016/j.amjmed.2020.08.019",
+      "assunto": "Panorama histórico da peste, estimativas de mortalidade, perseguição a minorias e regiões onde a doença ainda é endêmica."
+    },
+    {
+      "id": "gensini",
+      "titulo": "The concept of quarantine in history: from plague to SARS",
+      "autor": "G. F. Gensini, M. H. Yacoub e A. A. Conti — Journal of Infection, vol. 49, p. 257–261",
+      "ano": "2004",
+      "tipo": "Artigo científico revisado por pares",
+      "url": "https://flore.unifi.it/handle/2158/351225",
+      "assunto": "Origem da quarentena: isolamento de 30 dias em Ragusa (1377), depois ampliado para 40 dias, e os lazaretos."
+    },
+    {
+      "id": "natural-earth",
+      "titulo": "Natural Earth — dados cartográficos de domínio público",
+      "autor": "Natural Earth",
+      "ano": "s.d.",
+      "tipo": "Dados cartográficos",
+      "url": "https://www.naturalearthdata.com/",
+      "assunto": "Contornos dos continentes usados no mapa esquemático da disseminação."
+    }
+  ]
+}

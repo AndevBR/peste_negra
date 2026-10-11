@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-labelledby="t">
+<title id="t">Barraca de mercado medieval</title>
+<desc>Barraca com toldo listrado vendendo pães, repolhos e peixes, com uma balança de pratos.</desc>
+<defs>
+  <linearGradient id="casaco" x1="0" x2="1"><stop offset="0" stop-color="#1d221c"/><stop offset=".45" stop-color="#2f362e"/><stop offset=".8" stop-color="#4a5547"/><stop offset="1" stop-color="#2f362e"/></linearGradient>
+  <linearGradient id="manga" x1="0" x2="1"><stop offset="0" stop-color="#2f362e"/><stop offset="1" stop-color="#4a5547"/></linearGradient>
+  <linearGradient id="capa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2420"/><stop offset=".6" stop-color="#3b322b"/><stop offset="1" stop-color="#4b4036"/></linearGradient>
+  <radialGradient id="mascara" cx=".65" cy=".35" r=".8"><stop offset="0" stop-color="#8c5f38"/><stop offset=".6" stop-color="#6b4528"/><stop offset="1" stop-color="#432a17"/></radialGradient>
+  <linearGradient id="bico" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ead2a6"/><stop offset=".55" stop-color="#d2b383"/><stop offset="1" stop-color="#a5835a"/></linearGradient>
+  <radialGradient id="vidro" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#ffe9a3"/><stop offset=".5" stop-color="#e2a43a"/><stop offset="1" stop-color="#6f3f12"/></radialGradient>
+  <linearGradient id="aba" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a302a"/><stop offset="1" stop-color="#17110e"/></linearGradient>
+  <linearGradient id="copa" x1="0" x2="1"><stop offset="0" stop-color="#1c1613"/><stop offset=".7" stop-color="#352b25"/><stop offset="1" stop-color="#4a3c33"/></linearGradient>
+  <linearGradient id="madeira" x1="0" x2="1"><stop offset="0" stop-color="#4f361f"/><stop offset=".5" stop-color="#7a5634"/><stop offset="1" stop-color="#5d4127"/></linearGradient>
+  <linearGradient id="chama" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a0"/><stop offset="1" stop-color="#e58a2a"/></linearGradient>
+  <radialGradient id="halo"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset=".5" stop-color="#ffb347" stop-opacity=".18"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+  <radialGradient id="medalhao" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#9a3a3f"/><stop offset=".7" stop-color="#7a1f2b"/><stop offset="1" stop-color="#4e1219"/></radialGradient>
+  <radialGradient id="pergaminhoFundo" cx=".5" cy=".4" r=".75"><stop offset="0" stop-color="#fbf2dc"/><stop offset=".75" stop-color="#f2e4c2"/><stop offset="1" stop-color="#d9c294"/></radialGradient>
+</defs><clipPath id="q"><rect x="4" y="4" width="392" height="252" rx="18"/></clipPath>
+    <g clip-path="url(#q)"><rect width="400" height="260" fill="#c9d6d2"/><rect y="190" width="400" height="70" fill="#9a8668"/>
+    <g transform="translate(-20 40) skewX(0)" stroke="#1b1411" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="0" y="0" width="140" height="150" fill="#ddcca6"/>
+    <path d="M0 67.5 L140 67.5 M46.2 0 L46.2 150 M92.4 0 L92.4 150 M0 0 L46.2 67.5 M140 0 L92.4 67.5" stroke="#4a3122" stroke-width="5"/>
+    <rect x="11.200000000000001" y="18" width="25.2" height="33" fill="#3b3a40"/>
+    <rect x="56" y="90" width="28" height="60" fill="#4a3122"/>
+    <path d="M-10 0 L70 -90 L150 0 Z" fill="#8a4b32"/>
+  </g><g transform="translate(290 50) skewX(0)" stroke="#1b1411" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="0" y="0" width="130" height="140" fill="#e6d6b2"/>
+    <path d="M0 63 L130 63 M42.9 0 L42.9 140 M85.8 0 L85.8 140 M0 0 L42.9 63 M130 0 L85.8 63" stroke="#4a3122" stroke-width="5"/>
+    <rect x="10.4" y="16.8" width="23.4" height="30.8" fill="#3b3a40"/>
+    <rect x="52" y="84" width="26" height="56" fill="#4a3122"/>
+    <path d="M-10 0 L65 -84 L140 0 Z" fill="#6e3b2a"/>
+  </g>
+    <g stroke="#1b1411" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="110" y="120" width="190" height="80" fill="#8c5f38"/><rect x="104" y="112" width="202" height="14" fill="#6b4528"/>
+    <path d="M100 70 L310 70 L320 112 L90 112 Z" fill="#f2e4c2"/>
+    <path d="M100 70 L121 70 L116 112 L90 112 Z" fill="#7a1f2b"/><path d="M142 70 L163 70 L162 112 L136 112 Z" fill="#7a1f2b"/><path d="M184 70 L205 70 L208 112 L182 112 Z" fill="#7a1f2b"/><path d="M226 70 L247 70 L254 112 L228 112 Z" fill="#7a1f2b"/><path d="M268 70 L289 70 L300 112 L274 112 Z" fill="#7a1f2b"/>
+    <ellipse cx="140" cy="106" rx="16" ry="10" fill="#d6a35a"/><ellipse cx="168" cy="104" rx="16" ry="10" fill="#d6a35a"/>
+    <circle cx="206" cy="102" r="12" fill="#5f8f4e"/><circle cx="228" cy="104" r="12" fill="#77a865"/>
+    <path d="M250 104 Q266 94 284 104 Q266 112 250 104 Z M284 104 L292 98 L292 110 Z" fill="#9fb2bd"/></g>
+    <g stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"><path d="M150 150 L150 132 M128 150 L172 150"/><path d="M128 150 L120 164 L136 164 Z M172 150 L164 164 L180 164 Z" fill="#b8903f"/></g></g>
+    <rect x="4" y="4" width="392" height="252" rx="18" fill="none" stroke="#1b1411" stroke-width="5"/>
+    <rect x="12" y="12" width="376" height="236" rx="12" fill="none" stroke="#b8903f" stroke-width="2" opacity=".7"/>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-labelledby="t">
+<title id="t">Bactéria Yersinia pestis vista ao microscópio (representação didática)</title>
+<desc>Campo circular de microscópio com bactérias em forma de bastonete, mais escuras nas extremidades, e uma escala indicando cerca de 1 a 3 micrômetros de comprimento.</desc>
+<defs><radialGradient id="campo" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#fbf4e4"/><stop offset=".85" stop-color="#efe0c2"/><stop offset="1" stop-color="#c7ad7c"/></radialGradient></defs>
+    <circle cx="220" cy="220" r="196" fill="#2a211d" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="220" cy="220" r="180" fill="url(#campo)" stroke="#b8903f" stroke-width="8"/>
+    <clipPath id="lente"><circle cx="220" cy="220" r="176"/></clipPath>
+    <g clip-path="url(#lente)"><g transform="translate(150 140) rotate(20) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(235 110) rotate(-30) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(210 200) rotate(70) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(120 230) rotate(-10) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(290 190) rotate(15) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(180 290) rotate(-40) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(270 280) rotate(50) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(110 320) rotate(30) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(320 110) rotate(80) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(330 330) rotate(-20) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(80 170) rotate(60) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g><g transform="translate(250 360) rotate(10) scale(1)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g></g>
+    <g transform="translate(528 120)">
+      <g transform="translate(0 0) rotate(0) scale(2.2)">
+      <rect x="-34" y="-13" width="68" height="26" rx="13" fill="#d98a8f" stroke="#1b1411" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="0" rx="10" ry="9" fill="#9b2f3d"/><ellipse cx="20" cy="0" rx="10" ry="9" fill="#9b2f3d"/>
+      <path d="M-24 -7 Q0 -11 24 -7" stroke="#fff" stroke-width="2.5" fill="none" opacity=".55"/>
+    </g>
+      <path d="M-20 58 Q-30 39 -40 20" fill="none" stroke="#1b1411" stroke-width="4" stroke-linecap="round" />
+  <path d="M-40 20 L-30.3 27.1 L-39.6 32.0 Z" fill="#1b1411"/><text x="0" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="#1b1411" text-anchor="middle">extremidades</text><text x="0" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="normal" fill="#1b1411" text-anchor="middle">mais coradas*</text>
+      <text x="0" y="-48" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="bold" fill="#1b1411" text-anchor="middle">forma de bastonete</text>
+      <text x="0" y="150" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" fill="#7a1f2b" text-anchor="middle">≈ 1 a 3 µm</text>
+      <text x="0" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="normal" fill="#1b1411" text-anchor="middle">de comprimento</text>
+      <text x="0" y="214" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="normal" fill="#1b1411" text-anchor="middle">Visível só ao</text><text x="0" y="234" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="normal" fill="#1b1411" text-anchor="middle">microscópio</text><text x="0" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="normal" fill="#4a4640" text-anchor="middle">* em certas colorações</text>
+    </g>
+</svg>

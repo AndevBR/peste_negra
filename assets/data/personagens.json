@@ -1,0 +1,220 @@
+{
+  "personagens": [
+    {
+      "id": "doutor-da-peste",
+      "nome": "Doutores da peste",
+      "imagem": "assets/images/characters/doutor-compacto.svg",
+      "imagemJogo": "assets/images/games/sprite-medico.webp",
+      "periodo": "Contratados por cidades desde o século XIV; o traje com bico é do século XVII",
+      "resumo": "Médicos contratados pelas cidades para cuidar dos doentes de peste.",
+      "contexto": [
+        "Durante as epidemias, algumas cidades contratavam médicos específicos para atender os doentes de peste, inclusive os pobres. Nem todos tinham formação universitária: quando os médicos mais prestigiados fugiam, a função podia ficar com profissionais menos experientes.",
+        "O traje famoso — máscara com bico, chapéu, casaco encerado, luvas, botas e um bastão para examinar o doente à distância — só aparece no século XVII, quase 300 anos depois da Peste Negra. Ele é tradicionalmente atribuído ao médico francês Charles de Lorme.",
+        "O bico era recheado com ervas e substâncias perfumadas porque se acreditava que a doença vinha do “ar ruim”, o miasma. Os médicos também recomendavam sangrias, dietas, fogueiras aromáticas e fuga das áreas atingidas."
+      ],
+      "limitacoes": "Ninguém conhecia as bactérias nem o papel das pulgas. Os tratamentos não curavam a peste e alguns, como a sangria, enfraqueciam o doente.",
+      "curiosidades": [
+        "A imagem popular do doutor da peste mistura épocas diferentes: os médicos de 1348 não usavam o traje de bico.",
+        "As lentes de vidro da máscara protegiam os olhos e reforçavam a aparência misteriosa do traje.",
+        "Depois das epidemias, a figura virou personagem do Carnaval de Veneza e da comédia italiana."
+      ],
+      "estilizacao": "O Doutor da Peste deste site é uma representação estilizada inspirada no traje do século XVII, não um retrato de 1348.",
+      "fontes": [
+        "natgeo-medicos",
+        "britannica"
+      ]
+    },
+    {
+      "id": "flagelante",
+      "nome": "Flagelantes",
+      "imagem": "assets/images/personagens/flagelante.svg",
+      "imagemJogo": "assets/images/games/sprite-flagelante.webp",
+      "periodo": "Movimento que cresceu muito em 1348–1349, sobretudo na Europa Central",
+      "resumo": "Grupos religiosos que faziam penitência pública para pedir o fim da peste.",
+      "contexto": [
+        "Muitas pessoas acreditavam que a epidemia era um castigo divino pelos pecados da humanidade. Os flagelantes respondiam com penitência: andavam em procissão de cidade em cidade, rezando, cantando e açoitando as próprias costas em público.",
+        "O movimento já existia antes, mas cresceu muito durante a Peste Negra, especialmente nas regiões de língua alemã e nos Países Baixos. Alguns grupos usavam roupas brancas marcadas com cruzes vermelhas.",
+        "As autoridades da Igreja e muitos governantes passaram a desconfiar dos grupos, que agiam sem controle do clero e às vezes incitavam a violência contra comunidades judaicas. Em 1349, o papa Clemente VI condenou o movimento."
+      ],
+      "limitacoes": "As procissões reuniam multidões e viajavam de um lugar para outro, o que pode ter ajudado a espalhar a doença em vez de detê-la.",
+      "curiosidades": [
+        "As procissões costumavam durar 33 dias e meio, número ligado aos anos de vida atribuídos a Jesus.",
+        "O comportamento e a duração do movimento variaram bastante entre regiões: não foi igual em toda a Europa."
+      ],
+      "estilizacao": "Roupa e cruz vermelha inspiradas em descrições de grupos da Europa Central; a ilustração é estilizada.",
+      "fontes": [
+        "britannica-flagelantes",
+        "britannica-efeitos"
+      ]
+    },
+    {
+      "id": "erveira",
+      "nome": "Erveiras e curandeiras",
+      "imagem": "assets/images/personagens/erveira.svg",
+      "imagemJogo": "assets/images/games/sprite-erveira.webp",
+      "periodo": "Presentes em toda a Idade Média, em vilas e cidades",
+      "resumo": "Pessoas que conheciam plantas medicinais e cuidavam da saúde da comunidade.",
+      "contexto": [
+        "Muitas mulheres — e também homens — dominavam o uso de ervas, raízes e flores para preparar chás, pomadas, emplastros e xaropes. Esse conhecimento era transmitido de geração em geração, oralmente e na prática.",
+        "Para a maior parte da população, que não podia pagar um médico universitário, as curandeiras, parteiras e erveiras eram a principal forma de cuidado com a saúde.",
+        "Durante a peste, preparavam misturas aromáticas para afastar o “ar ruim”, como sachês e pomanders, além de remédios para febre e dor."
+      ],
+      "limitacoes": "Alguns preparados aliviavam sintomas, mas nenhum remédio de ervas curava a peste. A cura só veio com os antibióticos, no século XX.",
+      "curiosidades": [
+        "Arruda, alecrim, sálvia e alho estavam entre as plantas usadas contra o “ar ruim”.",
+        "Parte desse conhecimento popular foi registrada em livros de ervas (herbários) escritos nos séculos seguintes."
+      ],
+      "estilizacao": "Personagem genérica, que representa diversos tipos de curadoras populares.",
+      "fontes": []
+    },
+    {
+      "id": "cirurgiao-barbeiro",
+      "nome": "Cirurgiões-barbeiros",
+      "imagem": "assets/images/personagens/cirurgiao-barbeiro.svg",
+      "imagemJogo": "assets/images/games/sprite-barbeiro.webp",
+      "periodo": "Ofício comum nas cidades medievais e modernas",
+      "resumo": "Artesãos que cortavam cabelo e também faziam pequenas cirurgias e sangrias.",
+      "contexto": [
+        "Na Idade Média, cortar cabelo, fazer a barba, extrair dentes, tratar feridas, imobilizar fraturas e fazer sangrias podiam ser tarefas do mesmo profissional.",
+        "Diferentemente dos médicos universitários, que estudavam textos em latim, os cirurgiões-barbeiros aprendiam o ofício na prática, como aprendizes de um mestre, e muitas vezes se organizavam em corporações.",
+        "Durante a peste, alguns abriam os bubões (as ínguas inchadas) para drenar o pus, acreditando que isso eliminaria a doença do corpo."
+      ],
+      "limitacoes": "Sem conhecimento de micróbios nem esterilização, os procedimentos podiam causar infecções. A sangria enfraquecia o doente.",
+      "curiosidades": [
+        "As listras vermelhas e brancas dos postes de barbearia costumam ser associadas, por tradição, às faixas usadas nas sangrias.",
+        "A separação entre barbeiros e cirurgiões ocorreu séculos mais tarde, em épocas diferentes em cada país."
+      ],
+      "estilizacao": "Avental e instrumentos representam o ofício de forma estilizada.",
+      "fontes": []
+    },
+    {
+      "id": "medico-universitario",
+      "nome": "Médicos universitários",
+      "imagem": "assets/images/personagens/medico-universitario.svg",
+      "periodo": "Formados em universidades como Paris, Montpellier, Bolonha e Pádua",
+      "resumo": "Estudiosos que aprendiam medicina em textos antigos e examinavam a urina dos pacientes.",
+      "contexto": [
+        "Os médicos formados nas universidades estudavam autores gregos e árabes, como Hipócrates, Galeno e Avicena. A saúde era explicada pela teoria dos quatro humores: sangue, fleuma, bile amarela e bile negra.",
+        "Para diagnosticar, observavam a cor e o cheiro da urina em frascos de vidro, mediam o pulso e consultavam a posição dos astros.",
+        "Em 1348, a Faculdade de Medicina de Paris escreveu um parecer atribuindo a epidemia a uma conjunção de planetas e à corrupção do ar."
+      ],
+      "limitacoes": "Seu conhecimento era baseado em teorias que hoje sabemos estarem erradas; eles não tinham como entender a causa real da doença.",
+      "curiosidades": [
+        "O frasco de urina (chamado matula) era o símbolo mais comum do médico na arte medieval.",
+        "Eram poucos e caros: a maior parte da população nunca foi atendida por um médico universitário."
+      ],
+      "estilizacao": "Toga e chapéu inspirados em representações artísticas da época.",
+      "fontes": [
+        "britannica",
+        "glatter"
+      ]
+    },
+    {
+      "id": "apotecario",
+      "nome": "Apotecários",
+      "imagem": "assets/images/personagens/apotecario.svg",
+      "periodo": "Comuns nas cidades a partir do século XIII",
+      "resumo": "Comerciantes que preparavam e vendiam remédios, especiarias e ervas.",
+      "contexto": [
+        "O apotecário mantinha uma loja com potes de cerâmica, ervas secas, minerais, especiarias e xaropes. Preparava as receitas indicadas pelos médicos e também vendia produtos diretamente ao público.",
+        "Um dos remédios mais famosos era a teriaga, uma mistura com dezenas de ingredientes que se acreditava funcionar contra venenos e doenças graves.",
+        "Os apotecários são considerados antecessores dos farmacêuticos atuais."
+      ],
+      "limitacoes": "Os remédios disponíveis não combatiam a bactéria da peste.",
+      "curiosidades": [
+        "Os potes decorados usados para guardar remédios são chamados de albarelos.",
+        "Em várias cidades, apotecários e especieiros faziam parte da mesma corporação de ofício."
+      ],
+      "estilizacao": "Pote e roupa representam o ofício de maneira estilizada.",
+      "fontes": [
+        "natgeo-medicos"
+      ]
+    },
+    {
+      "id": "cuidadora",
+      "nome": "Cuidadores de enfermos",
+      "imagem": "assets/images/personagens/cuidadora.svg",
+      "periodo": "Em hospitais, conventos e casas, durante toda a epidemia",
+      "resumo": "Familiares, religiosas e trabalhadores que davam comida, água e conforto aos doentes.",
+      "contexto": [
+        "A maior parte do cuidado acontecia dentro das casas, feita por familiares — principalmente mulheres. Quando famílias inteiras adoeciam, vizinhos, religiosas e trabalhadores pagos assumiam a tarefa.",
+        "Hospitais medievais, muitas vezes ligados a ordens religiosas, ofereciam abrigo, alimentação e cuidados espirituais, mais do que tratamento médico.",
+        "Cuidar dos doentes era perigoso: muitos cuidadores adoeceram e morreram."
+      ],
+      "limitacoes": "Sem conhecer o contágio, os cuidadores não tinham como se proteger de forma eficaz.",
+      "curiosidades": [
+        "Cronistas da época registraram casos de pessoas que abandonavam parentes doentes por medo — e também de quem cuidou deles até o fim.",
+        "Alguns grupos de mulheres leigas religiosas, como as beguinas, dedicavam-se ao cuidado de doentes em várias cidades."
+      ],
+      "estilizacao": "A touca e a roupa representam, de forma genérica, cuidadoras ligadas a comunidades religiosas.",
+      "fontes": [
+        "britannica-efeitos"
+      ]
+    },
+    {
+      "id": "religioso",
+      "nome": "Religiosos e ordens assistenciais",
+      "imagem": "assets/images/personagens/religioso.svg",
+      "periodo": "Presentes em toda a Europa cristã",
+      "resumo": "Padres, frades e monjas que davam assistência espiritual e material.",
+      "contexto": [
+        "Padres e frades visitavam os doentes, ouviam confissões, davam os últimos sacramentos e organizavam os sepultamentos. Ordens religiosas mantinham hospitais e abrigos.",
+        "Por estarem em contato constante com os doentes, muitos religiosos morreram. Em alguns lugares, faltou clero para celebrar missas e enterros.",
+        "As igrejas organizavam orações e procissões para pedir o fim da epidemia."
+      ],
+      "limitacoes": "As procissões e as reuniões em igrejas reuniam multidões, o que podia favorecer a transmissão.",
+      "curiosidades": [
+        "A grande perda de religiosos levou à ordenação rápida de novos padres, às vezes com pouca formação.",
+        "A Peste Negra influenciou a arte religiosa, com temas como a “dança da morte”, que se tornaram comuns no século XV."
+      ],
+      "estilizacao": "O hábito marrom representa, de forma genérica, os frades mendicantes.",
+      "fontes": [
+        "britannica-efeitos"
+      ]
+    },
+    {
+      "id": "comerciante",
+      "nome": "Comerciantes e viajantes",
+      "imagem": "assets/images/personagens/comerciante.svg",
+      "periodo": "Pelas rotas de terra e mar entre a Ásia, o Mar Negro e a Europa",
+      "resumo": "Mercadores, marinheiros e peregrinos que levavam produtos — e, sem saber, a doença.",
+      "contexto": [
+        "Navios e caravanas transportavam tecidos, grãos, especiarias e outros produtos. Junto com as mercadorias viajavam pessoas, ratos e pulgas.",
+        "Por isso, a peste chegou primeiro aos grandes portos e depois seguiu pelos rios e estradas para o interior.",
+        "Com a epidemia, muitos portos passaram a desconfiar dos navios estrangeiros, e surgiram regras de isolamento que deram origem à quarentena."
+      ],
+      "limitacoes": "Sem entender a transmissão, as cidades às vezes tomavam medidas inúteis e, em outras, demoravam a agir.",
+      "curiosidades": [
+        "Mercadorias como tecidos e grãos podiam esconder pulgas por longos períodos.",
+        "Os registros comerciais e portuários ajudam os historiadores a reconstruir as rotas da doença."
+      ],
+      "estilizacao": "Chapéu e manto inspirados em trajes de viagem do século XIV; ilustração estilizada.",
+      "fontes": [
+        "britannica",
+        "gensini"
+      ]
+    },
+    {
+      "id": "coveiro",
+      "nome": "Encarregados dos sepultamentos",
+      "imagem": "assets/images/personagens/coveiro.svg",
+      "periodo": "Durante os picos da epidemia, em cidades e vilas",
+      "resumo": "Trabalhadores que recolhiam e enterravam os mortos.",
+      "contexto": [
+        "Nos piores momentos, o número de mortos era tão grande que os cemitérios das paróquias ficaram lotados. Cidades abriram novos cemitérios e covas coletivas.",
+        "Trabalhadores, muitas vezes pobres, eram pagos para recolher os corpos nas casas e nas ruas e levá-los para o enterro.",
+        "Cemitérios de emergência, como o de East Smithfield, em Londres, foram escavados por arqueólogos e ajudaram a ciência a confirmar a causa da Peste Negra."
+      ],
+      "limitacoes": "O trabalho era perigoso e muitas vezes mal remunerado; muitos desses trabalhadores também morreram.",
+      "curiosidades": [
+        "O DNA da bactéria foi recuperado de dentes de pessoas sepultadas em cemitérios de emergência da época.",
+        "Em algumas cidades, os registros de sepultamentos são uma das principais fontes para estimar a mortalidade."
+      ],
+      "estilizacao": "Representação genérica de um trabalhador medieval.",
+      "fontes": [
+        "bos",
+        "britannica"
+      ]
+    }
+  ]
+}

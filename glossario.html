@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Glossário histórico e científico — Peste Negra</title>
+  <meta name="description" content="Glossário pesquisável com termos históricos e científicos sobre a Peste Negra: Yersinia pestis, peste bubônica, quarentena, vetor e mais.">
+  <meta name="author" content="Anderson Carapeto">
+  <meta name="theme-color" content="#1d1917">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Peste Negra — Uma experiência histórica interativa">
+  <meta property="og:title" content="Glossário histórico e científico — Peste Negra">
+  <meta property="og:description" content="Glossário pesquisável com termos históricos e científicos sobre a Peste Negra: Yersinia pestis, peste bubônica, quarentena, vetor e mais.">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- SEO:ABSOLUTO -->
+  <link rel="preload" href="assets/fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/main.js" type="module"></script>
+</head>
+<body>
+  <a class="pular-link" href="./#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__barra">
+      <a class="marca" href="./" aria-label="Peste Negra — página inicial">
+        <img src="assets/images/characters/doutor-compacto.svg" alt="" width="40" height="40">
+        <span>Peste Negra</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav__botao" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span class="linhas" aria-hidden="true"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+        <div class="nav__painel" id="menu-principal">
+          <ul class="nav__lista">
+            <li><a href="./#historia">História</a></li>
+            <li><a href="./#bacteria">A bactéria</a></li>
+            <li><a href="./#linha-do-tempo">Linha do tempo</a></li>
+            <li><a href="./#personagens">Personagens</a></li>
+            <li><a href="./#cotidiano">Cotidiano</a></li>
+            <li><a href="./#mitos">Mitos e verdades</a></li>
+            <li><a href="./#jogos">Aprenda jogando</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="glossario.html">Glossário</a></li>
+            <li><a href="fontes.html">Fontes</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="pagina-topo">
+      <div class="container">
+        <img src="assets/images/characters/doutor-explicacao.svg" alt="" width="420" height="620">
+        <div>
+          <p class="trilha"><a href="./">Início</a> › Glossário histórico e científico</p>
+          <h1>Glossário histórico e científico</h1>
+          <p>Pesquise termos usados no site e filtre por categoria.</p>
+        </div>
+      </div>
+    </div>
+    <section class="secao" aria-label="Glossário">
+      <div class="container" data-glossario>
+        <form class="busca" role="search" action="#" novalidate>
+          <div class="campo">
+            <label for="busca-termo">Buscar termo</label>
+            <input id="busca-termo" type="search" name="q" maxlength="60" autocomplete="off" spellcheck="false" placeholder="Ex.: pulga, quarentena, bactéria" data-glossario-busca aria-describedby="glossario-status">
+          </div>
+          <button class="btn btn--contorno" type="button" data-glossario-limpar hidden>Limpar</button>
+        </form>
+        <fieldset class="filtros" data-glossario-filtros>
+          <legend>Filtrar por categoria</legend>
+        </fieldset>
+        <p class="status" id="glossario-status" role="status" data-glossario-status></p>
+        <dl class="termos" data-glossario-lista>
+          <div><p class="erro-carregamento" data-carregando>Carregando glossário…</p></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <h2>Peste Negra — Uma experiência histórica interativa</h2>
+          <p>Projeto educativo desenvolvido para uma feira de ciências. Acesso livre, sem cadastro e sem coleta de dados pessoais.</p>
+        </div>
+        <nav aria-label="Explorar">
+          <h2>Explorar</h2>
+          <ul>
+            <li><a href="./#historia">História</a></li>
+            <li><a href="./#bacteria">A bactéria</a></li>
+            <li><a href="./#linha-do-tempo">Linha do tempo</a></li>
+            <li><a href="./#personagens">Personagens</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Aprender">
+          <h2>Aprender</h2>
+          <ul>
+            <li><a href="jogos/jornada-medieval/">Jogo de tabuleiro</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="glossario.html">Glossário</a></li>
+            <li><a href="fontes.html">Fontes e referências</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="rodape__credito">
+        <p>Criado por <strong>Anderson Carapeto</strong> © 2026</p>
+        <p>Conteúdo educativo. Não substitui orientação médica.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
