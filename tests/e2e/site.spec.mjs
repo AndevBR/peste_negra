@@ -140,10 +140,15 @@ test.describe('página inicial', () => {
     await expect(page.locator('#painel-familias')).toBeVisible();
   });
 
-  test('o mapa mostra informações da cidade escolhida e anima a disseminação', async ({ page }) => {
+  test('o mapa mostra informações da cidade escolhida e anima a disseminação', async ({ page, isMobile }) => {
     await page.goto('');
-    await page.locator('[data-cidade="messina"]').click();
+    await page.locator('[data-cidade-lista="messina"]').click();
     await expect(page.locator('[data-mapa-info]')).toContainText('Messina — Outubro de 1347');
+    await expect(page.locator('[data-cidade-lista="messina"]')).toHaveAttribute('aria-pressed', 'true');
+    if (!isMobile) {
+      await page.locator('[data-cidade="paris"]').click();
+      await expect(page.locator('[data-mapa-info]')).toContainText('Paris — Verão de 1348');
+    }
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.locator('[data-mapa-animar]').click();
     await expect(page.locator('[data-mapa-info]')).toContainText('Novgorod');

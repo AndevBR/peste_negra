@@ -345,7 +345,8 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 .mapa__info { margin-top: var(--esp-4); min-height: 5.5rem; padding: var(--esp-4) var(--esp-5); background: #fffaf0; border: var(--borda); border-radius: var(--raio); }
 .mapa__info h3 { margin: 0 0 var(--esp-1); font-size: var(--texto-lg); color: var(--cor-bordo-escuro); }
 .mapa__aviso { font-size: var(--texto-xs); color: var(--cor-texto-suave); margin-top: var(--esp-2); }
-@media (max-width: 640px) { .mapa__rotulo { display: none; } .mapa__ponto { width: 34px; height: 34px; margin: -17px 0 0 -17px; } }
+.mapa__cidades { display: flex; flex-wrap: wrap; gap: var(--esp-2); list-style: none; padding: 0; margin: var(--esp-4) 0 0; }
+@media (max-width: 640px) { .mapa__rotulo { display: none; } .mapa__ponto { pointer-events: none; width: 20px; height: 20px; margin: -10px 0 0 -10px; } .mapa__ponto::before { inset: 3px; } }
 
 /* bactéria */
 .figura { margin: 0; }

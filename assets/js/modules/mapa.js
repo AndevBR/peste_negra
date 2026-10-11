@@ -10,6 +10,11 @@ export async function iniciarMapa(raiz) {
   let dados;
   try { dados = await carregarDados('mapa'); } catch (erro) { mostrarErro(info, erro); botao.hidden = true; return; }
 
+  // lista de cidades: controle equivalente aos pontos, com alvos de toque confortáveis
+  const lista = el('ul', { classe: 'mapa__cidades', 'aria-label': 'Cidades do mapa, em ordem cronológica' });
+  raiz.querySelector('.mapa__controles').after(lista);
+  const celular = window.matchMedia('(max-width: 640px)');
+
   const pontos = dados.cidades.map((c) => {
     const ponto = el('button', {
       classe: 'mapa__ponto', type: 'button', 'aria-pressed': 'false',
@@ -21,12 +26,27 @@ export async function iniciarMapa(raiz) {
     rotulo.style.left = ponto.style.left; rotulo.style.top = ponto.style.top;
     ponto.addEventListener('click', () => mostrar(c, ponto));
     camada.append(ponto, rotulo);
+    const botao = el('button', { classe: 'abas__aba', type: 'button', 'aria-pressed': 'false', dados: { cidadeLista: c.id }, texto: c.nome });
+    botao.addEventListener('click', () => mostrar(c, ponto));
+    lista.append(el('li', {}, [botao]));
     return ponto;
   });
+  const botoesLista = [...lista.querySelectorAll('button')];
+
+  // no celular os pontos ficam muito próximos: viram apenas indicação visual e a lista assume a interação
+  const ajustarPontos = () => pontos.forEach((p) => {
+    if (celular.matches) { p.tabIndex = -1; p.setAttribute('aria-hidden', 'true'); }
+    else { p.removeAttribute('tabindex'); p.removeAttribute('aria-hidden'); }
+  });
+  celular.addEventListener('change', ajustarPontos);
+  ajustarPontos();
 
   function mostrar(c, ponto) {
-    pontos.forEach((p) => { p.setAttribute('aria-pressed', String(p === ponto)); p.classList.remove('ativo'); });
-    ponto.classList.add('ativo');
+    pontos.forEach((p, i) => {
+      const ativo = p === ponto;
+      p.setAttribute('aria-pressed', String(ativo)); p.classList.toggle('ativo', ativo);
+      botoesLista[i].setAttribute('aria-pressed', String(ativo));
+    });
     info.replaceChildren(el('h3', { texto: `${c.nome} — ${c.data}` }), el('p', { texto: c.texto }));
   }
 
