@@ -23,7 +23,7 @@ export function vigiar(page) {
   page.on('response', (r) => { if (r.status() >= 400) problemas.push(`HTTP ${r.status()}: ${r.url()}`); });
   page.on('request', (r) => {
     const url = new URL(r.url());
-    if (!['127.0.0.1', 'localhost'].includes(url.hostname) && !url.protocol.startsWith('data')) externas.push(r.url());
+    if (!['127.0.0.1', 'localhost'].includes(url.hostname) && !url.protocol.startsWith('data') && url.protocol !== 'blob:') externas.push(r.url());
   });
   return { problemas, externas };
 }

@@ -205,8 +205,10 @@ npm run map -- ne_50m_land.geojson ne_50m_lakes.geojson   # mapa a partir do Nat
 
 | Recurso | Arquivo |
 | --- | --- |
-| Cenário da abertura | `assets/images/cinema/rua-*.webp` e `ceu-*.webp` (1920×1080 e versões `-pequeno`) |
-| Rato | `assets/images/cinema/rato-quadros.webp` (6 quadros lado a lado, fundo transparente) |
+| Cenário da abertura | `assets/images/cinema/cidade-noite.webp` e `cidade-relampago.webp` (1584×672 e versões `-pequeno`; o ponto de fuga da rua fica em `PONTO_DE_FUGA`, em `abertura.js`) — o início do site ainda usa `rua-*.webp` e `ceu-*.webp` |
+| Caminhada do Doutor (abertura) | `assets/images/cinema/doutor-andando.webp` (10 quadros de 272×476 lado a lado: 8 de caminhada, o último passo e a pose final; versão `-pequeno` para celular) |
+| Rato | `assets/images/cinema/rato-quadros.webp` (5 quadros de corrida para a direita, lado a lado, fundo transparente; para a esquerda o quadro é espelhado) |
+| Bactéria | `assets/images/illustrations/bacteria-yersinia.webp` (1264×846) e `bacteria-yersinia-pequena.webp` |
 | Doutor da Peste | `assets/images/cinema/doutor-*.webp` (640×1120, fundo transparente, figura apoiada embaixo) |
 | Retratos | campo `imagem` em `assets/data/personagens.json` |
 

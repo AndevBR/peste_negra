@@ -270,12 +270,14 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 /* ---------- 7. Abertura cinematográfica ---------- */
 .abertura { position: fixed; inset: 0; z-index: var(--z-abertura); overflow: hidden; background: #000; color: var(--pergaminho); }
 .abertura__cena { position: absolute; inset: 0; transform-origin: 50% 58%; }
-.abertura__camada { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; pointer-events: none; user-select: none; }
-.abertura__ceu-luz, .abertura__rua-luz { opacity: 0; }
+.abertura__camada { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 62%; pointer-events: none; user-select: none; }
+.abertura__cidade { filter: brightness(.82) saturate(.85); }
+.abertura__cidade-luz { opacity: 0; }
 .abertura__chuva { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 1.2s ease; }
-.abertura__doutor { position: absolute; left: 50%; bottom: 7%; height: 66vh; aspect-ratio: 640 / 1120; transform-origin: 50% 100%; transform: translateX(-50%) translateY(-31vh) scale(.24); opacity: 0; filter: blur(1.5px); pointer-events: none; }
-.abertura__doutor img { position: absolute; inset: 0; width: 100%; height: 100%; }
-.abertura__doutor .luz { opacity: 0; }
+.abertura__doutor { position: absolute; left: 50%; bottom: 7%; height: 66vh; aspect-ratio: 272 / 476; transform-origin: 50% 100%; transform: translateX(-50%) translateY(-24vh) scale(.1); opacity: 0; pointer-events: none; will-change: transform; }
+/* folha com 10 quadros: 8 de caminhada, o último passo e a pose parada (o JS escolhe o quadro) */
+.abertura__quadro { position: absolute; inset: 0; background: url('../images/cinema/doutor-andando.webp') 100% 0 / 1000% 100% no-repeat; filter: drop-shadow(0 18px 18px rgba(0, 0, 0, .75)) brightness(.95); }
+@media (max-width: 760px), (max-height: 520px) { .abertura__quadro { background-image: url('../images/cinema/doutor-andando-pequeno.webp'); } }
 .abertura__nevoa { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 2s ease; }
 .abertura__nevoa span { position: absolute; left: -60%; width: 220%; height: 45%; bottom: -8%; background: radial-gradient(ellipse at 30% 60%, rgba(150, 160, 178, .28), transparent 60%), radial-gradient(ellipse at 75% 45%, rgba(150, 160, 178, .22), transparent 55%); filter: blur(14px); animation: nevoa 46s linear infinite; }
 .abertura__nevoa span:nth-child(2) { bottom: 14%; height: 32%; opacity: .7; animation-duration: 64s; animation-direction: reverse; }
@@ -299,38 +301,52 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 /* fases da sequência (classes aplicadas por abertura.js) */
 .abertura.fase-1 .abertura__preto { opacity: .55; }
 .abertura.fase-1 .abertura__nevoa, .abertura.fase-1 .abertura__chuva { opacity: 1; }
-.abertura.fase-2 .abertura__doutor { opacity: .9; transition: opacity 2.2s ease; }
+.abertura.fase-2 .abertura__doutor { opacity: .85; transition: opacity 2.2s ease; }
 .abertura.fase-3 .abertura__preto { opacity: 0; }
 .abertura.fase-3 .abertura__cena { animation: aproximar 14s var(--curva-cine) forwards; }
-.abertura.fase-3 .abertura__doutor { opacity: 1; filter: none; transform: translateX(-50%) translateY(0) scale(1); transition: transform 7.5s var(--curva-cine), filter 3s ease, opacity 1s ease; }
-.abertura.fase-3 .abertura__doutor .luz { opacity: 1; transition: opacity 3.5s ease 1.2s; }
+.abertura.fase-3 .abertura__doutor { opacity: 1; transition: opacity 1s ease; }
+/* sem JS de caminhada (ou ao terminar), a pose final fica fixa */
+.abertura.parado .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(-50%) translateY(0) scale(1); }
 .abertura.fase-4 .abertura__pre { opacity: 1; transform: none; transition: opacity 1.2s ease, transform 1.2s var(--curva); }
 .abertura.fase-4 .abertura__titulo { opacity: 1; filter: none; transform: none; transition: opacity 1.6s ease .2s, filter 1.8s ease .2s, transform 2.4s var(--curva) .2s; }
 .abertura.fase-5 .abertura__botao { opacity: 1; transform: none; transition: opacity 1s ease, transform 1s var(--curva); }
-.abertura.relampago .abertura__ceu-luz, .abertura.relampago .abertura__rua-luz { animation: relampago 1.5s ease-out; }
+.abertura.relampago .abertura__cidade-luz { animation: relampago 1.5s ease-out; }
 .abertura.relampago .abertura__clarao { animation: clarao 1.5s ease-out; }
 .abertura.saindo { animation: sair-abertura 1.1s var(--curva-cine) forwards; }
 .abertura.saindo .abertura__cena { animation: atravessar 1.1s var(--curva-cine) forwards; }
 /* versão final estática (pular / movimento reduzido) */
 .abertura.instantanea * { transition: none !important; }
 .abertura.instantanea .abertura__preto { opacity: 0; }
-.abertura.instantanea .abertura__doutor { opacity: 1; filter: none; transform: translateX(-50%) translateY(0) scale(1); }
-.abertura.instantanea .abertura__doutor .luz, .abertura.instantanea .abertura__pre, .abertura.instantanea .abertura__titulo, .abertura.instantanea .abertura__botao { opacity: 1; filter: none; transform: none; }
+.abertura.instantanea .abertura__doutor { opacity: 1; }
+.abertura.instantanea .abertura__pre, .abertura.instantanea .abertura__titulo, .abertura.instantanea .abertura__botao { opacity: 1; filter: none; transform: none; }
 .abertura.instantanea .abertura__nevoa { opacity: 1; }
 
 @media (min-width: 900px) and (min-height: 521px) {
   .abertura__texto { inset: auto auto 11vh 7vw; align-items: flex-start; text-align: left; max-width: min(46rem, 52vw); padding: 0; }
   .abertura__titulo { font-size: clamp(3rem, 1rem + 5.2vw, 6.6rem); }
-  .abertura.fase-3 .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(calc(-50% + 17vw)) translateY(0) scale(1); }
+  .abertura.parado .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(calc(-50% + 17vw)) translateY(0) scale(1); }
 }
 @media (max-width: 760px), (max-height: 520px) {
-  .abertura__doutor { height: 44vh; bottom: 37%; }
-  .abertura__texto { bottom: 5vh; }
   .abertura__titulo { margin-bottom: var(--esp-5); letter-spacing: .1em; }
   .abertura__controle span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .btn-premium { padding: var(--esp-3) var(--esp-5); letter-spacing: .1em; min-height: 54px; }
 }
-@media (max-height: 520px) { .abertura__doutor { height: 60vh; bottom: 34%; } .abertura__pre { display: none; } }
+/* telas em pé: título no céu, botão embaixo e o Doutor parado sobre a rua, entre os dois */
+@media (max-aspect-ratio: 1/1) {
+  .abertura__texto { inset: 9vh 0 4vh 0; justify-content: flex-start; }
+  .abertura__botao { margin-top: auto; }
+  .abertura__doutor { height: 46vh; bottom: 13%; }
+  .abertura__credito { bottom: auto; top: calc(var(--esp-4) + 12px); }
+}
+/* celular deitado: texto à esquerda e o Doutor à direita, como no computador */
+@media (max-height: 520px) and (min-aspect-ratio: 1/1) {
+  .abertura__pre { display: none; }
+  .abertura__texto { inset: auto auto 6vh 5vw; align-items: flex-start; text-align: left; max-width: 56vw; padding: 0; }
+  .abertura__titulo { font-size: clamp(2rem, 1rem + 5vw, 3.6rem); }
+  .abertura__doutor { height: 74vh; bottom: 5%; }
+  .abertura__credito { bottom: auto; top: calc(var(--esp-4) + 12px); }
+  .abertura.parado .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(calc(-50% + 27vw)) translateY(0) scale(1); }
+}
 
 /* ---------- 8. Hero (início do site) ---------- */
 .hero { position: relative; isolation: isolate; overflow: hidden; min-height: min(100svh, 62rem); display: flex; align-items: flex-end; background: #090909; }
@@ -626,7 +642,10 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 
 /* ---------- 11. Ratos (decoração ambiental) ---------- */
 .trilha-rato { position: absolute; left: 0; right: 0; bottom: 6px; height: 46px; pointer-events: none; overflow: hidden; z-index: var(--z-ratos); }
-.rato { position: absolute; bottom: 0; width: 120px; height: 44px; pointer-events: none; background: url('../images/cinema/rato-quadros.webp') 0 0 / 600% 100% no-repeat; animation: passo .42s steps(6) infinite; filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .6)) brightness(.9); will-change: transform; }
+/* faixa no espaço vazio do menu lateral (só em telas altas e com o menu aberto) */
+.trilha-rato--lateral { position: relative; inset: auto; flex: none; margin-top: auto; display: none; }
+@media (min-width: 961px) and (min-height: 780px) and (prefers-reduced-motion: no-preference) { html:not(.lateral-recolhida) .trilha-rato--lateral { display: block; } html:not(.lateral-recolhida) .trilha-rato--lateral + .lateral__rodape { margin-top: 0; } }
+.rato { position: absolute; bottom: 0; width: 130px; height: 45px; pointer-events: none; background: url('../images/cinema/rato-quadros.webp') 0 0 / 500% 100% no-repeat; animation: passo .4s steps(5, jump-none) infinite; filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .6)) brightness(.9); will-change: transform; }
 .rato.parado { animation-play-state: paused; }
 .rato--esquerda { transform: scaleX(-1); }
 

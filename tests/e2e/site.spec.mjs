@@ -197,8 +197,7 @@ test.describe('navegação e responsividade', () => {
     await recolher.click();
     await expect(page.locator('html')).toHaveClass(/lateral-recolhida/);
     await expect(recolher).toHaveAttribute('aria-expanded', 'false');
-    const estreito = await page.locator('#menu-lateral').boundingBox();
-    expect(estreito.width).toBeLessThan(100);
+    await expect.poll(async () => (await page.locator('#menu-lateral').boundingBox()).width).toBeLessThan(100);
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/lateral-recolhida/);
     await page.locator('[data-recolher]').click();

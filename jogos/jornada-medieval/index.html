@@ -502,6 +502,8 @@ function sombraElipse(g, x, y, rx, ry, a) { g.save(); g.translate(x, y); g.scale
 
 var luzes = [], chamines = [], ratos = [];
 function construirMundo() {
+  luzes.length = 0; chamines.length = 0; ratos.length = 0;
+  S.setTransform(1, 0, 0, 1, 0, 0); S.globalCompositeOperation = 'source-over'; S.globalAlpha = 1; S.clearRect(0, 0, MW, MH);
   var r = rng(1348), g = S;
   var cel = Object.keys(TERRA).map(function (k) { var p = k.split(','); return { gx: +p[0], gy: +p[1] }; })
     .sort(function (a, b) { return (a.gx + a.gy) - (b.gx + b.gy) || a.gx - b.gx; });
@@ -930,7 +932,7 @@ function desenhar() {
     mancha(g, 0, 0, 150 + (i % 4) * 40, '#9fcfe0', 0.07 + 0.03 * Math.sin(t * 0.8 + i)); g.restore();
   }
   g.save(); g.translate(MW / 2 + 30, MH * 0.6); g.scale(1, 0.5); mancha(g, 0, 0, 980, 'rgba(4,14,24,1)', 0.6); g.restore();
-  g.drawImage(mundo, 0, 0);
+  g.drawImage(mundoImg || mundo, 0, 0);
 
   // fumaça das chaminés
   chamines.forEach(function (c, n) { for (var q = 0; q < 3; q++) { var ph = (t * 0.22 + q / 3 + n * 0.13) % 1; mancha(g, c.x + Math.sin(ph * 5 + n) * 6 + ph * 10, c.y - ph * 46, 5 + ph * 12, '#c9c6c0', 0.34 * (1 - ph)); } });
@@ -983,10 +985,34 @@ function desenhar() {
   confete.forEach(function (p) { g.save(); g.translate(p.x, p.y); g.rotate(p.g + p.v * 5); g.fillStyle = p.c; g.fillRect(-4, -2.5, 8, 5); g.restore(); });
 }
 
+/* Proteção para celulares: o navegador pode descartar o conteúdo de um canvas fora da tela
+   (falta de memória de vídeo, aba em segundo plano). Por isso o cenário pronto é guardado também
+   como imagem, e é refeito se for perdido. */
+var mundoImg = null, erroMostrado = false;
+function mundoOk() {
+  try { var c = CASAS[30]; return S.getImageData(Math.round(c.x), Math.round(c.y - 7), 1, 1).data[3] > 0; } catch (e) { return true; }
+}
+function verificarMundo() {
+  if (!mundoOk()) construirMundo();
+  if (mundoImg) return;
+  try {
+    mundo.toBlob(function (b) {
+      if (!b) return;
+      var im = new Image(); im.onload = function () { mundoImg = im; }; im.src = URL.createObjectURL(b);
+    }, 'image/png');
+  } catch (e) {}
+}
+document.addEventListener('visibilitychange', function () { if (!document.hidden && !mundoImg) verificarMundo(); });
+function mostrarErro(e) {
+  if (erroMostrado) return; erroMostrado = true;
+  var c = document.getElementById('creditos'); if (c) c.appendChild(document.createTextNode(' · erro: ' + (e && e.message ? e.message : e)));
+}
+
 var anterior = 0;
 function quadroAnim(agora) {
   var dt = Math.min(0.05, (agora - anterior) / 1000 || 0); anterior = agora;
-  atualizar(dt); desenhar(); requestAnimationFrame(quadroAnim);
+  try { atualizar(dt); desenhar(); } catch (e) { mostrarErro(e); }
+  requestAnimationFrame(quadroAnim);
 }
 
 /* arrastar o mapa */
@@ -1338,7 +1364,7 @@ $('de-novo').addEventListener('click', reiniciar);
    9. INÍCIO
    ===================================================================== */
 console.assert(CASAS.length === 62 && CASAS.filter(function (c) { return c.numero >= 1 && c.numero <= 60; }).length === 60, 'O tabuleiro deve ter INÍCIO, 60 casas e CHEGADA');
-construirMundo();
+construirMundo(); verificarMundo();
 desenharDado(1); hud();
 window.addEventListener('resize', ajustar);
 ajustar();

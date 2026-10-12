@@ -23,8 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <!-- SEO:ABSOLUTO -->
   <link rel="preload" href="assets/fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/images/cinema/rua-noite-pequeno.webp" as="image" type="image/webp" media="(max-width: 1280px)">
-  <link rel="preload" href="assets/images/cinema/rua-noite.webp" as="image" type="image/webp" media="(min-width: 1281px)">
+  <link rel="preload" href="assets/images/cinema/cidade-noite.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="assets/css/main.css">
   <noscript><link rel="stylesheet" href="assets/css/sem-js.css"></noscript>
   <script src="assets/js/main.js" type="module"></script>
@@ -48,14 +47,9 @@
   <!-- ============ ABERTURA CINEMATOGRÁFICA ============ -->
   <div class="abertura" id="abertura" role="dialog" aria-modal="true" aria-label="Abertura: A Peste Negra" data-abertura>
     <div class="abertura__cena" aria-hidden="true">
-      <img class="abertura__camada abertura__ceu" src="assets/images/cinema/ceu-noite.webp" srcset="assets/images/cinema/ceu-noite-pequeno.webp 1280w, assets/images/cinema/ceu-noite.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high">
-      <img class="abertura__camada abertura__ceu-luz" src="assets/images/cinema/ceu-relampago.webp" srcset="assets/images/cinema/ceu-relampago-pequeno.webp 1280w, assets/images/cinema/ceu-relampago.webp 1920w" sizes="100vw" alt="" width="1920" height="1080">
-      <img class="abertura__camada abertura__rua" src="assets/images/cinema/rua-noite.webp" srcset="assets/images/cinema/rua-noite-pequeno.webp 1280w, assets/images/cinema/rua-noite.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high">
-      <img class="abertura__camada abertura__rua-luz" src="assets/images/cinema/rua-relampago.webp" srcset="assets/images/cinema/rua-relampago-pequeno.webp 1280w, assets/images/cinema/rua-relampago.webp 1920w" sizes="100vw" alt="" width="1920" height="1080">
-      <div class="abertura__doutor">
-        <img class="sombra" src="assets/images/cinema/doutor-silhueta.webp" srcset="assets/images/cinema/doutor-silhueta-pequeno.webp 320w, assets/images/cinema/doutor-silhueta.webp 640w" sizes="(max-width: 760px) 30vh, 40vh" alt="" width="640" height="1120">
-        <img class="luz" src="assets/images/cinema/doutor-luz.webp" srcset="assets/images/cinema/doutor-luz-pequeno.webp 320w, assets/images/cinema/doutor-luz.webp 640w" sizes="(max-width: 760px) 30vh, 40vh" alt="" width="640" height="1120">
-      </div>
+      <img class="abertura__camada abertura__cidade" src="assets/images/cinema/cidade-noite.webp" srcset="assets/images/cinema/cidade-noite-pequeno.webp 1056w, assets/images/cinema/cidade-noite.webp 1584w" sizes="(max-aspect-ratio: 1/1) 250vh, 100vw" alt="" width="1584" height="672" fetchpriority="high">
+      <img class="abertura__camada abertura__cidade-luz" src="assets/images/cinema/cidade-relampago.webp" srcset="assets/images/cinema/cidade-relampago-pequeno.webp 1056w, assets/images/cinema/cidade-relampago.webp 1584w" sizes="(max-aspect-ratio: 1/1) 250vh, 100vw" alt="" width="1584" height="672" loading="lazy">
+      <div class="abertura__doutor"><div class="abertura__quadro"></div></div>
       <canvas class="abertura__chuva"></canvas>
       <div class="abertura__nevoa"><span></span><span></span><span></span></div>
       <div class="abertura__clarao"></div>
@@ -96,6 +90,7 @@
       <li><a class="lateral__link" href="fontes.html" data-pagina="fontes.html" data-dica="Fontes históricas"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#livro"/></svg><span class="lateral__rotulo">Fontes históricas</span></a></li>
       <li><a class="lateral__link" href="glossario.html" data-pagina="glossario.html" data-dica="Glossário"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#glossario"/></svg><span class="lateral__rotulo">Glossário</span></a></li>
     </ul>
+    <div class="trilha-rato trilha-rato--lateral" aria-hidden="true" data-trilha-rato></div>
     <div class="lateral__rodape">
       <button class="lateral__acao" type="button" data-rever-abertura><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#filme"/></svg><span class="lateral__rotulo">Rever a abertura</span></button>
       <button class="lateral__acao" type="button" data-recolher aria-expanded="true" aria-controls="menu-lateral"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#recolher"/></svg><span class="lateral__rotulo">Recolher menu</span></button>
@@ -207,8 +202,8 @@
 
         <div class="grade-2 revelar">
           <figure class="figura placa">
-            <img src="assets/images/illustrations/bacteria-yersinia.svg" alt="Representação didática da bactéria Yersinia pestis ao microscópio: pequenos bastonetes com as extremidades mais escuras. Uma ampliação indica que cada bactéria mede cerca de 1 a 3 micrômetros." width="640" height="440" loading="lazy">
-            <figcaption>Diagrama didático, fora de escala e com cores ilustrativas. Não é uma micrografia real.</figcaption>
+            <img src="assets/images/illustrations/bacteria-yersinia.webp" srcset="assets/images/illustrations/bacteria-yersinia-pequena.webp 760w, assets/images/illustrations/bacteria-yersinia.webp 1264w" sizes="(max-width: 900px) 92vw, 46vw" alt="Representação didática da bactéria Yersinia pestis ao microscópio: pequenos bastonetes com as extremidades mais escuras. Uma ampliação indica que cada bactéria mede cerca de 1 a 3 micrômetros." width="1264" height="846" loading="lazy" decoding="async">
+            <figcaption>Ilustração didática, fora de escala e com cores ilustrativas. Não é uma micrografia real.</figcaption>
           </figure>
           <div>
             <h3>O que é uma bactéria?</h3>
@@ -253,6 +248,7 @@
           </ol>
         </div>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
 
     <!-- ============ LINHA DO TEMPO ============ -->
@@ -292,6 +288,7 @@
         </ul>
         <p class="nota revelar"><span><strong>Sobre as imagens:</strong> as figuras são reconstruções artísticas. Roupas e objetos foram inspirados em fontes históricas, mas não reproduzem pessoas reais nem valem igualmente para toda a Europa.</span></p>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
 
     <!-- ============ VIDA MEDIEVAL ============ -->
@@ -410,6 +407,7 @@
           <li><p class="erro-carregamento" data-carregando>Carregando afirmações…</p></li>
         </ul>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
 
     <!-- ============ JOGOS ============ -->

@@ -30,6 +30,29 @@ test.describe('abertura cinematográfica', () => {
     expect(v.problemas).toEqual([]);
   });
 
+  test('o Doutor caminha do fundo da rua trocando quadros e para na pose final', async ({ page }) => {
+    await page.goto('');
+    const doutor = page.locator('.abertura__doutor');
+    const quadro = page.locator('.abertura__quadro');
+    await expect(page.locator('[data-abertura]')).toHaveClass(/fase-2/, { timeout: 4000 });
+    // durante a caminhada: vários quadros diferentes e o tamanho crescendo com a perspectiva
+    const amostras = [];
+    for (let i = 0; i < 12; i++) {
+      amostras.push(await page.evaluate(() => ({
+        q: getComputedStyle(document.querySelector('.abertura__quadro')).backgroundPositionX,
+        h: document.querySelector('.abertura__doutor').getBoundingClientRect().height,
+      })));
+      await page.waitForTimeout(250);
+    }
+    expect(new Set(amostras.map((a) => a.q)).size).toBeGreaterThanOrEqual(4);
+    expect(amostras.at(-1).h).toBeGreaterThan(amostras[0].h * 2);
+    // ao final: classe "parado", último quadro (pose de frente) e sem transformação inline
+    await expect(page.locator('[data-abertura]')).toHaveClass(/parado/, { timeout: 6000 });
+    await expect(quadro).toHaveCSS('background-position-x', '100%');
+    expect(await doutor.evaluate((el) => el.style.transform)).toBe('');
+    await expect(doutor).toHaveCSS('pointer-events', 'none');
+  });
+
   test('pode ser pulada imediatamente pelo botão ou pela tecla Esc', async ({ page, context }) => {
     await page.goto('');
     await page.getByRole('button', { name: 'Pular introdução' }).click();
@@ -113,9 +136,9 @@ test.describe('abertura cinematográfica', () => {
 testSemAbertura.describe('ratos ambientais', () => {
   testSemAbertura('atravessam as faixas entre seções sem bloquear cliques', async ({ page }) => {
     await page.goto('?ratos=sempre');
-    const trilha = page.locator('[data-trilha-rato]').first();
+    const trilha = page.locator('#historia [data-trilha-rato]');
     await trilha.scrollIntoViewIfNeeded();
-    const rato = page.locator('.rato').first();
+    const rato = trilha.locator('.rato').first();
     await expect(rato).toBeAttached({ timeout: 8000 });
     await expect(rato).toHaveCSS('pointer-events', 'none');
     await expect(trilha).toHaveCSS('pointer-events', 'none');
@@ -136,9 +159,10 @@ testSemAbertura.describe('ratos ambientais', () => {
   testSemAbertura('ficam desativados com redução de movimento', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('?ratos=sempre');
-    await expect(page.locator('[data-trilha-rato]').first()).toBeHidden();
+    await expect(page.locator('#historia [data-trilha-rato]')).toBeHidden();
     await page.evaluate(() => document.getElementById('cotidiano').scrollIntoView());
     await page.waitForTimeout(1500);
     await expect(page.locator('.rato')).toHaveCount(0);
+    await expect(page.locator('.trilha-rato--lateral')).toBeHidden();
   });
 });
