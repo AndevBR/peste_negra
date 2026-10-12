@@ -1,11 +1,14 @@
 // Abertura cinematográfica: o vídeo do Doutor da Peste caminhando pela rua, com o título
-// e o botão que levam ao site. Pode ser pulada a qualquer momento (botão ou Esc), começa
-// sem som (o visitante ativa se quiser) e respeita a redução de movimento.
+// e o botão que levam ao site. Pode ser pulada a qualquer momento (botão ou Esc), toca com
+// som (o visitante desliga no botão) e respeita a redução de movimento.
 import { reduzirMovimento } from './dom.js';
 
 const CHAVE = 'peste-negra:abertura-vista';
 const lerVista = () => { try { return sessionStorage.getItem(CHAVE) === '1'; } catch { return false; } };
 const marcarVista = () => { try { sessionStorage.setItem(CHAVE, '1'); } catch { /* sem armazenamento: tudo bem */ } };
+const CHAVE_SOM = 'peste-negra:abertura-sem-som';
+const lerSemSom = () => { try { return sessionStorage.getItem(CHAVE_SOM) === '1'; } catch { return false; } };
+const gravarSemSom = (v) => { try { sessionStorage.setItem(CHAVE_SOM, v ? '1' : '0'); } catch { /* tudo bem */ } };
 
 export function iniciarAbertura() {
   const raiz = document.querySelector('[data-abertura]');
@@ -15,6 +18,7 @@ export function iniciarAbertura() {
   const botaoPular = raiz.querySelector('[data-pular]');
   const botaoSom = raiz.querySelector('[data-som]');
   const video = raiz.querySelector('.abertura__video');
+  let somLigado = !lerSemSom();
   let temporizadores = [];
   let aberta = false;
 
@@ -48,7 +52,13 @@ export function iniciarAbertura() {
     if (video) {
       prepararVideo();
       video.currentTime = 0;
-      video.play()?.catch(mostrarFinal);
+      video.muted = !somLigado;
+      // navegadores só deixam tocar com som depois de um gesto do visitante: se bloquearem,
+      // o vídeo segue mudo e o som entra no primeiro toque, clique ou tecla
+      video.play()?.catch(() => {
+        video.muted = true;
+        video.play()?.catch(mostrarFinal);
+      });
     }
     // o título e o botão entram quando o Doutor se aproxima e para (vídeo de ~12 s)
     agendar(250, () => raiz.classList.add('fase-1'));
@@ -79,14 +89,25 @@ export function iniciarAbertura() {
   botaoEntrar.addEventListener('click', () => fechar());
   botaoPular.addEventListener('click', () => fechar({ animar: false }));
   raiz.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); fechar({ animar: false }); } });
+  function mostrarSom() {
+    botaoSom.setAttribute('aria-pressed', String(somLigado));
+    botaoSom.querySelector('[data-som-rotulo]').textContent = somLigado ? 'Desativar som' : 'Ativar som';
+    botaoSom.setAttribute('aria-label', somLigado ? 'Desativar som' : 'Ativar som');
+    botaoSom.querySelector('use').setAttribute('href', botaoSom.querySelector('use').getAttribute('href').replace(/#.*/, somLigado ? '#som' : '#sem-som'));
+  }
   botaoSom.addEventListener('click', () => {
-    const ligado = !!video && video.muted;
-    if (video) video.muted = !ligado;
-    botaoSom.setAttribute('aria-pressed', String(ligado));
-    botaoSom.querySelector('[data-som-rotulo]').textContent = ligado ? 'Desativar som' : 'Ativar som';
-    botaoSom.setAttribute('aria-label', ligado ? 'Desativar som ambiente' : 'Ativar som ambiente');
-    botaoSom.querySelector('use').setAttribute('href', botaoSom.querySelector('use').getAttribute('href').replace(/#.*/, ligado ? '#som' : '#sem-som'));
+    somLigado = !somLigado;
+    gravarSemSom(!somLigado);
+    if (video) video.muted = !somLigado;
+    mostrarSom();
   });
+  // primeiro gesto do visitante libera o som que o navegador segurou (menos no próprio botão)
+  const liberarSom = (e) => {
+    if (!video || !somLigado || !video.muted || e.target.closest?.('[data-som]')) return;
+    video.muted = false;
+  };
+  ['pointerdown', 'keydown', 'touchend'].forEach((t) => document.addEventListener(t, liberarSom, true));
+  mostrarSom();
 
   // a abertura não aparece se o visitante já a viu nesta sessão, se chegou por um link
   // direto para uma seção (#jogos, por exemplo) ou se pediu ?abertura=0

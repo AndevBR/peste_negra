@@ -30,11 +30,11 @@ test.describe('abertura cinematográfica', () => {
     expect(v.problemas).toEqual([]);
   });
 
-  test('o vídeo da abertura começa sem som, toca e para no último quadro', async ({ page }) => {
+  test('o vídeo da abertura toca e para no último quadro', async ({ page }) => {
     await page.goto('');
     const video = page.locator('.abertura__video');
     await expect(video).toHaveAttribute('src', /assets\/video\/abertura(-pequeno)?\.(mp4|webm)$/);
-    expect(await video.evaluate((v) => v.muted && !v.loop)).toBe(true);
+    expect(await video.evaluate((v) => v.loop)).toBe(false);
     await expect(video).toHaveCSS('pointer-events', 'none');
     // o vídeo avança e chega ao fim (fica parado no último quadro)
     await expect.poll(() => video.evaluate((v) => v.currentTime), { timeout: 8000 }).toBeGreaterThan(1);
@@ -74,19 +74,25 @@ test.describe('abertura cinematográfica', () => {
     await expect(page.locator('#titulo-jogos')).toBeInViewport();
   });
 
-  test('não toca som sozinha; o som do vídeo só liga quando o visitante ativa', async ({ page }) => {
+  test('o som vem ligado; o visitante desliga e religa pelo botão', async ({ page }) => {
     await page.goto('');
     const video = page.locator('.abertura__video');
     const som = page.locator('[data-som]');
-    await page.waitForTimeout(1500);
-    expect(await video.evaluate((v) => v.muted)).toBe(true);
+    await expect(som).toHaveAttribute('aria-pressed', 'true');
+    await expect(som).toHaveAccessibleName('Desativar som');
+    // se o navegador segurou o som, o primeiro toque fora do botão o libera
+    await page.locator('.abertura__texto').click({ position: { x: 5, y: 5 }, force: true });
+    await expect.poll(() => video.evaluate((v) => v.muted)).toBe(false);
+    await som.click();
     await expect(som).toHaveAttribute('aria-pressed', 'false');
+    await expect(som).toHaveAccessibleName('Ativar som');
+    expect(await video.evaluate((v) => v.muted)).toBe(true);
+    // clicar em outro lugar não religa o som desligado pelo visitante
+    await page.locator('.abertura__texto').click({ position: { x: 5, y: 5 }, force: true });
+    expect(await video.evaluate((v) => v.muted)).toBe(true);
     await som.click();
     await expect(som).toHaveAttribute('aria-pressed', 'true');
     expect(await video.evaluate((v) => v.muted)).toBe(false);
-    await som.click();
-    await expect(som).toHaveAttribute('aria-pressed', 'false');
-    expect(await video.evaluate((v) => v.muted)).toBe(true);
   });
 
   test('com redução de movimento mostra a cena final sem animação nem vídeo', async ({ page }) => {
