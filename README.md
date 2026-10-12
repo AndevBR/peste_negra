@@ -63,8 +63,6 @@ Recursos verificados no arquivo:
 - **1 a 4 jogadores** no mesmo aparelho, com 4 personagens;
 - controles por toque, mouse e teclado; mapa arrastável.
 
-Não há casas específicas de “quarentena” no tabuleiro: o tema aparece nas cartas de revés e de perder a vez.
-
 ## Estrutura do projeto
 
 ```
