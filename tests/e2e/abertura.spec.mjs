@@ -30,27 +30,18 @@ test.describe('abertura cinematográfica', () => {
     expect(v.problemas).toEqual([]);
   });
 
-  test('o Doutor caminha do fundo da rua trocando quadros e para na pose final', async ({ page }) => {
+  test('o vídeo da abertura começa sem som, toca e para no último quadro', async ({ page }) => {
     await page.goto('');
-    const doutor = page.locator('.abertura__doutor');
-    const quadro = page.locator('.abertura__quadro');
-    await expect(page.locator('[data-abertura]')).toHaveClass(/fase-2/, { timeout: 4000 });
-    // durante a caminhada: vários quadros diferentes e o tamanho crescendo com a perspectiva
-    const amostras = [];
-    for (let i = 0; i < 12; i++) {
-      amostras.push(await page.evaluate(() => ({
-        q: getComputedStyle(document.querySelector('.abertura__quadro')).backgroundPositionX,
-        h: document.querySelector('.abertura__doutor').getBoundingClientRect().height,
-      })));
-      await page.waitForTimeout(250);
-    }
-    expect(new Set(amostras.map((a) => a.q)).size).toBeGreaterThanOrEqual(4);
-    expect(amostras.at(-1).h).toBeGreaterThan(amostras[0].h * 2);
-    // ao final: classe "parado", último quadro (pose de frente) e sem transformação inline
-    await expect(page.locator('[data-abertura]')).toHaveClass(/parado/, { timeout: 10000 });
-    await expect(quadro).toHaveCSS('background-position-x', '100%');
-    expect(await doutor.evaluate((el) => el.style.transform)).toBe('');
-    await expect(doutor).toHaveCSS('pointer-events', 'none');
+    const video = page.locator('.abertura__video');
+    await expect(video).toHaveAttribute('src', /assets\/video\/abertura(-pequeno)?\.(mp4|webm)$/);
+    expect(await video.evaluate((v) => v.muted && !v.loop)).toBe(true);
+    await expect(video).toHaveCSS('pointer-events', 'none');
+    // o vídeo avança e chega ao fim (fica parado no último quadro)
+    await expect.poll(() => video.evaluate((v) => v.currentTime), { timeout: 8000 }).toBeGreaterThan(1);
+    await expect.poll(() => video.evaluate((v) => v.ended), { timeout: 16000 }).toBe(true);
+    // pular a abertura pausa o vídeo
+    await page.getByRole('button', { name: 'Pular introdução' }).click();
+    expect(await video.evaluate((v) => v.paused)).toBe(true);
   });
 
   test('pode ser pulada imediatamente pelo botão ou pela tecla Esc', async ({ page, context }) => {
@@ -83,46 +74,32 @@ test.describe('abertura cinematográfica', () => {
     await expect(page.locator('#titulo-jogos')).toBeInViewport();
   });
 
-  test('não toca som sozinha; o som só é criado depois de o visitante ativar', async ({ page }) => {
-    await page.addInitScript(() => {
-      window.__contextosDeAudio = 0;
-      const Original = window.AudioContext;
-      window.AudioContext = class extends Original { constructor(...a) { super(...a); window.__contextosDeAudio++; } };
-    });
+  test('não toca som sozinha; o som do vídeo só liga quando o visitante ativa', async ({ page }) => {
     await page.goto('');
-    await page.waitForTimeout(2500);
-    expect(await page.evaluate(() => window.__contextosDeAudio)).toBe(0);
-    expect(await page.locator('audio, video').count()).toBe(0);
+    const video = page.locator('.abertura__video');
     const som = page.locator('[data-som]');
+    await page.waitForTimeout(1500);
+    expect(await video.evaluate((v) => v.muted)).toBe(true);
     await expect(som).toHaveAttribute('aria-pressed', 'false');
     await som.click();
     await expect(som).toHaveAttribute('aria-pressed', 'true');
-    expect(await page.evaluate(() => window.__contextosDeAudio)).toBe(1);
+    expect(await video.evaluate((v) => v.muted)).toBe(false);
     await som.click();
     await expect(som).toHaveAttribute('aria-pressed', 'false');
+    expect(await video.evaluate((v) => v.muted)).toBe(true);
   });
 
-  test('com redução de movimento mostra a cena final sem animação nem relâmpagos', async ({ page }) => {
+  test('com redução de movimento mostra a cena final sem animação nem vídeo', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('');
     const abertura = page.locator('[data-abertura]');
     await expect(abertura).toHaveClass(/instantanea/);
     await expect(page.getByRole('button', { name: 'Descubra o que foi a Peste Negra' })).toBeFocused();
-    await page.waitForTimeout(2000);
-    await expect(abertura).not.toHaveClass(/relampago/);
-  });
-
-  test('os relâmpagos são clarões isolados (nunca mais de um por segundo)', async ({ page }) => {
-    await page.goto('');
-    const inicios = await page.evaluate(() => new Promise((ok) => {
-      const raiz = document.querySelector('[data-abertura]');
-      const marcas = [];
-      let antes = false; // registra só o início de cada relâmpago (classe ausente → presente)
-      new MutationObserver(() => { const agora = raiz.classList.contains('relampago'); if (agora && !antes) marcas.push(performance.now()); antes = agora; }).observe(raiz, { attributes: true, attributeFilter: ['class'] });
-      setTimeout(() => ok(marcas), 9000);
-    }));
-    expect(inicios.length).toBeGreaterThanOrEqual(2);
-    for (let i = 1; i < inicios.length; i++) expect(inicios[i] - inicios[i - 1]).toBeGreaterThan(1000);
+    // sem vídeo em movimento: aparece a imagem final, com o Doutor já parado
+    const video = page.locator('.abertura__video');
+    await expect(video).toHaveAttribute('poster', /abertura-fim\.webp$/);
+    await page.waitForTimeout(1000);
+    expect(await video.evaluate((v) => v.paused && !v.getAttribute('src'))).toBe(true);
   });
 
   test('não tem violações de acessibilidade detectáveis', async ({ page }) => {

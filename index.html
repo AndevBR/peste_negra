@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Peste Negra — Uma experiência histórica interativa</title>
   <meta name="description" content="Experiência histórica interativa sobre a Peste Negra (1347–1351): abertura cinematográfica, a bactéria Yersinia pestis, linha do tempo, personagens medievais, mitos e verdades, quiz e jogo de tabuleiro com o Doutor da Peste.">
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <!-- SEO:ABSOLUTO -->
   <link rel="preload" href="assets/fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/images/cinema/cidade-noite.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/video/abertura-inicio.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="assets/css/main.css">
   <noscript><link rel="stylesheet" href="assets/css/sem-js.css"></noscript>
   <script src="assets/js/main.js" type="module"></script>
@@ -47,12 +47,7 @@
   <!-- ============ ABERTURA CINEMATOGRÁFICA ============ -->
   <div class="abertura" id="abertura" role="dialog" aria-modal="true" aria-label="Abertura: A Peste Negra" data-abertura>
     <div class="abertura__cena" aria-hidden="true">
-      <img class="abertura__camada abertura__cidade" src="assets/images/cinema/cidade-noite.webp" srcset="assets/images/cinema/cidade-noite-pequeno.webp 1056w, assets/images/cinema/cidade-noite.webp 1584w" sizes="(max-aspect-ratio: 1/1) 250vh, 100vw" alt="" width="1584" height="672" fetchpriority="high">
-      <img class="abertura__camada abertura__cidade-luz" src="assets/images/cinema/cidade-relampago.webp" srcset="assets/images/cinema/cidade-relampago-pequeno.webp 1056w, assets/images/cinema/cidade-relampago.webp 1584w" sizes="(max-aspect-ratio: 1/1) 250vh, 100vw" alt="" width="1584" height="672" loading="lazy">
-      <div class="abertura__doutor"><div class="abertura__quadro"></div></div>
-      <canvas class="abertura__chuva"></canvas>
-      <div class="abertura__nevoa"><span></span><span></span><span></span></div>
-      <div class="abertura__clarao"></div>
+      <video class="abertura__video" muted playsinline preload="none" disablepictureinpicture poster="assets/video/abertura-inicio.webp" data-video="assets/video/abertura" data-poster-fim="assets/video/abertura-fim.webp"></video>
       <div class="abertura__vinheta"></div>
       <div class="abertura__grao"></div>
       <div class="abertura__preto"></div>

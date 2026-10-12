@@ -270,19 +270,8 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 /* ---------- 7. Abertura cinematográfica ---------- */
 .abertura { position: fixed; inset: 0; z-index: var(--z-abertura); overflow: hidden; background: #000; color: var(--pergaminho); }
 .abertura__cena { position: absolute; inset: 0; transform-origin: 50% 58%; }
-.abertura__camada { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 62%; pointer-events: none; user-select: none; }
-.abertura__cidade { filter: brightness(.82) saturate(.85); }
-.abertura__cidade-luz { opacity: 0; }
-.abertura__chuva { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 1.2s ease; }
-.abertura__doutor { position: absolute; left: 50%; bottom: 7%; height: 66vh; aspect-ratio: 272 / 476; transform-origin: 50% 100%; transform: translateX(-50%) translateY(-24vh) scale(.1); opacity: 0; pointer-events: none; will-change: transform; }
-/* folha com 10 quadros: 8 de caminhada, o último passo e a pose parada (o JS escolhe o quadro) */
-.abertura__quadro { position: absolute; inset: 0; background: url('../images/cinema/doutor-andando.webp') 100% 0 / 1000% 100% no-repeat; filter: drop-shadow(0 18px 18px rgba(0, 0, 0, .75)) brightness(.95); }
-@media (max-width: 760px), (max-height: 520px) { .abertura__quadro { background-image: url('../images/cinema/doutor-andando-pequeno.webp'); } }
-.abertura__nevoa { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 2s ease; }
-.abertura__nevoa span { position: absolute; left: -60%; width: 220%; height: 45%; bottom: -8%; background: radial-gradient(ellipse at 30% 60%, rgba(150, 160, 178, .28), transparent 60%), radial-gradient(ellipse at 75% 45%, rgba(150, 160, 178, .22), transparent 55%); filter: blur(14px); animation: nevoa 46s linear infinite; }
-.abertura__nevoa span:nth-child(2) { bottom: 14%; height: 32%; opacity: .7; animation-duration: 64s; animation-direction: reverse; }
-.abertura__nevoa span:nth-child(3) { bottom: 30%; height: 26%; opacity: .45; animation-duration: 90s; }
-.abertura__clarao { position: absolute; inset: 0; background: radial-gradient(ellipse at 66% 18%, rgba(200, 215, 255, .5), rgba(150, 170, 220, .12) 55%, transparent 80%); opacity: 0; pointer-events: none; mix-blend-mode: screen; }
+/* vídeo da abertura (enviado pelo autor): cobre a tela e para no último quadro */
+.abertura__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; background: #000; }
 .abertura__vinheta { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 55%, transparent 35%, rgba(0, 0, 0, .55) 75%, rgba(0, 0, 0, .9)), linear-gradient(0deg, rgba(0, 0, 0, .75), transparent 40%); }
 .abertura__grao { position: absolute; inset: -50%; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); animation: grao .9s steps(4) infinite; }
 .abertura__preto { position: absolute; inset: 0; background: #000; pointer-events: none; transition: opacity 1.8s ease; }
@@ -300,52 +289,42 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 
 /* fases da sequência (classes aplicadas por abertura.js) */
 .abertura.fase-1 .abertura__preto { opacity: .55; }
-.abertura.fase-1 .abertura__nevoa, .abertura.fase-1 .abertura__chuva { opacity: 1; }
-.abertura.fase-2 .abertura__doutor { opacity: .85; transition: opacity 2.2s ease; }
 .abertura.fase-3 .abertura__preto { opacity: 0; }
-.abertura.fase-3 .abertura__cena { animation: aproximar 14s var(--curva-cine) forwards; }
-.abertura.fase-3 .abertura__doutor { opacity: 1; transition: opacity 1s ease; }
-/* sem JS de caminhada (ou ao terminar), a pose final fica fixa */
-.abertura.parado .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(-50%) translateY(0) scale(1); }
 .abertura.fase-4 .abertura__pre { opacity: 1; transform: none; transition: opacity 1.2s ease, transform 1.2s var(--curva); }
 .abertura.fase-4 .abertura__titulo { opacity: 1; filter: none; transform: none; transition: opacity 1.6s ease .2s, filter 1.8s ease .2s, transform 2.4s var(--curva) .2s; }
 .abertura.fase-5 .abertura__botao { opacity: 1; transform: none; transition: opacity 1s ease, transform 1s var(--curva); }
-.abertura.relampago .abertura__cidade-luz { animation: relampago 1.5s ease-out; }
-.abertura.relampago .abertura__clarao { animation: clarao 1.5s ease-out; }
 .abertura.saindo { animation: sair-abertura 1.1s var(--curva-cine) forwards; }
 .abertura.saindo .abertura__cena { animation: atravessar 1.1s var(--curva-cine) forwards; }
 /* versão final estática (pular / movimento reduzido) */
 .abertura.instantanea * { transition: none !important; }
 .abertura.instantanea .abertura__preto { opacity: 0; }
-.abertura.instantanea .abertura__doutor { opacity: 1; }
 .abertura.instantanea .abertura__pre, .abertura.instantanea .abertura__titulo, .abertura.instantanea .abertura__botao { opacity: 1; filter: none; transform: none; }
-.abertura.instantanea .abertura__nevoa { opacity: 1; }
 
 @media (min-width: 900px) and (min-height: 521px) {
-  .abertura__texto { inset: auto auto 11vh 7vw; align-items: flex-start; text-align: left; max-width: min(46rem, 52vw); padding: 0; }
-  .abertura__titulo { font-size: clamp(3rem, 1rem + 5.2vw, 6.6rem); }
-  .abertura.parado .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(calc(-50% + 17vw)) translateY(0) scale(1); }
+  /* texto à esquerda, fora do Doutor (que fica no centro do vídeo) */
+  .abertura__texto { inset: auto auto 11vh 5vw; align-items: flex-start; text-align: left; max-width: 34vw; padding: 0; }
+  .abertura__titulo { font-size: clamp(2.4rem, 4.4vw, 6rem); }
 }
 @media (max-width: 760px), (max-height: 520px) {
   .abertura__titulo { margin-bottom: var(--esp-5); letter-spacing: .1em; }
   .abertura__controle span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .btn-premium { padding: var(--esp-3) var(--esp-5); letter-spacing: .1em; min-height: 54px; }
 }
-/* telas em pé: título no céu, botão embaixo e o Doutor parado sobre a rua, entre os dois */
+/* telas em pé: título em cima, botão embaixo e o vídeo numa faixa entre os dois */
 @media (max-aspect-ratio: 1/1) {
   .abertura__texto { inset: 9vh 0 4vh 0; justify-content: flex-start; }
   .abertura__botao { margin-top: auto; }
-  .abertura__doutor { height: 46vh; bottom: 13%; }
+  /* faixa de vídeo entre o título e o botão, com bordas esfumadas */
+  .abertura__video { inset: 27vh 0 auto; height: 61vh; -webkit-mask-image: linear-gradient(transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(transparent, #000 14%, #000 86%, transparent); }
   .abertura__credito { bottom: auto; top: calc(var(--esp-4) + 12px); }
 }
-/* celular deitado: texto à esquerda e o Doutor à direita, como no computador */
+/* celular deitado: texto à esquerda, fora do Doutor, como no computador */
 @media (max-height: 520px) and (min-aspect-ratio: 1/1) {
   .abertura__pre { display: none; }
-  .abertura__texto { inset: auto auto 6vh 5vw; align-items: flex-start; text-align: left; max-width: 56vw; padding: 0; }
-  .abertura__titulo { font-size: clamp(2rem, 1rem + 5vw, 3.6rem); }
-  .abertura__doutor { height: 74vh; bottom: 5%; }
+  .abertura__texto { inset: auto auto 6vh 5vw; align-items: flex-start; text-align: left; max-width: 34vw; padding: 0; }
+  .abertura__titulo { font-size: clamp(1.6rem, 4.2vw, 3.4rem); }
+  .abertura__botao { padding: var(--esp-2) var(--esp-4); min-height: 48px; font-size: .8rem; }
   .abertura__credito { bottom: auto; top: calc(var(--esp-4) + 12px); }
-  .abertura.parado .abertura__doutor, .abertura.instantanea .abertura__doutor { transform: translateX(calc(-50% + 27vw)) translateY(0) scale(1); }
 }
 
 /* ---------- 8. Hero (início do site) ---------- */
@@ -664,12 +643,9 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 /* ---------- 13. Movimento e acessibilidade ---------- */
 @keyframes nevoa { from { transform: translateX(0); } to { transform: translateX(25%); } }
 @keyframes grao { 0% { transform: translate(0, 0); } 25% { transform: translate(-5%, 3%); } 50% { transform: translate(4%, -4%); } 75% { transform: translate(-3%, -2%); } 100% { transform: translate(2%, 4%); } }
-@keyframes aproximar { from { transform: scale(1); } to { transform: scale(1.09); } }
 @keyframes atravessar { to { transform: scale(1.6); filter: blur(10px) brightness(.4); } }
 @keyframes sair-abertura { 60% { opacity: 1; } to { opacity: 0; visibility: hidden; } }
 /* relâmpago: um único clarão suave (nunca mais de 1 por segundo — WCAG 2.3.1) */
-@keyframes relampago { 0% { opacity: 0; } 8% { opacity: .55; } 16% { opacity: .2; } 24% { opacity: .5; } 100% { opacity: 0; } }
-@keyframes clarao { 0% { opacity: 0; } 8% { opacity: .6; } 100% { opacity: 0; } }
 @keyframes reflexo { 0%, 60% { left: -30%; } 100% { left: 130%; } }
 @keyframes aparece { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
@@ -685,7 +661,7 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
-  .hero__nevoa span, .abertura__nevoa span, .hero__doutor img, .abas__figura img, .abertura__grao, .btn-premium::before { animation: none !important; }
+  .hero__nevoa span, .hero__doutor img, .abas__figura img, .abertura__grao, .btn-premium::before { animation: none !important; }
   .js .revelar { opacity: 1; transform: none; }
   .hero__camada { transform: none !important; }
   .trilha-rato { display: none; }
