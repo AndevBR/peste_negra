@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "check:links": "node scripts/check-links.mjs",
     "images": "node scripts/gerar-imagens.mjs",
-    "map": "node scripts/gerar-mapa.mjs"
+    "map": "node scripts/gerar-mapa.mjs",
+    "cinema": "node scripts/gerar-cinema.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -1,5 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <!-- Ícones de traço (24x24). Uso: <svg class="icone"><use href="assets/images/icons/icones.svg#nome"/></svg> -->
+  <!-- Ícones de traço (24x24). Uso: svg.icone + use href="assets/images/icons/icones.svg#nome" -->
+  <symbol id="casa" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+  <symbol id="pergaminho" viewBox="0 0 24 24"><path d="M7 4h11a2 2 0 0 1 2 2v1h-3"/><path d="M17 7v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1h11"/><path d="M7 4a2 2 0 0 0-2 2v11"/><path d="M9 9h5M9 12h5M9 15h3"/></symbol>
+  <symbol id="bacteria" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="8" rx="4" transform="rotate(-30 12 12)"/><circle cx="8.8" cy="13.8" r="1.2" fill="currentColor"/><circle cx="15.2" cy="10.2" r="1.2" fill="currentColor"/><path d="M19 5l2-2M5 19l-2 2"/></symbol>
+  <symbol id="ampulheta" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12"/><path d="M7 3c0 5 10 5 10 9s-10 4-10 9"/><path d="M17 3c0 5-10 5-10 9s10 4 10 9"/></symbol>
+  <symbol id="mascara" viewBox="0 0 24 24"><path d="M4 9c0-3 3-5 6-5s5 2 5 5"/><path d="M3 9h13"/><path d="M6 9c0 5 2 8 5 8 2 0 3-1 4-2l6 3c-2-4-4-7-6-8"/><circle cx="9" cy="11" r="1.4"/></symbol>
+  <symbol id="vila" viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M4 20v-8l4-4 4 4v8"/><path d="M12 20v-6l4-4 4 4v6"/><path d="M7 20v-3h2v3M15 20v-3h2v3"/></symbol>
+  <symbol id="pergunta" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7"/><circle cx="12" cy="17" r=".9" fill="currentColor"/></symbol>
+  <symbol id="recolher" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="som" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="sem-som" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l5 6M22 9l-5 6"/></symbol>
+  <symbol id="filme" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></symbol>
+  <symbol id="glossario" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M9 10h6M9 13h6M9 16h4"/></symbol>
   <symbol id="seta-direita" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="seta-esquerda" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
   <symbol id="seta-baixo" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>

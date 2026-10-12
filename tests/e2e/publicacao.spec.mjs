@@ -1,12 +1,11 @@
 // Simula a publicação no GitHub Pages: gera o build de produção com uma URL pública
 // e serve o resultado em um subdiretório (/peste_negra/), como faz o GitHub Pages.
-import { test, expect } from '@playwright/test';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { construir } from '../../scripts/build.mjs';
 import { iniciarServidor } from '../../scripts/serve.mjs';
-import { vigiar, rolarTudo, semImagensQuebradas } from './ajuda.mjs';
+import { test, expect, vigiar, rolarTudo, semImagensQuebradas } from './ajuda.mjs';
 
 const URL_PUBLICA = 'https://exemplo.github.io/peste_negra/';
 let pasta, servidor, base;

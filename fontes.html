@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Fontes e referências — Peste Negra</title>
+  <title>Fontes históricas e científicas — Peste Negra</title>
   <meta name="description" content="Referências históricas e científicas usadas no site sobre a Peste Negra: OMS, CDC, Ministério da Saúde, Instituto Pasteur e artigos revisados por pares.">
   <meta name="author" content="Anderson Carapeto">
-  <meta name="theme-color" content="#1d1917">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0e0d0c">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="assets/images/icons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/images/icons/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
@@ -17,57 +17,59 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Peste Negra — Uma experiência histórica interativa">
-  <meta property="og:title" content="Fontes e referências — Peste Negra">
+  <meta property="og:title" content="Fontes históricas e científicas — Peste Negra">
   <meta property="og:description" content="Referências históricas e científicas usadas no site sobre a Peste Negra: OMS, CDC, Ministério da Saúde, Instituto Pasteur e artigos revisados por pares.">
   <meta name="twitter:card" content="summary_large_image">
   <!-- SEO:ABSOLUTO -->
   <link rel="preload" href="assets/fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/main.css">
+  <noscript><link rel="stylesheet" href="assets/css/sem-js.css"></noscript>
   <script src="assets/js/main.js" type="module"></script>
 </head>
-<body>
-  <a class="pular-link" href="./#conteudo">Pular para o conteúdo</a>
+<body class="com-lateral">
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="cabecalho">
-    <div class="container cabecalho__barra">
-      <a class="marca" href="./" aria-label="Peste Negra — página inicial">
-        <img src="assets/images/characters/doutor-compacto.svg" alt="" width="40" height="40">
-        <span>Peste Negra</span>
-      </a>
-      <nav class="nav" aria-label="Navegação principal">
-        <button class="nav__botao" type="button" aria-expanded="false" aria-controls="menu-principal">
-          <span class="linhas" aria-hidden="true"><span></span><span></span><span></span></span>
-          Menu
-        </button>
-        <div class="nav__painel" id="menu-principal">
-          <ul class="nav__lista">
-            <li><a href="./#historia">História</a></li>
-            <li><a href="./#bacteria">A bactéria</a></li>
-            <li><a href="./#linha-do-tempo">Linha do tempo</a></li>
-            <li><a href="./#personagens">Personagens</a></li>
-            <li><a href="./#cotidiano">Cotidiano</a></li>
-            <li><a href="./#mitos">Mitos e verdades</a></li>
-            <li><a href="./#jogos">Aprenda jogando</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="glossario.html">Glossário</a></li>
-            <li><a href="fontes.html">Fontes</a></li>
-          </ul>
-        </div>
-      </nav>
+  <!-- ============ MENU LATERAL ============ -->
+  <button class="lateral__abrir" type="button" aria-controls="menu-lateral" aria-expanded="false"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#menu"/></svg> Menu</button>
+  <div class="lateral__veu" hidden></div>
+  <nav class="lateral" id="menu-lateral" aria-label="Navegação principal">
+    <a class="lateral__marca" href="./#inicio">
+      <img src="assets/images/characters/doutor-compacto.svg" alt="" width="44" height="44">
+      <span>A Peste Negra<small>1347 · 1351</small></span>
+    </a>
+    <ul class="lateral__lista">
+      <li><a class="lateral__link" href="./#inicio" data-secao="inicio" data-dica="Início"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#casa"/></svg><span class="lateral__rotulo">Início</span></a></li>
+      <li><a class="lateral__link" href="./#historia" data-secao="historia" data-dica="A Peste Negra"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#pergaminho"/></svg><span class="lateral__rotulo">A Peste Negra</span></a></li>
+      <li><a class="lateral__link" href="./#bacteria" data-secao="bacteria" data-dica="A bactéria"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#bacteria"/></svg><span class="lateral__rotulo">A bactéria</span></a></li>
+      <li><a class="lateral__link" href="./#linha-do-tempo" data-secao="linha-do-tempo" data-dica="Linha do tempo"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#ampulheta"/></svg><span class="lateral__rotulo">Linha do tempo</span></a></li>
+      <li><a class="lateral__link" href="./#personagens" data-secao="personagens" data-dica="Personagens"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#mascara"/></svg><span class="lateral__rotulo">Personagens</span></a></li>
+      <li><a class="lateral__link" href="./#cotidiano" data-secao="cotidiano" data-dica="Vida medieval"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#vila"/></svg><span class="lateral__rotulo">Vida medieval</span></a></li>
+      <li><a class="lateral__link" href="./#mitos" data-secao="mitos" data-dica="Mitos e verdades"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#olho"/></svg><span class="lateral__rotulo">Mitos e verdades</span></a></li>
+      <li><a class="lateral__link" href="quiz.html" data-pagina="quiz.html" data-dica="Quiz"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#pergunta"/></svg><span class="lateral__rotulo">Quiz</span></a></li>
+      <li><a class="lateral__link lateral__link--jogos" href="./#jogos" data-secao="jogos" data-dica="Jogos"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#dado"/></svg><span class="lateral__rotulo">Jogos</span></a></li>
+      <li><a class="lateral__link" href="fontes.html" data-pagina="fontes.html" data-dica="Fontes históricas"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#livro"/></svg><span class="lateral__rotulo">Fontes históricas</span></a></li>
+      <li><a class="lateral__link" href="glossario.html" data-pagina="glossario.html" data-dica="Glossário"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#glossario"/></svg><span class="lateral__rotulo">Glossário</span></a></li>
+    </ul>
+    <div class="lateral__rodape">
+      <button class="lateral__acao" type="button" data-rever-abertura><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#filme"/></svg><span class="lateral__rotulo">Rever a abertura</span></button>
+      <button class="lateral__acao" type="button" data-recolher aria-expanded="true" aria-controls="menu-lateral"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#recolher"/></svg><span class="lateral__rotulo">Recolher menu</span></button>
+      <p class="lateral__credito">Criado por <strong>Anderson Carapeto</strong> © 2026</p>
     </div>
-  </header>
+  </nav>
 
-  <main id="conteudo">
-    <div class="pagina-topo">
+  <div class="pagina">
+  <main id="conteudo" tabindex="-1">
+    <header class="pagina-topo">
+      <div class="pagina-topo__fundo" aria-hidden="true"><img src="assets/images/cinema/rua-noite-pequeno.webp" alt="" width="1280" height="720"></div>
       <div class="container">
-        <img src="assets/images/characters/doutor-explicacao.svg" alt="" width="420" height="620">
+        <img class="pagina-topo__doutor" src="assets/images/cinema/doutor-luz-pequeno.webp" alt="" width="320" height="560">
         <div>
-          <p class="trilha"><a href="./">Início</a> › Fontes e referências</p>
-          <h1>Fontes e referências</h1>
+          <p class="trilha"><a href="./">Início</a> › Fontes históricas e científicas</p>
+          <h1>Fontes históricas e científicas</h1>
           <p>As informações do site se baseiam nas referências abaixo. Cada item indica o assunto que fundamenta.</p>
         </div>
       </div>
-    </div>
+    </header>
     <section class="secao" aria-label="Referências">
       <div class="container">
         <div class="texto-largo">
@@ -86,7 +88,8 @@
         <div class="texto-largo">
           <h2>Créditos</h2>
           <ul>
-            <li>Textos, ilustrações vetoriais e programação do site: produzidos para este projeto.</li>
+            <li>Textos, ilustrações, cenas da abertura e programação do site: produzidos para este projeto.</li>
+            <li>Cenas da vida medieval (alimentação, higiene, crenças, quarentena e famílias): imagens fornecidas pelo autor do projeto.</li>
             <li>Jogo “A Peste Negra — Jornada Medieval”: criado por Anderson Carapeto.</li>
             <li>Contornos do mapa: <a href="https://www.naturalearthdata.com/" rel="noopener noreferrer" target="_blank">Natural Earth</a> (domínio público).</li>
             <li>Fontes tipográficas: Cinzel e Alegreya (SIL Open Font License).</li>
@@ -107,7 +110,7 @@
         <nav aria-label="Explorar">
           <h2>Explorar</h2>
           <ul>
-            <li><a href="./#historia">História</a></li>
+            <li><a href="./#historia">A Peste Negra</a></li>
             <li><a href="./#bacteria">A bactéria</a></li>
             <li><a href="./#linha-do-tempo">Linha do tempo</a></li>
             <li><a href="./#personagens">Personagens</a></li>
@@ -119,16 +122,15 @@
             <li><a href="jogos/jornada-medieval/">Jogo de tabuleiro</a></li>
             <li><a href="quiz.html">Quiz</a></li>
             <li><a href="glossario.html">Glossário</a></li>
-            <li><a href="fontes.html">Fontes e referências</a></li>
+            <li><a href="fontes.html">Fontes históricas</a></li>
           </ul>
         </nav>
       </div>
       <div class="rodape__credito">
         <p>Criado por <strong>Anderson Carapeto</strong> © 2026</p>
-        <p>Conteúdo educativo. Não substitui orientação médica.</p>
       </div>
     </div>
   </footer>
-
+  </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
-import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { vigiar, CAMINHO_JSQR } from './ajuda.mjs';
+import { test, expect, vigiar, CAMINHO_JSQR } from './ajuda.mjs';
 
 test.describe('quiz', () => {
   async function jogarSessao(page, estrategia) {
@@ -175,8 +174,19 @@ test.describe('jogo de tabuleiro', () => {
     const info = await page.evaluate(() => ({ casas: window.jornada.CASAS.length, perguntas: window.jornada.PERGUNTAS.length, cartas: window.jornada.CARTAS.length }));
     expect(info).toEqual({ casas: 62, perguntas: info.perguntas, cartas: 25 });
     expect(info.perguntas).toBeGreaterThanOrEqual(30);
+    // as cartas de Sorte ou Revés (arquivos externos, carregados sob demanda) aparecem
+    await page.evaluate(() => { window.jornada.iniciar(1); window.jornada.proximaCarta = 'reves2'; window.jornada.ir(4); window.jornada.forcar.push(2); });
+    await expect(page.locator('#lancar')).toBeEnabled({ timeout: 8000 });
+    await page.locator('#lancar').click();
+    await expect(page.locator('#carta')).toBeVisible({ timeout: 15000 });
+    await expect.poll(() => page.locator('#c-img').evaluate((i) => i.complete && i.naturalWidth)).toBe(600);
     expect(v.problemas).toEqual([]);
     expect(v.externas).toEqual([]);
+  });
+
+  test('o jogo é leve o bastante para celulares (menos de 1 MB na abertura)', async ({ request }) => {
+    const r = await request.get('jogos/jornada-medieval/');
+    expect((await r.body()).length).toBeLessThan(1024 * 1024);
   });
 
   test('o jogo tem link de volta para o site', async ({ page }) => {

@@ -3,7 +3,7 @@
     {
       "id": "doutor-da-peste",
       "nome": "Doutores da peste",
-      "imagem": "assets/images/characters/doutor-compacto.svg",
+      "imagem": "assets/images/cinema/doutor-luz.webp",
       "imagemJogo": "assets/images/games/sprite-medico.webp",
       "periodo": "Contratados por cidades desde o século XIV; o traje com bico é do século XVII",
       "resumo": "Médicos contratados pelas cidades para cuidar dos doentes de peste.",
@@ -22,12 +22,14 @@
       "fontes": [
         "natgeo-medicos",
         "britannica"
-      ]
+      ],
+      "tipoImagem": "arte",
+      "legendaImagem": "Reconstrução artística"
     },
     {
       "id": "flagelante",
       "nome": "Flagelantes",
-      "imagem": "assets/images/personagens/flagelante.svg",
+      "imagem": "assets/images/games/retrato-flagelante.webp",
       "imagemJogo": "assets/images/games/sprite-flagelante.webp",
       "periodo": "Movimento que cresceu muito em 1348–1349, sobretudo na Europa Central",
       "resumo": "Grupos religiosos que faziam penitência pública para pedir o fim da peste.",
@@ -45,12 +47,14 @@
       "fontes": [
         "britannica-flagelantes",
         "britannica-efeitos"
-      ]
+      ],
+      "tipoImagem": "jogo",
+      "legendaImagem": "Personagem do jogo"
     },
     {
       "id": "erveira",
       "nome": "Erveiras e curandeiras",
-      "imagem": "assets/images/personagens/erveira.svg",
+      "imagem": "assets/images/games/retrato-erveira.webp",
       "imagemJogo": "assets/images/games/sprite-erveira.webp",
       "periodo": "Presentes em toda a Idade Média, em vilas e cidades",
       "resumo": "Pessoas que conheciam plantas medicinais e cuidavam da saúde da comunidade.",
@@ -65,12 +69,14 @@
         "Parte desse conhecimento popular foi registrada em livros de ervas (herbários) escritos nos séculos seguintes."
       ],
       "estilizacao": "Personagem genérica, que representa diversos tipos de curadoras populares.",
-      "fontes": []
+      "fontes": [],
+      "tipoImagem": "jogo",
+      "legendaImagem": "Personagem do jogo"
     },
     {
       "id": "cirurgiao-barbeiro",
       "nome": "Cirurgiões-barbeiros",
-      "imagem": "assets/images/personagens/cirurgiao-barbeiro.svg",
+      "imagem": "assets/images/games/retrato-barbeiro.webp",
       "imagemJogo": "assets/images/games/sprite-barbeiro.webp",
       "periodo": "Ofício comum nas cidades medievais e modernas",
       "resumo": "Artesãos que cortavam cabelo e também faziam pequenas cirurgias e sangrias.",
@@ -85,12 +91,14 @@
         "A separação entre barbeiros e cirurgiões ocorreu séculos mais tarde, em épocas diferentes em cada país."
       ],
       "estilizacao": "Avental e instrumentos representam o ofício de forma estilizada.",
-      "fontes": []
+      "fontes": [],
+      "tipoImagem": "jogo",
+      "legendaImagem": "Personagem do jogo"
     },
     {
       "id": "medico-universitario",
       "nome": "Médicos universitários",
-      "imagem": "assets/images/personagens/medico-universitario.svg",
+      "imagem": "assets/images/personagens/sombra-medico-universitario.svg",
       "periodo": "Formados em universidades como Paris, Montpellier, Bolonha e Pádua",
       "resumo": "Estudiosos que aprendiam medicina em textos antigos e examinavam a urina dos pacientes.",
       "contexto": [
@@ -107,12 +115,14 @@
       "fontes": [
         "britannica",
         "glatter"
-      ]
+      ],
+      "tipoImagem": "sombra",
+      "legendaImagem": "Retrato em sombra — ilustração realista pendente"
     },
     {
       "id": "apotecario",
       "nome": "Apotecários",
-      "imagem": "assets/images/personagens/apotecario.svg",
+      "imagem": "assets/images/personagens/sombra-apotecario.svg",
       "periodo": "Comuns nas cidades a partir do século XIII",
       "resumo": "Comerciantes que preparavam e vendiam remédios, especiarias e ervas.",
       "contexto": [
@@ -128,12 +138,14 @@
       "estilizacao": "Pote e roupa representam o ofício de maneira estilizada.",
       "fontes": [
         "natgeo-medicos"
-      ]
+      ],
+      "tipoImagem": "sombra",
+      "legendaImagem": "Retrato em sombra — ilustração realista pendente"
     },
     {
       "id": "cuidadora",
       "nome": "Cuidadores de enfermos",
-      "imagem": "assets/images/personagens/cuidadora.svg",
+      "imagem": "assets/images/personagens/sombra-cuidadora.svg",
       "periodo": "Em hospitais, conventos e casas, durante toda a epidemia",
       "resumo": "Familiares, religiosas e trabalhadores que davam comida, água e conforto aos doentes.",
       "contexto": [
@@ -149,12 +161,14 @@
       "estilizacao": "A touca e a roupa representam, de forma genérica, cuidadoras ligadas a comunidades religiosas.",
       "fontes": [
         "britannica-efeitos"
-      ]
+      ],
+      "tipoImagem": "sombra",
+      "legendaImagem": "Retrato em sombra — ilustração realista pendente"
     },
     {
       "id": "religioso",
       "nome": "Religiosos e ordens assistenciais",
-      "imagem": "assets/images/personagens/religioso.svg",
+      "imagem": "assets/images/personagens/sombra-religioso.svg",
       "periodo": "Presentes em toda a Europa cristã",
       "resumo": "Padres, frades e monjas que davam assistência espiritual e material.",
       "contexto": [
@@ -170,12 +184,14 @@
       "estilizacao": "O hábito marrom representa, de forma genérica, os frades mendicantes.",
       "fontes": [
         "britannica-efeitos"
-      ]
+      ],
+      "tipoImagem": "sombra",
+      "legendaImagem": "Retrato em sombra — ilustração realista pendente"
     },
     {
       "id": "comerciante",
       "nome": "Comerciantes e viajantes",
-      "imagem": "assets/images/personagens/comerciante.svg",
+      "imagem": "assets/images/personagens/sombra-comerciante.svg",
       "periodo": "Pelas rotas de terra e mar entre a Ásia, o Mar Negro e a Europa",
       "resumo": "Mercadores, marinheiros e peregrinos que levavam produtos — e, sem saber, a doença.",
       "contexto": [
@@ -192,12 +208,14 @@
       "fontes": [
         "britannica",
         "gensini"
-      ]
+      ],
+      "tipoImagem": "sombra",
+      "legendaImagem": "Retrato em sombra — ilustração realista pendente"
     },
     {
       "id": "coveiro",
       "nome": "Encarregados dos sepultamentos",
-      "imagem": "assets/images/personagens/coveiro.svg",
+      "imagem": "assets/images/personagens/sombra-coveiro.svg",
       "periodo": "Durante os picos da epidemia, em cidades e vilas",
       "resumo": "Trabalhadores que recolhiam e enterravam os mortos.",
       "contexto": [
@@ -214,7 +232,9 @@
       "fontes": [
         "bos",
         "britannica"
-      ]
+      ],
+      "tipoImagem": "sombra",
+      "legendaImagem": "Retrato em sombra — ilustração realista pendente"
     }
   ]
 }

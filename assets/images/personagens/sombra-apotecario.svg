@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-labelledby="t">
+<title id="t">Retrato estilizado de um apotecário, com gorro e pote de remédios (silhueta)</title>
+<defs>
+      <radialGradient id="nevoa" cx=".55" cy=".38" r=".75"><stop offset="0" stop-color="#5a5650"/><stop offset=".45" stop-color="#2c2a28"/><stop offset="1" stop-color="#0e0d0d"/></radialGradient>
+      <filter id="sombra" x="-10%" y="-10%" width="120%" height="120%">
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0.035  0 0 0 0 0.03  0 0 0 0 0.03  0 0 0 1 0" result="escuro"/>
+        <feOffset in="SourceAlpha" dx="3" dy="2" result="desl"/>
+        <feComposite in="SourceAlpha" in2="desl" operator="out" result="borda"/>
+        <feGaussianBlur in="borda" stdDeviation="1.3" result="bb"/>
+        <feFlood flood-color="#e8b86a"/><feComposite in2="bb" operator="in" result="rim"/>
+        <feMerge><feMergeNode in="escuro"/><feMergeNode in="rim"/></feMerge>
+      </filter>
+      <linearGradient id="chao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".85"/></linearGradient>
+    </defs>
+    <rect width="240" height="300" fill="url(#nevoa)"/>
+    <g transform="translate(0 46)" filter="url(#sombra)"><path d="M36 250 Q40 186 82 172 Q120 162 158 172 Q200 186 204 250 Z" fill="#3e5a46" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M60 250 Q64 204 86 186 M180 250 Q176 204 154 186" stroke="#2b4031" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M100 176 L140 176 L132 250 L108 250 Z" fill="#e8dcc0" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M104 150 L104 176 Q120 186 136 176 L136 150 Z" fill="#9a6844" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="120" cy="120" rx="36" ry="42" fill="#9a6844" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="84" cy="124" rx="6" ry="10" fill="#9a6844" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="156" cy="124" rx="6" ry="10" fill="#9a6844" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="104" cy="118" rx="4" ry="5" fill="#1b1411"/><ellipse cx="136" cy="118" rx="4" ry="5" fill="#1b1411"/>
+       <circle cx="105.5" cy="116" r="1.4" fill="#fff"/><circle cx="137.5" cy="116" r="1.4" fill="#fff"/>
+  <path d="M96 106 Q104 101 112 105 M128 105 Q136 101 144 106" stroke="#1b1411" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M120 120 Q116 134 122 136" stroke="#1b1411" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M110 146 Q120 150 130 146" stroke="#1b1411" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="98" cy="134" rx="6" ry="3.5" fill="#d9776a" opacity=".25"/><ellipse cx="142" cy="134" rx="6" ry="3.5" fill="#d9776a" opacity=".25"/>
+  
+      <path d="M80 104 Q80 66 120 62 Q160 66 160 104 Q120 86 80 104 Z" fill="#5a3d26" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M84 90 Q120 50 156 90 Q160 70 144 60 Q120 44 96 60 Q80 70 84 90 Z" fill="#8c5f38" stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <g transform="translate(-6 -30)"><g stroke="#1b1411" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M162 150 Q160 140 170 138 L202 138 Q212 140 210 150 Q218 186 210 220 Q186 230 162 220 Q154 186 162 150 Z" fill="#2f5d7c"/>
+    <path d="M164 168 Q186 174 208 168 L208 198 Q186 204 164 198 Z" fill="#f2e4c2"/><rect x="166" y="128" width="40" height="12" rx="4" fill="#432a17"/></g>
+    <path d="M176 182 L196 182 M176 190 L190 190" stroke="#7a1f2b" stroke-width="3"/></g></g>
+    <rect y="200" width="240" height="100" fill="url(#chao)"/>
+</svg>

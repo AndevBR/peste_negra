@@ -101,8 +101,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LARGURA} ${ALTURA}" role="img" aria-labelledby="t">
 <title id="t">Mapa simplificado da Europa, do Norte da África e do Oriente Próximo</title>
 <!-- Contornos: Natural Earth (domínio público), simplificados por scripts/gerar-mapa.mjs -->
-<path d="${terra}" fill="#e9d9b0" stroke="#7a5a33" stroke-width="1.2" stroke-linejoin="round" fill-rule="evenodd"/>
-${lagos ? `<path d="${lagos}" fill="#b9c9c0" stroke="#7a5a33" stroke-width="0.8"/>` : ''}
+<path d="${terra}" fill="#352f28" stroke="#a88a55" stroke-width="1.1" stroke-linejoin="round" fill-rule="evenodd"/>
+${lagos ? `<path d="${lagos}" fill="#132026" stroke="#6d5a3a" stroke-width="0.7"/>` : ''}
 </svg>
 `;
   writeFileSync(new URL('../assets/images/illustrations/mapa-europa.svg', import.meta.url), svg);

@@ -1,8 +1,7 @@
 // Auditoria automática de acessibilidade (axe-core) com regras WCAG 2.0, 2.1 e 2.2 níveis A e AA.
 // Ferramentas automáticas encontram parte dos problemas; a revisão manual continua necessária.
-import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { rolarTudo } from './ajuda.mjs';
+import { test, expect, rolarTudo } from './ajuda.mjs';
 
 const REGRAS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 

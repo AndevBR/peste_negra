@@ -26,3 +26,8 @@ salvar('environments/hero-ceu.svg', cenas.heroCeu());
 salvar('environments/hero-cidade-longe.svg', cenas.heroCidadeLonge());
 salvar('environments/hero-cidade-perto.svg', cenas.heroCidadePerto());
 salvar('icons/favicon.svg', cenas.favicon());
+
+import { retratoSombra } from './arte/personagens.mjs';
+for (const nome of ['medico-universitario', 'apotecario', 'cuidadora', 'religioso', 'comerciante', 'coveiro']) {
+  salvar(`personagens/sombra-${nome}.svg`, retratoSombra(nome));
+}

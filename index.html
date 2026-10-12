@@ -6,10 +6,10 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Peste Negra — Uma experiência histórica interativa</title>
-  <meta name="description" content="Site educativo sobre a Peste Negra (1347–1351): história, a bactéria Yersinia pestis, linha do tempo, personagens medievais, mitos e verdades, quiz e jogo de tabuleiro com o Doutor da Peste.">
+  <meta name="description" content="Experiência histórica interativa sobre a Peste Negra (1347–1351): abertura cinematográfica, a bactéria Yersinia pestis, linha do tempo, personagens medievais, mitos e verdades, quiz e jogo de tabuleiro com o Doutor da Peste.">
   <meta name="author" content="Anderson Carapeto">
-  <meta name="theme-color" content="#1d1917">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0e0d0c">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="assets/images/icons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/images/icons/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
@@ -18,13 +18,15 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Peste Negra — Uma experiência histórica interativa">
   <meta property="og:title" content="Peste Negra — Uma experiência histórica interativa">
-  <meta property="og:description" content="Explore a história da Peste Negra com o Doutor da Peste: ciência, linha do tempo, personagens, quiz e jogo de tabuleiro.">
-  <meta property="og:image:alt" content="Ilustração do Doutor da Peste diante de uma cidade medieval ao entardecer">
+  <meta property="og:description" content="Entre em uma cidade europeia de 1348 com o Doutor da Peste: história, ciência, personagens, quiz e jogo de tabuleiro.">
+  <meta property="og:image:alt" content="O Doutor da Peste em uma rua medieval à noite">
   <meta name="twitter:card" content="summary_large_image">
   <!-- SEO:ABSOLUTO -->
   <link rel="preload" href="assets/fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/alegreya-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/images/cinema/rua-noite-pequeno.webp" as="image" type="image/webp" media="(max-width: 1280px)">
+  <link rel="preload" href="assets/images/cinema/rua-noite.webp" as="image" type="image/webp" media="(min-width: 1281px)">
   <link rel="stylesheet" href="assets/css/main.css">
+  <noscript><link rel="stylesheet" href="assets/css/sem-js.css"></noscript>
   <script src="assets/js/main.js" type="module"></script>
   <script type="application/ld+json">
   {
@@ -32,7 +34,7 @@
     "@type": "WebSite",
     "name": "Peste Negra — Uma experiência histórica interativa",
     "inLanguage": "pt-BR",
-    "description": "Site educativo sobre a Peste Negra: história, ciência, personagens medievais, quiz e jogo de tabuleiro.",
+    "description": "Experiência histórica interativa sobre a Peste Negra: história, ciência, personagens medievais, quiz e jogo de tabuleiro.",
     "author": { "@type": "Person", "name": "Anderson Carapeto" },
     "copyrightYear": 2026,
     "isAccessibleForFree": true,
@@ -40,144 +42,162 @@
   }
   </script>
 </head>
-<body>
+<body class="com-lateral">
   <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="cabecalho">
-    <div class="container cabecalho__barra">
-      <a class="marca" href="./" aria-label="Peste Negra — página inicial">
-        <img src="assets/images/characters/doutor-compacto.svg" alt="" width="40" height="40">
-        <span>Peste Negra</span>
-      </a>
-      <nav class="nav" aria-label="Navegação principal">
-        <button class="nav__botao" type="button" aria-expanded="false" aria-controls="menu-principal">
-          <span class="linhas" aria-hidden="true"><span></span><span></span><span></span></span>
-          Menu
-        </button>
-        <div class="nav__painel" id="menu-principal">
-          <ul class="nav__lista">
-            <li><a href="#historia">História</a></li>
-            <li><a href="#bacteria">A bactéria</a></li>
-            <li><a href="#linha-do-tempo">Linha do tempo</a></li>
-            <li><a href="#personagens">Personagens</a></li>
-            <li><a href="#cotidiano">Cotidiano</a></li>
-            <li><a href="#mitos">Mitos e verdades</a></li>
-            <li><a href="#jogos">Aprenda jogando</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="glossario.html">Glossário</a></li>
-            <li><a href="fontes.html">Fontes</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="conteudo">
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
-      <div class="hero__camadas" aria-hidden="true">
-        <div class="hero__camada" data-profundidade="0.05"><img src="assets/images/environments/hero-ceu.svg" alt="" width="1600" height="900" fetchpriority="high"></div>
-        <div class="hero__camada" data-profundidade="0.15"><img src="assets/images/environments/hero-cidade-longe.svg" alt="" width="1600" height="900"></div>
-        <div class="hero__camada" data-profundidade="0.3"><img src="assets/images/environments/hero-cidade-perto.svg" alt="" width="1600" height="900"></div>
+  <!-- ============ ABERTURA CINEMATOGRÁFICA ============ -->
+  <div class="abertura" id="abertura" role="dialog" aria-modal="true" aria-label="Abertura: A Peste Negra" data-abertura>
+    <div class="abertura__cena" aria-hidden="true">
+      <img class="abertura__camada abertura__ceu" src="assets/images/cinema/ceu-noite.webp" srcset="assets/images/cinema/ceu-noite-pequeno.webp 1280w, assets/images/cinema/ceu-noite.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high">
+      <img class="abertura__camada abertura__ceu-luz" src="assets/images/cinema/ceu-relampago.webp" srcset="assets/images/cinema/ceu-relampago-pequeno.webp 1280w, assets/images/cinema/ceu-relampago.webp 1920w" sizes="100vw" alt="" width="1920" height="1080">
+      <img class="abertura__camada abertura__rua" src="assets/images/cinema/rua-noite.webp" srcset="assets/images/cinema/rua-noite-pequeno.webp 1280w, assets/images/cinema/rua-noite.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high">
+      <img class="abertura__camada abertura__rua-luz" src="assets/images/cinema/rua-relampago.webp" srcset="assets/images/cinema/rua-relampago-pequeno.webp 1280w, assets/images/cinema/rua-relampago.webp 1920w" sizes="100vw" alt="" width="1920" height="1080">
+      <div class="abertura__doutor">
+        <img class="sombra" src="assets/images/cinema/doutor-silhueta.webp" srcset="assets/images/cinema/doutor-silhueta-pequeno.webp 320w, assets/images/cinema/doutor-silhueta.webp 640w" sizes="(max-width: 760px) 30vh, 40vh" alt="" width="640" height="1120">
+        <img class="luz" src="assets/images/cinema/doutor-luz.webp" srcset="assets/images/cinema/doutor-luz-pequeno.webp 320w, assets/images/cinema/doutor-luz.webp 640w" sizes="(max-width: 760px) 30vh, 40vh" alt="" width="640" height="1120">
       </div>
-      <canvas class="hero__particulas" aria-hidden="true"></canvas>
-      <div class="hero__nevoa" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="hero__vinheta" aria-hidden="true"></div>
+      <canvas class="abertura__chuva"></canvas>
+      <div class="abertura__nevoa"><span></span><span></span><span></span></div>
+      <div class="abertura__clarao"></div>
+      <div class="abertura__vinheta"></div>
+      <div class="abertura__grao"></div>
+      <div class="abertura__preto"></div>
+    </div>
+    <div class="abertura__texto">
+      <p class="abertura__pre">Europa · 1348</p>
+      <p class="abertura__titulo" aria-hidden="true"><span>Uma experiência histórica</span>A PESTE NEGRA</p>
+      <button class="btn-premium abertura__botao" type="button" data-entrar>Descubra o que foi a Peste Negra <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-direita"/></svg></button>
+    </div>
+    <div class="abertura__controles">
+      <button class="abertura__controle" type="button" data-som aria-pressed="false" aria-label="Ativar som ambiente"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#sem-som"/></svg><span data-som-rotulo>Ativar som</span></button>
+      <button class="abertura__controle" type="button" data-pular aria-label="Pular introdução"><span>Pular introdução</span><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-direita"/></svg></button>
+    </div>
+    <p class="abertura__credito">Criado por Anderson Carapeto © 2026</p>
+  </div>
 
+  <!-- ============ MENU LATERAL ============ -->
+  <button class="lateral__abrir" type="button" aria-controls="menu-lateral" aria-expanded="false"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#menu"/></svg> Menu</button>
+  <div class="lateral__veu" hidden></div>
+  <nav class="lateral" id="menu-lateral" aria-label="Navegação principal">
+    <a class="lateral__marca" href="./#inicio">
+      <img src="assets/images/characters/doutor-compacto.svg" alt="" width="44" height="44">
+      <span>A Peste Negra<small>1347 · 1351</small></span>
+    </a>
+    <ul class="lateral__lista">
+      <li><a class="lateral__link" href="./#inicio" data-secao="inicio" data-dica="Início"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#casa"/></svg><span class="lateral__rotulo">Início</span></a></li>
+      <li><a class="lateral__link" href="./#historia" data-secao="historia" data-dica="A Peste Negra"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#pergaminho"/></svg><span class="lateral__rotulo">A Peste Negra</span></a></li>
+      <li><a class="lateral__link" href="./#bacteria" data-secao="bacteria" data-dica="A bactéria"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#bacteria"/></svg><span class="lateral__rotulo">A bactéria</span></a></li>
+      <li><a class="lateral__link" href="./#linha-do-tempo" data-secao="linha-do-tempo" data-dica="Linha do tempo"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#ampulheta"/></svg><span class="lateral__rotulo">Linha do tempo</span></a></li>
+      <li><a class="lateral__link" href="./#personagens" data-secao="personagens" data-dica="Personagens"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#mascara"/></svg><span class="lateral__rotulo">Personagens</span></a></li>
+      <li><a class="lateral__link" href="./#cotidiano" data-secao="cotidiano" data-dica="Vida medieval"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#vila"/></svg><span class="lateral__rotulo">Vida medieval</span></a></li>
+      <li><a class="lateral__link" href="./#mitos" data-secao="mitos" data-dica="Mitos e verdades"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#olho"/></svg><span class="lateral__rotulo">Mitos e verdades</span></a></li>
+      <li><a class="lateral__link" href="quiz.html" data-pagina="quiz.html" data-dica="Quiz"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#pergunta"/></svg><span class="lateral__rotulo">Quiz</span></a></li>
+      <li><a class="lateral__link lateral__link--jogos" href="./#jogos" data-secao="jogos" data-dica="Jogos"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#dado"/></svg><span class="lateral__rotulo">Jogos</span></a></li>
+      <li><a class="lateral__link" href="fontes.html" data-pagina="fontes.html" data-dica="Fontes históricas"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#livro"/></svg><span class="lateral__rotulo">Fontes históricas</span></a></li>
+      <li><a class="lateral__link" href="glossario.html" data-pagina="glossario.html" data-dica="Glossário"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#glossario"/></svg><span class="lateral__rotulo">Glossário</span></a></li>
+    </ul>
+    <div class="lateral__rodape">
+      <button class="lateral__acao" type="button" data-rever-abertura><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#filme"/></svg><span class="lateral__rotulo">Rever a abertura</span></button>
+      <button class="lateral__acao" type="button" data-recolher aria-expanded="true" aria-controls="menu-lateral"><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#recolher"/></svg><span class="lateral__rotulo">Recolher menu</span></button>
+      <p class="lateral__credito">Criado por <strong>Anderson Carapeto</strong> © 2026</p>
+    </div>
+  </nav>
+
+  <div class="pagina">
+  <main id="conteudo" tabindex="-1">
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+      <div class="hero__camada" data-profundidade="0.06" aria-hidden="true"><img src="assets/images/cinema/ceu-noite.webp" srcset="assets/images/cinema/ceu-noite-pequeno.webp 1280w, assets/images/cinema/ceu-noite.webp 1920w" sizes="100vw" alt="" width="1920" height="1080"></div>
+      <div class="hero__camada" data-profundidade="0.16" aria-hidden="true"><img src="assets/images/cinema/rua-noite.webp" srcset="assets/images/cinema/rua-noite-pequeno.webp 1280w, assets/images/cinema/rua-noite.webp 1920w" sizes="100vw" alt="" width="1920" height="1080"></div>
+      <figure class="hero__doutor" aria-hidden="true"><img src="assets/images/cinema/doutor-luz.webp" srcset="assets/images/cinema/doutor-luz-pequeno.webp 320w, assets/images/cinema/doutor-luz.webp 640w" sizes="40vh" alt="" width="640" height="1120"></figure>
+      <canvas class="hero__particulas" aria-hidden="true"></canvas>
+      <div class="hero__nevoa" aria-hidden="true"><span></span><span></span></div>
+      <div class="hero__vinheta" aria-hidden="true"></div>
       <div class="container hero__conteudo">
         <div class="hero__texto">
-          <span class="hero__pre">Europa · 1347–1351</span>
-          <h1 id="titulo-principal">A Peste Negra <em>Uma experiência histórica interativa</em></h1>
-          <p class="hero__subtitulo">Acompanhe o Doutor da Peste por ruas, mercados e portos medievais e descubra como uma bactéria microscópica mudou a história da Europa — e o que a ciência sabe hoje.</p>
+          <p class="hero__pre">Europa · 1347–1351</p>
+          <h1 id="titulo-principal">A Peste Negra</h1>
+          <p class="hero__subtitulo">Atravesse as ruas de uma cidade medieval ao lado do Doutor da Peste e descubra como uma bactéria microscópica mudou a história da Europa — e o que a ciência sabe hoje.</p>
           <div class="hero__acoes">
             <a class="btn btn--ouro" href="#historia">Explorar a história <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-baixo"/></svg></a>
-            <a class="btn btn--claro" href="#jogos">Jogar agora <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#dado"/></svg></a>
+            <a class="btn btn--fantasma" href="#jogos">Jogar agora <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#dado"/></svg></a>
+          </div>
+          <div class="hero__dados">
+            <div><strong>1347</strong><span>chegada à Sicília</span></div>
+            <div><strong>⅓ a ½</strong><span>da população europeia (estimativa)</span></div>
+            <div><strong>1894</strong><span>bactéria identificada</span></div>
           </div>
         </div>
-        <figure class="hero__doutor">
-          <p class="hero__balao">Saudações, visitante! Sou o Doutor da Peste e serei seu guia nesta jornada.</p>
-          <img src="assets/images/characters/doutor-principal.svg" alt="O Doutor da Peste, personagem-guia do site, com chapéu de abas largas, máscara de bico, casaco escuro, cajado e uma lanterna acesa" width="420" height="620" fetchpriority="high">
-        </figure>
       </div>
-      <a class="hero__rolar" href="#historia">Role para explorar <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-baixo"/></svg></a>
     </section>
 
     <!-- ============ O QUE FOI ============ -->
     <section class="secao" id="historia" aria-labelledby="titulo-historia">
-      <div class="container com-guia">
-        <div>
-          <div class="secao__topo revelar">
+      <span class="secao__numero" aria-hidden="true">I</span>
+      <div class="container">
+        <div class="abertura-capitulo revelar">
+          <div>
             <p class="ornamento">Capítulo I</p>
             <h2 id="titulo-historia">O que foi a Peste Negra?</h2>
-            <p class="texto-largo">A Peste Negra foi a mais mortal epidemia registrada na história da Europa. Entre 1347 e 1351, uma doença causada pela bactéria <i>Yersinia pestis</i> se espalhou por portos, cidades e vilas, matando milhões de pessoas em poucos anos.</p>
-          </div>
-
-          <div class="texto-largo revelar">
-            <h3>O contexto</h3>
-            <p>No século XIV, a Europa vivia o fim da Idade Média. A maior parte das pessoas trabalhava no campo, mas as cidades cresciam, ligadas por rotas de comércio que alcançavam o Mar Negro, o Oriente Próximo e a Ásia. Pouco antes, crises de fome e más colheitas já tinham enfraquecido muitas regiões.</p>
+            <p class="lead">Entre 1347 e 1351, uma doença causada pela bactéria <i>Yersinia pestis</i> se espalhou por portos, cidades e vilas da Europa, matando milhões de pessoas em poucos anos. Foi a mais mortal epidemia registrada na história do continente.</p>
+            <p>No século XIV, a maior parte das pessoas trabalhava no campo, mas as cidades cresciam, ligadas por rotas de comércio que alcançavam o Mar Negro, o Oriente Próximo e a Ásia. Pouco antes, crises de fome e más colheitas já tinham enfraquecido muitas regiões.</p>
             <p>Estudos com DNA antigo apoiam que essa onda de peste começou na Ásia Central, por volta de 1338. A doença acompanhou caravanas e navios até os portos do Mar Negro e, em <strong>outubro de 1347</strong>, chegou à Sicília. Em pouco mais de quatro anos, atingiu quase todo o continente.</p>
-            <h3>Como as pessoas viveram a epidemia</h3>
-            <p>Ninguém sabia o que causava a doença nem como ela passava de uma pessoa para outra. Muitos fugiram das cidades; outros ficaram para cuidar dos doentes. Famílias foram separadas, faltaram padres, médicos e coveiros, e cemitérios de emergência precisaram ser abertos.</p>
           </div>
-
-          <div class="dados revelar" role="list" aria-label="Números da Peste Negra">
-            <div class="dado" role="listitem">
-              <span class="dado__valor">1347–1351</span>
-              <span class="dado__rotulo">Período da primeira e mais intensa onda na Europa.</span>
-              <span class="dado__tipo selo">Fato histórico</span>
-            </div>
-            <div class="dado" role="listitem">
-              <span class="dado__valor">⅓ a ½</span>
-              <span class="dado__rotulo">Parcela estimada da população europeia que morreu. Os números variam conforme a região e o método.</span>
-              <span class="dado__tipo selo">Estimativa</span>
-            </div>
-            <div class="dado" role="listitem">
-              <span class="dado__valor">Até o séc. XVIII</span>
-              <span class="dado__rotulo">A peste voltou à Europa em novos surtos por cerca de quatro séculos.</span>
-              <span class="dado__tipo selo">Fato histórico</span>
-            </div>
-          </div>
-
-          <div class="texto-largo revelar">
-            <h3>As consequências</h3>
-            <p>Os historiadores concordam que a Peste Negra transformou a sociedade medieval, embora discutam até que ponto ela causou essas mudanças ou apenas acelerou processos que já estavam em andamento.</p>
-          </div>
-          <ul class="lista-consequencias revelar">
-            <li><strong>Demográficas</strong>A população europeia levou mais de um século para se recuperar. Muitas aldeias foram abandonadas.</li>
-            <li><strong>Econômicas</strong>Com menos trabalhadores, salários tenderam a subir e o preço da terra a cair. Governos tentaram congelar salários por lei.</li>
-            <li><strong>Sociais</strong>Revoltas camponesas, mudanças na relação entre senhores e servos e a busca por culpados, com perseguições violentas a comunidades judaicas.</li>
-            <li><strong>Culturais e religiosas</strong>A morte se tornou tema frequente na arte. Surgiram movimentos de penitência, como os flagelantes.</li>
-            <li><strong>Saúde pública</strong>Cidades criaram regras de isolamento, conselhos de saúde, quarentenas e lazaretos — ideias usadas até hoje.</li>
-          </ul>
-          <p class="nota revelar"><span><strong>Fato, estimativa ou interpretação?</strong> Neste site, indicamos quando uma informação é um fato bem documentado, uma estimativa (como o número de mortos) ou uma interpretação debatida pelos historiadores. As referências estão na página <a href="fontes.html">Fontes</a>.</span></p>
-
-          <div class="mapa revelar" data-mapa>
-            <h3>Como a peste se espalhou</h3>
-            <p>Toque ou clique nas cidades para ver quando a doença chegou, ou use o botão para acompanhar a disseminação ao longo do tempo.</p>
-            <div class="mapa__quadro">
-              <img src="assets/images/illustrations/mapa-europa.svg" alt="Mapa esquemático da Europa e do Mediterrâneo com cidades marcadas na ordem de chegada da peste: Caffa em 1346, Constantinopla e Messina em 1347, Marselha, Veneza, Florença, Barcelona, Paris, Melcombe e Londres em 1348, Viena e Bergen em 1349, Lübeck em 1350 e Novgorod em 1352." width="900" height="638" loading="lazy">
-              <div class="mapa__pontos" data-mapa-pontos></div>
-            </div>
-            <div class="mapa__controles">
-              <button class="btn btn--pequeno" type="button" data-mapa-animar><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#play"/></svg> Ver a disseminação</button>
-              <span class="selo" data-mapa-ano aria-live="polite"></span>
-            </div>
-            <div class="mapa__info" data-mapa-info aria-live="polite">
-              <h3>Escolha uma cidade</h3>
-              <p>As datas indicam aproximadamente quando a peste chegou a cada local.</p>
-            </div>
-            <p class="mapa__aviso">Mapa esquemático. Datas aproximadas, que variam conforme a fonte. Contornos: Natural Earth (domínio público).</p>
-          </div>
+          <figure class="abertura-capitulo__imagem">
+            <img src="assets/images/cenas/jogo-porto.webp" alt="Ilustração de um porto medieval murado, com navio atracado e mercadorias sendo inspecionadas" width="344" height="354" loading="lazy">
+            <figcaption>Os portos eram as portas de entrada da doença. Ilustração do jogo “Jornada Medieval”.</figcaption>
+          </figure>
         </div>
-        <figure class="guia">
-          <img src="assets/images/characters/doutor-explicacao.svg" alt="" width="420" height="620" loading="lazy">
-          <figcaption>“Separar fatos de estimativas é o primeiro passo de todo historiador.”</figcaption>
-        </figure>
+
+        <div class="texto-largo revelar">
+          <h3>Como as pessoas viveram a epidemia</h3>
+          <p>Ninguém sabia o que causava a doença nem como ela passava de uma pessoa para outra. Muitos fugiram das cidades; outros ficaram para cuidar dos doentes. Famílias foram separadas, faltaram padres, médicos e coveiros, e cemitérios de emergência precisaram ser abertos.</p>
+        </div>
+
+        <div class="dados revelar" role="list" aria-label="Números da Peste Negra">
+          <div class="dado" role="listitem"><span class="dado__valor">1347–1351</span><span class="dado__rotulo">Período da primeira e mais intensa onda na Europa.</span><span class="dado__tipo selo">Fato histórico</span></div>
+          <div class="dado" role="listitem"><span class="dado__valor">⅓ a ½</span><span class="dado__rotulo">Parcela estimada da população europeia que morreu. Os números variam conforme a região e o método.</span><span class="dado__tipo selo">Estimativa</span></div>
+          <div class="dado" role="listitem"><span class="dado__valor">Até o séc. XVIII</span><span class="dado__rotulo">A peste voltou à Europa em novos surtos por cerca de quatro séculos.</span><span class="dado__tipo selo">Fato histórico</span></div>
+        </div>
+
+        <div class="texto-largo revelar">
+          <h3>As consequências</h3>
+          <p>Os historiadores concordam que a Peste Negra transformou a sociedade medieval, embora discutam até que ponto ela causou essas mudanças ou apenas acelerou processos que já estavam em andamento.</p>
+        </div>
+        <ul class="lista-consequencias revelar">
+          <li><strong>Demográficas</strong>A população europeia levou mais de um século para se recuperar. Muitas aldeias foram abandonadas.</li>
+          <li><strong>Econômicas</strong>Com menos trabalhadores, salários tenderam a subir e o preço da terra a cair. Governos tentaram congelar salários por lei.</li>
+          <li><strong>Sociais</strong>Revoltas camponesas, mudanças na relação entre senhores e servos e a busca por culpados, com perseguições violentas a comunidades judaicas.</li>
+          <li><strong>Culturais e religiosas</strong>A morte se tornou tema frequente na arte. Surgiram movimentos de penitência, como os flagelantes.</li>
+          <li><strong>Saúde pública</strong>Cidades criaram regras de isolamento, conselhos de saúde, quarentenas e lazaretos — ideias usadas até hoje.</li>
+        </ul>
+        <p class="nota revelar"><span><strong>Fato, estimativa ou interpretação?</strong> Neste site, indicamos quando uma informação é um fato bem documentado, uma estimativa (como o número de mortos) ou uma interpretação debatida pelos historiadores. As ilustrações são reconstruções artísticas. As referências estão em <a href="fontes.html">Fontes históricas</a>.</span></p>
+
+        <div class="mapa revelar" data-mapa>
+          <p class="ornamento">Mapa interativo</p>
+          <h3>Como a peste se espalhou</h3>
+          <p>Toque ou clique nas cidades para ver quando a doença chegou, ou acompanhe a disseminação ao longo do tempo.</p>
+          <div class="mapa__quadro">
+            <img src="assets/images/illustrations/mapa-europa.svg" alt="Mapa esquemático da Europa e do Mediterrâneo com cidades marcadas na ordem de chegada da peste: Caffa em 1346, Constantinopla e Messina em 1347, Marselha, Veneza, Florença, Barcelona, Paris, Melcombe e Londres em 1348, Viena e Bergen em 1349, Lübeck em 1350 e Novgorod em 1352." width="900" height="638" loading="lazy">
+            <div class="mapa__pontos" data-mapa-pontos></div>
+          </div>
+          <div class="mapa__controles">
+            <button class="btn btn--pequeno" type="button" data-mapa-animar><svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#play"/></svg> Ver a disseminação</button>
+            <span class="selo" data-mapa-ano aria-live="polite"></span>
+          </div>
+          <div class="mapa__info" data-mapa-info aria-live="polite">
+            <h3>Escolha uma cidade</h3>
+            <p>As datas indicam aproximadamente quando a peste chegou a cada local.</p>
+          </div>
+          <p class="mapa__aviso">Mapa esquemático. Datas aproximadas, que variam conforme a fonte. Contornos: Natural Earth (domínio público).</p>
+        </div>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
 
     <!-- ============ BACTÉRIA ============ -->
-    <section class="secao secao--escura" id="bacteria" aria-labelledby="titulo-bacteria">
+    <section class="secao secao--fundo" id="bacteria" aria-labelledby="titulo-bacteria">
+      <span class="secao__numero" aria-hidden="true">II</span>
       <div class="container">
         <div class="secao__topo centro texto-largo revelar">
           <p class="ornamento">Capítulo II</p>
@@ -186,9 +206,9 @@
         </div>
 
         <div class="grade-2 revelar">
-          <figure class="figura figura--clara">
+          <figure class="figura placa">
             <img src="assets/images/illustrations/bacteria-yersinia.svg" alt="Representação didática da bactéria Yersinia pestis ao microscópio: pequenos bastonetes com as extremidades mais escuras. Uma ampliação indica que cada bactéria mede cerca de 1 a 3 micrômetros." width="640" height="440" loading="lazy">
-            <figcaption>Representação didática, fora de escala. Cores ilustrativas.</figcaption>
+            <figcaption>Diagrama didático, fora de escala e com cores ilustrativas. Não é uma micrografia real.</figcaption>
           </figure>
           <div>
             <h3>O que é uma bactéria?</h3>
@@ -200,23 +220,19 @@
         </div>
 
         <div class="revelar">
-          <h3 class="centro">Como a peste é transmitida</h3>
-          <figure class="figura figura--clara">
+          <h3 class="subtitulo-secao">Como a peste é transmitida</h3>
+          <figure class="figura placa">
             <img src="assets/images/illustrations/ciclo-transmissao.svg" alt="Diagrama do ciclo de transmissão: roedores e pulgas mantêm a bactéria na natureza; a picada da pulga transmite a peste a uma pessoa, causando a forma bubônica; a doença pode evoluir para a forma pneumônica, que passa de pessoa para pessoa por gotículas. Setas tracejadas indicam o contato com animais infectados e a hipótese debatida de transmissão por pulgas humanas e piolhos." width="760" height="520" loading="lazy">
           </figure>
           <div class="grade-2">
-            <div>
-              <p>A forma mais comum de transmissão é a <strong>picada de pulgas infectadas</strong>. A pessoa também pode se infectar ao manusear animais doentes ou, no caso da forma pneumônica, ao respirar <strong>gotículas</strong> eliminadas por alguém doente.</p>
-            </div>
-            <div>
-              <p><strong>E os ratos?</strong> Ratos e suas pulgas tiveram papel importante, mas não explicam tudo. Pesquisas recentes sugerem que pulgas humanas e piolhos podem ter contribuído para a rapidez dos surtos na Europa, e a forma pneumônica passava diretamente entre pessoas. O peso de cada via ainda é debatido pelos cientistas.</p>
-            </div>
+            <p>A forma mais comum de transmissão é a <strong>picada de pulgas infectadas</strong>. A pessoa também pode se infectar ao manusear animais doentes ou, no caso da forma pneumônica, ao respirar <strong>gotículas</strong> eliminadas por alguém doente.</p>
+            <p><strong>E os ratos?</strong> Ratos e suas pulgas tiveram papel importante, mas não explicam tudo. Pesquisas recentes sugerem que pulgas humanas e piolhos podem ter contribuído para a rapidez dos surtos na Europa, e a forma pneumônica passava diretamente entre pessoas. O peso de cada via ainda é debatido pelos cientistas.</p>
           </div>
         </div>
 
         <div class="revelar">
-          <h3 class="centro">As três formas da peste</h3>
-          <figure class="figura figura--clara">
+          <h3 class="subtitulo-secao">As três formas da peste</h3>
+          <figure class="figura placa">
             <img src="assets/images/illustrations/formas-peste.svg" alt="Três silhuetas humanas comparando as formas da peste: bubônica, com ínguas inchadas no pescoço, axilas e virilha; septicêmica, com a infecção espalhada pelos vasos sanguíneos; e pneumônica, com os pulmões atingidos e gotículas saindo pela boca." width="780" height="400" loading="lazy">
           </figure>
           <div class="formas">
@@ -227,7 +243,7 @@
         </div>
 
         <div class="revelar">
-          <h3 class="centro">Da ignorância ao conhecimento</h3>
+          <h3 class="subtitulo-secao">Da ignorância ao conhecimento</h3>
           <ol class="evolucao">
             <li><strong>Século XIV</strong><span>Explicações por miasmas (“ar ruim”), desequilíbrio dos humores, astros e castigo divino. Tratamentos como sangrias e ervas não curavam.</span></li>
             <li><strong>Séculos XIV–XVII</strong><span>Mesmo sem conhecer a causa, cidades observam que isolar doentes e viajantes ajuda: surgem quarentenas, lazaretos e conselhos de saúde.</span></li>
@@ -240,11 +256,13 @@
     </section>
 
     <!-- ============ LINHA DO TEMPO ============ -->
-    <section class="secao secao--alt" id="linha-do-tempo" aria-labelledby="titulo-linha">
+    <section class="secao" id="linha-do-tempo" aria-labelledby="titulo-linha">
+      <div class="secao__fundo" aria-hidden="true"><img src="assets/images/cenas/jogo-tempestade.webp" alt="" width="344" height="354" loading="lazy"></div>
+      <span class="secao__numero" aria-hidden="true">III</span>
       <div class="container">
         <div class="secao__topo revelar">
           <p class="ornamento">Capítulo III</p>
-          <h2 id="titulo-linha">Linha do tempo interativa</h2>
+          <h2 id="titulo-linha">Linha do tempo</h2>
           <p class="texto-largo">Dos primeiros sinais na Ásia Central às pesquisas com DNA antigo. Selecione um marco para ler a explicação completa.</p>
         </div>
         <div class="linha revelar" data-linha-do-tempo>
@@ -257,33 +275,36 @@
           </ol>
         </div>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
 
     <!-- ============ PERSONAGENS ============ -->
-    <section class="secao" id="personagens" aria-labelledby="titulo-personagens">
+    <section class="secao secao--alt" id="personagens" aria-labelledby="titulo-personagens">
+      <span class="secao__numero" aria-hidden="true">IV</span>
       <div class="container">
         <div class="secao__topo revelar">
           <p class="ornamento">Capítulo IV</p>
-          <h2 id="titulo-personagens">Personagens e profissões medievais</h2>
-          <p class="texto-largo">Quem cuidava dos doentes, quem vendia remédios e quem buscava explicações para a tragédia? Conheça pessoas que viveram a epidemia — cada ofício funcionava de modo diferente conforme a região e a época.</p>
+          <h2 id="titulo-personagens">Personagens e profissões</h2>
+          <p class="texto-largo">Quem cuidava dos doentes, quem vendia remédios e quem buscava explicações para a tragédia? Cada ofício funcionava de modo diferente conforme a região e a época.</p>
         </div>
         <ul class="galeria revelar" data-personagens>
           <li><p class="erro-carregamento" data-carregando>Carregando personagens…</p></li>
         </ul>
-        <p class="nota revelar"><span><strong>Sobre as ilustrações:</strong> os retratos são representações estilizadas, criadas para este projeto. Roupas e objetos foram inspirados em fontes históricas, mas não reproduzem pessoas reais nem valem igualmente para toda a Europa.</span></p>
+        <p class="nota revelar"><span><strong>Sobre as imagens:</strong> as figuras são reconstruções artísticas. Algumas vêm do jogo “Jornada Medieval”; os ofícios ainda sem ilustração própria aparecem como retratos em sombra. Roupas e objetos foram inspirados em fontes históricas, mas não reproduzem pessoas reais nem valem igualmente para toda a Europa.</span></p>
       </div>
     </section>
 
-    <!-- ============ COTIDIANO ============ -->
-    <section class="secao secao--pedra" id="cotidiano" aria-labelledby="titulo-cotidiano">
+    <!-- ============ VIDA MEDIEVAL ============ -->
+    <section class="secao" id="cotidiano" aria-labelledby="titulo-cotidiano">
+      <span class="secao__numero" aria-hidden="true">V</span>
       <div class="container">
         <div class="secao__topo revelar">
           <p class="ornamento">Capítulo V</p>
-          <h2 id="titulo-cotidiano">A vida cotidiana durante a epidemia</h2>
+          <h2 id="titulo-cotidiano">A vida medieval durante a epidemia</h2>
           <p class="texto-largo">Como era viver em uma cidade medieval quando a peste chegou? Escolha um tema.</p>
         </div>
         <div class="abas revelar" data-abas>
-          <div class="abas__lista" role="tablist" aria-label="Temas da vida cotidiana">
+          <div class="abas__lista" role="tablist" aria-label="Temas da vida medieval">
             <button class="abas__aba" role="tab" type="button" id="aba-moradias" aria-controls="painel-moradias" aria-selected="true">Moradias e ruas</button>
             <button class="abas__aba" role="tab" type="button" id="aba-mercado" aria-controls="painel-mercado" aria-selected="false" tabindex="-1">Mercados e comércio</button>
             <button class="abas__aba" role="tab" type="button" id="aba-alimentacao" aria-controls="painel-alimentacao" aria-selected="false" tabindex="-1">Alimentação</button>
@@ -294,7 +315,10 @@
           </div>
 
           <div class="abas__painel" role="tabpanel" id="painel-moradias" aria-labelledby="aba-moradias" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-moradias-ruas.svg" alt="Rua estreita com casas de madeira e taipa coladas umas às outras, chão de terra com lama, valeta de esgoto a céu aberto e um rato." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/jogo-rua-interditada.webp" alt="Ilustração de uma rua medieval estreita e cinzenta, com casas de madeira, lixo e ratos pelo chão e pessoas doentes encostadas às paredes" width="344" height="354" loading="lazy">
+              <figcaption>Ilustração do jogo “Jornada Medieval”.</figcaption>
+            </figure>
             <div>
               <h3>Moradias e ruas</h3>
               <p>Nas cidades, as casas eram construídas muito próximas, com estrutura de madeira, paredes de taipa e telhados de palha ou telha. Famílias inteiras dividiam poucos cômodos, às vezes com animais.</p>
@@ -302,7 +326,10 @@
             </div>
           </div>
           <div class="abas__painel" role="tabpanel" id="painel-mercado" aria-labelledby="aba-mercado" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-mercado.svg" alt="Barraca de mercado com toldo listrado vendendo pães, repolhos e peixes, com uma balança de pratos." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/jogo-mercado.webp" alt="Ilustração de uma barraca de mercado medieval com tecidos, legumes, embutidos e sacos de grãos, e um viajante comprando mantimentos" width="344" height="354" loading="lazy">
+              <figcaption>Ilustração do jogo “Jornada Medieval”.</figcaption>
+            </figure>
             <div>
               <h3>Mercados e comércio</h3>
               <p>Os mercados reuniam camponeses, artesãos e mercadores de longe. Grãos, tecidos e outras mercadorias viajavam por terra e mar — e, sem que ninguém soubesse, levavam pulgas e ratos.</p>
@@ -310,7 +337,10 @@
             </div>
           </div>
           <div class="abas__painel" role="tabpanel" id="painel-alimentacao" aria-labelledby="aba-alimentacao" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-alimentacao.svg" alt="Mesa simples com pão escuro, uma tigela de sopa de cereais e legumes, uma jarra e cebolas." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/cotidiano-alimentacao.webp" alt="Mesa rústica de madeira com pão escuro, uma tigela de sopa de legumes e dois ovos, junto à parede de uma casa de enxaimel" width="787" height="481" loading="lazy">
+              <figcaption>Reconstrução artística.</figcaption>
+            </figure>
             <div>
               <h3>Alimentação</h3>
               <p>A base da dieta da maioria era o pão escuro, mingaus e sopas de cereais e legumes, com cebola, alho e, às vezes, queijo. Carne era mais comum nas mesas ricas.</p>
@@ -318,7 +348,10 @@
             </div>
           </div>
           <div class="abas__painel" role="tabpanel" id="painel-higiene" aria-labelledby="aba-higiene" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-higiene.svg" alt="Poço de pedra com balde, uma bacia e lixo acumulado perto das casas, com um rato." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/cotidiano-higiene.webp" alt="Poço de pedra com balde numa rua lamacenta, com valeta de esgoto, restos de comida, roupas sujas e ratos" width="792" height="484" loading="lazy">
+              <figcaption>Reconstrução artística.</figcaption>
+            </figure>
             <div>
               <h3>Higiene e saneamento</h3>
               <p>Ao contrário do que se costuma dizer, pessoas medievais se lavavam e muitas cidades tinham banhos públicos. Mas não havia saneamento como hoje: água de poços e rios, lixo nas ruas e dejetos lançados em valetas.</p>
@@ -326,7 +359,10 @@
             </div>
           </div>
           <div class="abas__painel" role="tabpanel" id="painel-crencas" aria-labelledby="aba-crencas" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-crencas.svg" alt="Céu noturno com três planetas próximos e vapores esverdeados saindo do chão, representando a teoria dos miasmas, com um pomander perfumado em primeiro plano." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/cotidiano-crencas.webp" alt="Rua noturna entre duas casas medievais, com três planetas no céu estrelado e vapores esverdeados subindo do chão, representando a teoria dos miasmas" width="770" height="477" loading="lazy">
+              <figcaption>Reconstrução artística: a “conjunção dos planetas” e o “ar ruim” eram explicações da época.</figcaption>
+            </figure>
             <div>
               <h3>Crenças e explicações médicas</h3>
               <p>Sem microscópios, as pessoas buscavam explicações no que podiam observar e nas tradições da época.</p>
@@ -334,7 +370,10 @@
             </div>
           </div>
           <div class="abas__painel" role="tabpanel" id="painel-quarentena" aria-labelledby="aba-quarentena" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-quarentena.svg" alt="Navio ancorado longe do porto, uma ilha com um prédio de isolamento e uma placa com os dizeres 40 dias." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/cotidiano-quarentena.webp" alt="Porto medieval com navio atracado, pessoas no cais e uma pequena ilha com construções de isolamento ao fundo; uma placa indica 40 dias" width="769" height="470" loading="lazy">
+              <figcaption>Reconstrução artística.</figcaption>
+            </figure>
             <div>
               <h3>Isolamento e quarentena</h3>
               <p>Mesmo sem entender a causa, algumas cidades perceberam que o contato com doentes e viajantes espalhava a peste.</p>
@@ -342,7 +381,10 @@
             </div>
           </div>
           <div class="abas__painel" role="tabpanel" id="painel-familias" aria-labelledby="aba-familias" tabindex="0">
-            <img src="assets/images/illustrations/cotidiano-familias-trabalho.svg" alt="Campo de trigo com uma única pessoa trabalhando com uma foice, moedas no chão e uma casa abandonada ao fundo." width="400" height="260" loading="lazy">
+            <figure class="abas__figura">
+              <img src="assets/images/cenas/cotidiano-familias-trabalho.webp" alt="Casal de camponeses diante de uma aldeia de casas de palha, ao lado de um campo de trigo com uma foice e moedas espalhadas no chão" width="745" height="469" loading="lazy">
+              <figcaption>Reconstrução artística.</figcaption>
+            </figure>
             <div>
               <h3>Famílias, trabalhadores e comunidades</h3>
               <p>A epidemia deixou órfãos, viúvas e aldeias inteiras vazias. Cronistas relatam tanto o abandono de doentes por medo quanto gestos de cuidado e solidariedade.</p>
@@ -351,35 +393,33 @@
           </div>
         </div>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
 
     <!-- ============ MITOS ============ -->
     <section class="secao" id="mitos" aria-labelledby="titulo-mitos">
-      <div class="container com-guia">
-        <div>
-          <div class="secao__topo revelar">
-            <p class="ornamento">Capítulo VI</p>
-            <h2 id="titulo-mitos">Mitos e verdades</h2>
-            <p class="texto-largo">Leia cada afirmação, pense na sua resposta e depois revele a explicação.</p>
-          </div>
-          <ul class="mitos revelar" data-mitos>
-            <li><p class="erro-carregamento" data-carregando>Carregando afirmações…</p></li>
-          </ul>
+      <div class="secao__fundo" aria-hidden="true"><img src="assets/images/cenas/cotidiano-crencas.webp" alt="" width="770" height="477" loading="lazy"></div>
+      <span class="secao__numero" aria-hidden="true">VI</span>
+      <div class="container">
+        <div class="secao__topo revelar">
+          <p class="ornamento">Capítulo VI</p>
+          <h2 id="titulo-mitos">Mitos e verdades</h2>
+          <p class="texto-largo">Leia cada afirmação, pense na sua resposta e depois revele a explicação.</p>
         </div>
-        <figure class="guia">
-          <img src="assets/images/characters/doutor-alerta.svg" alt="" width="420" height="620" loading="lazy">
-          <figcaption>“Atenção! Nem tudo o que se conta sobre a peste é verdade.”</figcaption>
-        </figure>
+        <ul class="mitos revelar" data-mitos>
+          <li><p class="erro-carregamento" data-carregando>Carregando afirmações…</p></li>
+        </ul>
       </div>
     </section>
 
     <!-- ============ JOGOS ============ -->
     <section class="secao secao--alt" id="jogos" aria-labelledby="titulo-jogos">
+      <span class="secao__numero" aria-hidden="true">VII</span>
       <div class="container">
         <div class="secao__topo revelar">
-          <p class="ornamento">Capítulo VII</p>
-          <h2 id="titulo-jogos">Aprenda jogando</h2>
-          <p class="texto-largo">Coloque seus conhecimentos à prova com os jogos criados para este projeto. Funcionam no navegador do celular, do tablet e do computador — sem instalar nada e sem cadastro.</p>
+          <p class="ornamento">Aprenda jogando</p>
+          <h2 id="titulo-jogos">Jogos</h2>
+          <p class="texto-largo">Coloque seus conhecimentos à prova. Os jogos funcionam no navegador do celular, do tablet e do computador — sem instalar nada e sem cadastro.</p>
         </div>
 
         <article class="cartao jogo revelar" aria-labelledby="titulo-jornada">
@@ -394,7 +434,7 @@
               <dt>Objetivo educativo</dt><dd>Revisar fatos sobre a epidemia, a bactéria, a medicina medieval e os personagens da época.</dd>
               <dt>Jogadores</dt><dd>1 a 4, revezando no mesmo aparelho.</dd>
               <dt>Personagens</dt><dd>Médico da Peste, Erveira Alquimista, Flagelante e Cirurgião-Barbeiro.</dd>
-              <dt>Aparelhos</dt><dd>Celular, tablet e computador (navegador atualizado). Recomenda-se o celular na horizontal.</dd>
+              <dt>Aparelhos</dt><dd>Celular, tablet e computador. No celular, prefira a tela na horizontal.</dd>
             </dl>
             <details>
               <summary>Como jogar</summary>
@@ -413,38 +453,41 @@
           </div>
         </article>
 
-        <article class="cartao cartao-quiz revelar" aria-labelledby="titulo-cartao-quiz">
-          <img src="assets/images/characters/doutor-jogos.svg" alt="" width="420" height="620" loading="lazy">
-          <div>
-            <h3 id="titulo-cartao-quiz">Quiz da Peste Negra</h3>
-            <p>10 perguntas sorteadas a cada partida, com explicação em todas as respostas. Descubra quanto você aprendeu!</p>
-            <a class="btn" href="quiz.html">Fazer o quiz <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-direita"/></svg></a>
-          </div>
-        </article>
-      </div>
-    </section>
+        <div class="cartoes-jogos">
+          <article class="cartao cartao-quiz revelar" aria-labelledby="titulo-cartao-quiz">
+            <img src="assets/images/cinema/doutor-luz-pequeno.webp" alt="" width="320" height="560" loading="lazy">
+            <div>
+              <h3 id="titulo-cartao-quiz">Quiz da Peste Negra</h3>
+              <p>10 perguntas sorteadas a cada partida, com explicação em todas as respostas.</p>
+              <a class="btn" href="quiz.html">Fazer o quiz <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-direita"/></svg></a>
+            </div>
+          </article>
 
-    <!-- ============ QR CODE ============ -->
-    <section class="secao secao--escura" id="leve-com-voce" aria-labelledby="titulo-qr">
-      <div class="container qr revelar" data-qr>
-        <div class="qr__codigo" data-qr-codigo>
-          <p class="qr__pendente">O QR Code aparecerá aqui quando o site estiver publicado em um endereço público.</p>
-        </div>
-        <div>
-          <p class="ornamento">Feira de ciências</p>
-          <h2 id="titulo-qr">Leve a experiência com você</h2>
-          <p class="qr__frase">Aponte a câmera do celular e comece a jogar.</p>
-          <p class="qr__url" data-qr-url></p>
-          <h3>Nunca usou um QR Code?</h3>
-          <ol>
-            <li>Abra o aplicativo de câmera do celular.</li>
-            <li>Aponte para o quadrado acima, como se fosse tirar uma foto, e espere alguns segundos.</li>
-            <li>Toque no link que aparecer na tela.</li>
-            <li>Se nada acontecer, use um aplicativo leitor de QR Code ou digite o endereço mostrado.</li>
-          </ol>
-          <p><a class="btn btn--ouro" href="jogos/jornada-medieval/" data-qr-link>Abrir o jogo <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-direita"/></svg></a></p>
+          <article class="cartao revelar" id="leve-com-voce" aria-labelledby="titulo-qr">
+            <div class="qr" data-qr>
+              <div class="qr__codigo" data-qr-codigo>
+                <p class="qr__pendente">O QR Code aparecerá aqui quando o site estiver publicado em um endereço público.</p>
+              </div>
+              <div>
+                <h3 id="titulo-qr">Leve a experiência com você</h3>
+                <p class="qr__frase">Aponte a câmera do celular e comece a jogar.</p>
+                <p class="qr__url" data-qr-url></p>
+                <details>
+                  <summary>Nunca usou um QR Code?</summary>
+                  <ol>
+                    <li>Abra o aplicativo de câmera do celular.</li>
+                    <li>Aponte para o quadrado, como se fosse tirar uma foto, e espere alguns segundos.</li>
+                    <li>Toque no link que aparecer na tela.</li>
+                    <li>Se nada acontecer, use um aplicativo leitor de QR Code ou digite o endereço mostrado.</li>
+                  </ol>
+                </details>
+                <p><a class="btn btn--pequeno btn--fantasma" href="jogos/jornada-medieval/" data-qr-link>Abrir o jogo <svg class="icone" aria-hidden="true"><use href="assets/images/icons/icones.svg#seta-direita"/></svg></a></p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
+      <div class="trilha-rato" aria-hidden="true" data-trilha-rato></div>
     </section>
   </main>
 
@@ -458,7 +501,7 @@
         <nav aria-label="Explorar">
           <h2>Explorar</h2>
           <ul>
-            <li><a href="./#historia">História</a></li>
+            <li><a href="./#historia">A Peste Negra</a></li>
             <li><a href="./#bacteria">A bactéria</a></li>
             <li><a href="./#linha-do-tempo">Linha do tempo</a></li>
             <li><a href="./#personagens">Personagens</a></li>
@@ -470,16 +513,16 @@
             <li><a href="jogos/jornada-medieval/">Jogo de tabuleiro</a></li>
             <li><a href="quiz.html">Quiz</a></li>
             <li><a href="glossario.html">Glossário</a></li>
-            <li><a href="fontes.html">Fontes e referências</a></li>
+            <li><a href="fontes.html">Fontes históricas</a></li>
           </ul>
         </nav>
       </div>
       <div class="rodape__credito">
         <p>Criado por <strong>Anderson Carapeto</strong> © 2026</p>
-        <p>Conteúdo educativo. Não substitui orientação médica.</p>
       </div>
     </div>
   </footer>
+  </div>
 
   <dialog class="dialogo" id="painel" aria-labelledby="painel-titulo">
     <div class="dialogo__cabecalho">

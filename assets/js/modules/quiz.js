@@ -94,7 +94,7 @@ export async function iniciarQuiz(raiz) {
     deNovo.addEventListener('click', novaSessao);
     const titulo = el('h2', { tabindex: '-1', texto: 'Resultado' });
     palco.replaceChildren(el('div', { classe: 'cartao quiz__cartao resultado', dados: { quizResultado: '' } }, [
-      el('img', { src: 'assets/images/characters/doutor-boas-vindas.svg', alt: '', width: 420, height: 620 }),
+      el('img', { src: 'assets/images/cinema/doutor-luz-pequeno.webp', alt: '', width: 320, height: 560 }),
       titulo,
       el('p', { classe: 'resultado__placar', dados: { quizPlacar: '' }, texto: `${p.acertos} / ${p.total}` }),
       el('p', { texto: `Você acertou ${p.acertos} de ${p.total} perguntas (${p.percentual}%).` }),

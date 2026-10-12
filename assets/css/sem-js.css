@@ -1,0 +1,4 @@
+/* Carregado apenas quando o JavaScript está desativado (<noscript>): sem abertura animada e sem efeitos de entrada. */
+.abertura, .lateral__abrir, .lateral__veu { display: none !important; }
+.revelar { opacity: 1 !important; transform: none !important; }
+@media (max-width: 960px) { .lateral { position: static; transform: none; width: auto; } }

@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { PAGINAS, vigiar, rolarTudo, semImagensQuebradas } from './ajuda.mjs';
+import { test, expect, PAGINAS, vigiar, rolarTudo, semImagensQuebradas } from './ajuda.mjs';
 
 test.describe('carregamento e integridade', () => {
   for (const pagina of PAGINAS) {
@@ -8,6 +7,7 @@ test.describe('carregamento e integridade', () => {
       await page.goto(pagina);
       await expect(page.locator('h1')).toBeVisible();
       await expect(page.locator('footer')).toContainText('Criado por Anderson Carapeto © 2026');
+    await expect(page.locator('footer')).not.toContainText('Não substitui orientação médica');
       await rolarTudo(page);
       await semImagensQuebradas(page);
       await page.waitForTimeout(300);
@@ -156,28 +156,58 @@ test.describe('página inicial', () => {
 });
 
 test.describe('navegação e responsividade', () => {
-  test('o menu móvel abre e fecha', async ({ page, isMobile }) => {
+  test('o menu lateral móvel abre e fecha como gaveta', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'apenas no celular');
     await page.goto('');
-    const botao = page.locator('.nav__botao');
-    await expect(page.locator('#menu-principal a').first()).toBeHidden();
+    const botao = page.locator('.lateral__abrir');
+    const menu = page.locator('#menu-lateral');
+    await expect(menu).not.toBeInViewport();
     await botao.click();
     await expect(botao).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.locator('#menu-principal').getByRole('link', { name: 'Personagens' })).toBeVisible();
+    await expect(menu).toBeInViewport();
+    await expect(menu.getByRole('link', { name: 'Personagens' })).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(botao).toHaveAttribute('aria-expanded', 'false');
     await expect(botao).toBeFocused();
     await botao.click();
-    await page.locator('#menu-principal').getByRole('link', { name: 'Personagens' }).click();
+    await page.locator('.lateral__veu').click({ position: { x: 380, y: 400 } });
+    await expect(botao).toHaveAttribute('aria-expanded', 'false');
+    await botao.click();
+    await menu.getByRole('link', { name: 'Personagens' }).click();
     await expect(botao).toHaveAttribute('aria-expanded', 'false');
     await expect(page).toHaveURL(/#personagens$/);
   });
 
-  test('no computador o menu fica sempre visível', async ({ page, isMobile }) => {
+  test('no computador o menu lateral fica fixo, acompanha a rolagem e pode ser recolhido', async ({ page, isMobile }) => {
     test.skip(isMobile, 'apenas no computador');
     await page.goto('');
-    await expect(page.locator('.nav__botao')).toBeHidden();
-    await expect(page.locator('#menu-principal').getByRole('link', { name: 'Linha do tempo' })).toBeVisible();
+    await expect(page.locator('.lateral__abrir')).toBeHidden();
+    const link = page.locator('#menu-lateral').getByRole('link', { name: 'Linha do tempo' });
+    await expect(link).toBeVisible();
+    // o conteúdo começa à direita do menu (o menu não cobre o texto)
+    const menu = await page.locator('#menu-lateral').boundingBox();
+    const titulo = await page.locator('#titulo-principal').boundingBox();
+    expect(titulo.x).toBeGreaterThan(menu.x + menu.width);
+    // destaque da seção visível
+    await link.click();
+    await expect(link).toHaveAttribute('aria-current', 'location');
+    await expect(page.locator('#menu-lateral')).toBeInViewport();
+    // recolher e expandir (preferência lembrada)
+    const recolher = page.locator('[data-recolher]');
+    await recolher.click();
+    await expect(page.locator('html')).toHaveClass(/lateral-recolhida/);
+    await expect(recolher).toHaveAttribute('aria-expanded', 'false');
+    const estreito = await page.locator('#menu-lateral').boundingBox();
+    expect(estreito.width).toBeLessThan(100);
+    await page.reload();
+    await expect(page.locator('html')).toHaveClass(/lateral-recolhida/);
+    await page.locator('[data-recolher]').click();
+    await expect(page.locator('html')).not.toHaveClass(/lateral-recolhida/);
+  });
+
+  test('o menu indica a página atual nas páginas internas', async ({ page }) => {
+    await page.goto('quiz.html');
+    await expect(page.locator('#menu-lateral a[data-pagina="quiz.html"]')).toHaveAttribute('aria-current', 'page');
   });
 
   for (const pagina of PAGINAS) {

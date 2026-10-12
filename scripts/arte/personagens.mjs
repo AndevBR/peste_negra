@@ -168,3 +168,28 @@ export function retrato(nome) {
   const p = PERSONAGENS[nome];
   return svg({ viewBox: '0 0 240 240', titulo: p.titulo, conteudo: defsComuns() + moldura(p.desenhar()) });
 }
+
+// Retrato em sombra: mesma figura, mas em silhueta escura com luz de contorno dourada,
+// contra um fundo de névoa. Usado enquanto não houver retratos realistas de cada ofício.
+export function retratoSombra(nome) {
+  const p = PERSONAGENS[nome];
+  return svg({
+    viewBox: '0 0 240 300',
+    titulo: `${p.titulo} (silhueta)`,
+    conteudo: `<defs>
+      <radialGradient id="nevoa" cx=".55" cy=".38" r=".75"><stop offset="0" stop-color="#5a5650"/><stop offset=".45" stop-color="#2c2a28"/><stop offset="1" stop-color="#0e0d0d"/></radialGradient>
+      <filter id="sombra" x="-10%" y="-10%" width="120%" height="120%">
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0.035  0 0 0 0 0.03  0 0 0 0 0.03  0 0 0 1 0" result="escuro"/>
+        <feOffset in="SourceAlpha" dx="3" dy="2" result="desl"/>
+        <feComposite in="SourceAlpha" in2="desl" operator="out" result="borda"/>
+        <feGaussianBlur in="borda" stdDeviation="1.3" result="bb"/>
+        <feFlood flood-color="#e8b86a"/><feComposite in2="bb" operator="in" result="rim"/>
+        <feMerge><feMergeNode in="escuro"/><feMergeNode in="rim"/></feMerge>
+      </filter>
+      <linearGradient id="chao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".85"/></linearGradient>
+    </defs>
+    <rect width="240" height="300" fill="url(#nevoa)"/>
+    <g transform="translate(0 46)" filter="url(#sombra)">${p.desenhar()}</g>
+    <rect y="200" width="240" height="100" fill="url(#chao)"/>`,
+  });
+}

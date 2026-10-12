@@ -31,15 +31,17 @@ Criado por **Anderson Carapeto** © 2026.
 
 | Página / seção | Conteúdo |
 | --- | --- |
-| **Início** (`index.html`) | Abertura com o Doutor da Peste, cenário medieval com névoa, partículas e parallax |
+| **Abertura cinematográfica** | Rua medieval noturna em perspectiva, chuva, névoa, relâmpagos e a entrada do Doutor da Peste; título “A PESTE NEGRA” e botão “Descubra o que foi a Peste Negra”. Pode ser pulada (botão ou Esc), aparece uma vez por sessão e pode ser revista pelo menu. Som ambiente opcional (desligado por padrão) |
+| **Menu lateral** | Fixo à esquerda no computador (pode ser recolhido), gaveta no celular e no tablet; destaca a seção visível e a página atual |
+| **Início** (`index.html`) | Cenário noturno com parallax, névoa, partículas e o Doutor iluminado pela lanterna |
 | O que foi a Peste Negra? | Contexto, estimativas (claramente marcadas), consequências e **mapa interativo** da disseminação |
 | A bactéria responsável | *Yersinia pestis*, ciclo de transmissão, as três formas da peste e a evolução do conhecimento |
 | Linha do tempo | 16 marcos, de 1338 aos dias de hoje; cada marco abre uma explicação com fontes |
 | Personagens | 10 cartões (doutores da peste, flagelantes, erveiras, cirurgiões-barbeiros, médicos, apotecários, cuidadores, religiosos, comerciantes, coveiros) |
-| Vida cotidiana | 7 temas em abas acessíveis, com ilustrações |
+| Vida medieval | 7 temas em abas acessíveis, com as cenas fornecidas pelo autor e ilustrações do jogo |
 | Mitos e verdades | 10 afirmações com resposta revelável e explicação |
-| Aprenda jogando | Jogo de tabuleiro e quiz |
-| Leve a experiência com você | QR Code para a feira de ciências |
+| Jogos | Jogo de tabuleiro, quiz e QR Code para a feira de ciências |
+| Ratos | Ratinhos atravessam, de vez em quando, as faixas vazias entre algumas seções (decoração que não bloqueia cliques) |
 | **Quiz** (`quiz.html`) | Banco de 38 questões; 10 sorteadas por partida, sem repetir entre partidas enquanto houver questões novas |
 | **Glossário** (`glossario.html`) | 28 termos, busca sem acentos e filtro por categoria |
 | **Fontes** (`fontes.html`) | 20 referências com autor, link e assunto que fundamentam |
@@ -47,7 +49,12 @@ Criado por **Anderson Carapeto** © 2026.
 
 ### O jogo de tabuleiro
 
-O jogo é o arquivo original enviado pelo autor (um único HTML autocontido, ~6,6 MB, com as imagens embutidas). Ele foi integrado **sem alterar a lógica**: a única mudança foi um link “← SITE” no topo e outro no menu de jogadores, para voltar ao site. Recursos verificados no arquivo:
+O jogo é o arquivo enviado pelo autor, integrado **sem alterar a lógica**. Mudanças feitas:
+
+- links “← SITE” no topo e no menu de jogadores, para voltar ao site;
+- **otimização para celulares**: o arquivo original tinha ~6,6 MB porque todas as imagens estavam embutidas. Em uma rede 4G simulada o tabuleiro ficava vazio por cerca de 36 s (o problema visto no Android). Agora os sprites são WebP embutidos e as 25 cartas ficam em `jogos/jornada-medieval/cartas/`, carregadas depois que o tabuleiro aparece. O jogo caiu para ~530 KB e, na mesma rede simulada, abre em ~5 s. Há também o aviso “Carregando o tabuleiro…”. Para reaplicar em uma nova versão do jogo: `python3 scripts/otimizar-jogo.py jogo-original.html jogos/jornada-medieval/index.html`.
+
+Recursos verificados no arquivo:
 
 - tabuleiro isométrico com **60 casas** + início e chegada;
 - **dado D6**; passar da chegada faz voltar o excedente;
@@ -72,15 +79,17 @@ Não há casas específicas de “quarentena” no tabuleiro: o tema aparece nas
 │   │   └── modules/              # um módulo por recurso (quiz, glossário, mapa…)
 │   ├── data/                     # conteúdo em JSON (separado da apresentação)
 │   ├── images/
-│   │   ├── characters/           # Doutor da Peste: 6 poses (SVG)
-│   │   ├── personagens/          # retratos dos ofícios (SVG)
-│   │   ├── illustrations/        # diagramas, mapa e cenas do cotidiano (SVG)
-│   │   ├── environments/         # camadas do cenário da abertura (SVG)
-│   │   ├── games/                # capa e personagens do jogo (WebP)
+│   │   ├── cinema/               # abertura: céu, rua, relâmpago, Doutor e rato (WebP gerados)
+│   │   ├── cenas/                # cenas da vida medieval (recortes das imagens do autor e do jogo)
+│   │   ├── originais/            # imagens enviadas pelo autor, preservadas sem alteração
+│   │   ├── characters/           # Doutor da Peste estilizado (SVG, ícone e retrato compacto)
+│   │   ├── personagens/          # retratos em sombra dos ofícios (SVG)
+│   │   ├── illustrations/        # diagramas científicos e mapa (SVG)
+│   │   ├── games/                # capa, sprites e retratos do jogo (WebP)
 │   │   └── icons/                # favicon, ícones e sprite de ícones
 │   ├── fonts/                    # Cinzel e Alegreya (locais, licença OFL)
 │   └── vendor/qrcode-generator/  # gerador de QR Code (MIT)
-├── jogos/jornada-medieval/index.html
+├── jogos/jornada-medieval/       # jogo (index.html) e cartas/ em WebP
 ├── scripts/                      # build, servidor local e geradores de arte
 ├── tests/unit/                   # testes de lógica (node:test)
 ├── tests/e2e/                    # testes de navegador (Playwright + axe-core)
@@ -170,26 +179,39 @@ Todo o conteúdo interativo está em `assets/data/`:
 | `fontes.json` | Referências. Os outros arquivos citam fontes pelo `id` |
 | `mapa.json` | Cidades do mapa (gerado com `scripts/gerar-mapa.mjs`) |
 
-Os textos longos das seções (história, bactéria, cotidiano) estão no `index.html`. Depois de editar, rode `npm test`: os testes avisam se faltar campo, se uma fonte citada não existir ou se uma imagem estiver ausente. Para atualizar o jogo, substitua `jogos/jornada-medieval/index.html` pela nova versão e, se quiser manter o botão de voltar, reaplique o link “← SITE” (veja o histórico do git).
+Os textos longos das seções (história, bactéria, cotidiano) estão no `index.html`. Depois de editar, rode `npm test`: os testes avisam se faltar campo, se uma fonte citada não existir ou se uma imagem estiver ausente. Para atualizar o jogo, rode `python3 scripts/otimizar-jogo.py nova-versao.html jogos/jornada-medieval/index.html` (otimiza as imagens) e, se quiser manter o botão de voltar, reaplique o link “← SITE” (veja o histórico do git).
 
-## Ilustrações
+## Ilustrações e imagens
 
-Todas as ilustrações do site são **SVG originais** criados para o projeto (não foram usadas imagens de terceiros nem geradores de imagem):
+Nenhuma imagem foi copiada de terceiros e **não foi usado gerador de imagens por IA** (a ferramenta não estava disponível neste ambiente). As imagens do site têm quatro origens:
 
-- **Doutor da Peste** em 6 variações: principal (lanterna e cajado), boas-vindas, explicação (livro e dedo erguido), alerta, jogos (com um dado) e retrato compacto;
-- 9 retratos de ofícios medievais;
-- diagramas da bactéria, do ciclo de transmissão e das três formas da peste;
-- 7 cenas do cotidiano; 3 camadas do cenário da abertura; mapa da Europa (contornos Natural Earth, domínio público); favicon.
+| Origem | Onde aparece |
+| --- | --- |
+| **Imagens enviadas pelo autor** (originais preservados em `assets/images/originais/`) | Vida medieval: alimentação, higiene, crenças, quarentena e famílias. Foram apenas recortadas para retirar a moldura e o texto das capturas e convertidas para WebP |
+| **Arte do jogo “Jornada Medieval”** | Retratos da erveira, do flagelante e do cirurgião-barbeiro; cenas de moradias e de mercado; fundos atmosféricos (desfocados); capa do jogo |
+| **Arte cinematográfica criada por código** (`scripts/arte/cinema.mjs`) | Abertura e início do site: céu de tempestade, rua medieval em perspectiva 3D (casas de enxaimel, calçamento molhado, reflexos), versões iluminadas pelo relâmpago, Doutor da Peste com proporções realistas (silhueta e versão iluminada) e o rato animado (6 quadros) |
+| **Ilustrações vetoriais criadas por código** (`scripts/arte/*.mjs`) | Diagramas científicos, mapa (contornos Natural Earth, domínio público), retratos em sombra dos ofícios, ícones |
 
-As ilustrações são geradas por código, a partir de peças compartilhadas, o que mantém a identidade do personagem consistente:
+Para regenerar:
 
 ```bash
-npm run art      # regenera os SVGs (scripts/arte/*.mjs)
-npm run images   # regenera capa do jogo, imagem de compartilhamento e ícones PNG (usa o Playwright)
-npm run map -- ne_50m_land.geojson ne_50m_lakes.geojson   # regenera o mapa a partir do Natural Earth
+npm run art      # SVGs (diagramas, retratos em sombra, ícones)
+npm run cinema   # WebP da abertura e do rato (usa o Playwright)
+npm run images   # capa do jogo, imagem de compartilhamento e ícones PNG
+npm run map -- ne_50m_land.geojson ne_50m_lakes.geojson   # mapa a partir do Natural Earth
 ```
 
-As imagens dos personagens que aparecem nos painéis “como aparece no jogo” e a capa do jogo foram extraídas do próprio jogo do autor.
+### Pontos preparados para receber imagens realistas
+
+A arte criada por código tem aparência cinematográfica, mas **não é fotorrealista**. Para trocar por ilustrações realistas, basta substituir o arquivo mantendo o nome (ou alterar o caminho indicado):
+
+| Recurso | Arquivo atual | Formato sugerido |
+| --- | --- | --- |
+| Doutor da Peste (abertura e início) | `assets/images/cinema/doutor-luz.webp` e `doutor-silhueta.webp` (+ versões `-pequeno`) | PNG/WebP com fundo transparente, 640×1120, figura inteira de frente |
+| Cenário da abertura | `assets/images/cinema/rua-noite.webp`, `rua-relampago.webp`, `ceu-*.webp` | 1920×1080 (rua com o céu transparente, ou uma única imagem no lugar da rua) |
+| Rato | `assets/images/cinema/rato-quadros.webp` | 6 quadros lado a lado do rato andando para a direita, fundo transparente (proporção 300×110 por quadro) |
+| Retratos dos ofícios sem arte própria (médico universitário, apotecário, cuidadora, religioso, comerciante, coveiro) | campo `imagem` em `assets/data/personagens.json` (hoje `assets/images/personagens/sombra-*.svg`) | Retrato 4:5; altere também `tipoImagem` para `"arte"` |
+| Moradias e ruas / Mercados e comércio | `assets/images/cenas/jogo-rua-interditada.webp` e `jogo-mercado.webp` (cenas das cartas do jogo) | Mesmo estilo das outras cenas da vida medieval, 16:10 |
 
 ## Segurança e privacidade
 
@@ -211,14 +233,15 @@ Limitações que não podem ser resolvidas no GitHub Pages:
 
 - HTML semântico, link “Pular para o conteúdo”, foco visível, navegação completa por teclado (abas com setas, painel modal com `<dialog>` que fecha com Esc e devolve o foco), textos alternativos, regiões `aria-live` para mensagens, contraste WCAG AA em todos os pares de cores do sistema de design, e respeito a `prefers-reduced-motion`.
 - Acerto/erro e vereditos usam **texto e ícone**, não só cor.
-- Desempenho: sem frameworks; ilustrações vetoriais leves (2–12 KB cada); fontes locais com `font-display: swap` e pré-carregamento; `loading="lazy"` nas imagens abaixo da dobra; módulos carregados sob demanda; partículas pausadas fora da tela. O jogo (~6,6 MB) só é baixado quando o visitante clica em “Jogar agora”.
+- Desempenho: sem frameworks nem bibliotecas de animação (CSS, Canvas 2D e Web Animations); camadas da abertura pré-renderizadas em WebP (~350 KB no computador, ~200 KB no celular, com `srcset`); fontes locais com `font-display: swap`; `loading="lazy"` nas imagens abaixo da dobra; módulos carregados sob demanda; chuva e partículas pausadas fora da tela; ratos desativados em aparelhos com pouca memória ou economia de dados. O jogo (~530 KB) só é baixado quando o visitante clica em “Jogar agora”.
+- Abertura: cada relâmpago é um clarão suave com no máximo duas oscilações, e há sempre mais de 1 segundo entre um relâmpago e outro — abaixo do limite de três flashes por segundo do critério WCAG 2.3.1; som nunca toca sozinho; com redução de movimento a abertura mostra só a cena final, sem animação.
 - SEO: títulos e descrições em português, hierarquia de títulos, Open Graph, dados estruturados (schema.org), `sitemap.xml` e `robots.txt` gerados no build com a URL real (a indexação não é bloqueada; apenas a página 404 tem `noindex`).
 
 ## Limitações conhecidas e pendências
 
 **Dependem de ação manual:**
 
-- Ativar o GitHub Pages (Settings → Pages → Source: GitHub Actions) e fazer merge na branch principal.
+- O site já está publicado no GitHub Pages a partir da branch `claude/peste-negra-educational-site-lbso28` (opção “Deploy from a branch”). Cada novo envio para essa branch atualiza o site. Para usar o workflow de testes antes da publicação, mude a origem para “GitHub Actions” e faça merge na `main`.
 - Depois de publicado, **testar o QR Code com celulares reais** (Android e iPhone) e imprimir para a feira.
 - Recomenda-se que um(a) professor(a) de história/ciências revise os textos antes da apresentação.
 - Escolher uma licença para o projeto, se desejar (nenhum arquivo de licença foi adicionado).
@@ -231,6 +254,9 @@ Limitações que não podem ser resolvidas no GitHub Pages:
 
 **Limitações de conteúdo e do jogo:**
 
+- A arte da abertura, o Doutor e o rato foram criados por código: têm direção de arte cinematográfica, mas não são fotorrealistas (veja “Pontos preparados para receber imagens realistas”). Seis ofícios aparecem como retratos em sombra até receberem ilustrações próprias.
+- As cenas de moradias e de mercado usam ilustrações das cartas do jogo, em estilo diferente das cenas enviadas pelo autor.
+
 - Algumas informações gerais sobre ofícios medievais (cirurgiões-barbeiros, erveiras, uroscopia, teoria dos humores) não têm referência específica listada; o site indica isso nos painéis.
-- O jogo é preservado como foi enviado. Ele usa `user-scalable=no` (impede o zoom por pinça, útil para o jogo, mas uma limitação de acessibilidade) e algumas perguntas simplificam a transmissão (por exemplo, atribuindo-a só a ratos). O site apresenta a visão mais completa na seção “A bactéria responsável” e em “Mitos e verdades”.
+- A lógica do jogo é preservada como foi enviada. Ele usa `user-scalable=no` (impede o zoom por pinça, útil para o jogo, mas uma limitação de acessibilidade) e algumas perguntas simplificam a transmissão (por exemplo, atribuindo-a só a ratos). O site apresenta a visão mais completa na seção “A bactéria responsável” e em “Mitos e verdades”.
 - Não há modo offline: o site precisa de internet. Para a feira, deixe uma aba aberta com o site carregado ou garanta acesso à rede.

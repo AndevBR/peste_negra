@@ -1,6 +1,8 @@
-// Ponto de entrada: inicia apenas os módulos usados pela página atual.
+// Ponto de entrada: inicia a abertura, o menu e apenas os módulos usados pela página atual.
+import { iniciarAbertura } from './modules/abertura.js';
 import { iniciarNavegacao } from './modules/navegacao.js';
 import { iniciarRevelar, iniciarParallax, iniciarParticulas } from './modules/efeitos.js';
+import { iniciarRatos } from './modules/ratos.js';
 
 document.documentElement.classList.add('js');
 
@@ -17,17 +19,36 @@ const modulos = [
 ];
 
 function iniciar() {
+  const abertura = iniciarAbertura();
   iniciarNavegacao();
+  document.querySelector('[data-rever-abertura]')?.addEventListener('click', () => {
+    if (abertura) abertura.abrir();
+    else location.href = './?abertura=1';
+  });
   iniciarRevelar();
   iniciarParallax();
   iniciarParticulas();
+  iniciarRatos();
+  const carregando = [];
   for (const [seletor, carregar] of modulos) {
     const raiz = document.querySelector(seletor);
     if (!raiz) continue;
-    carregar()
+    carregando.push(carregar()
       .then((iniciarModulo) => iniciarModulo(raiz))
-      .catch((erro) => console.error(`Falha ao iniciar ${seletor}:`, erro));
+      .catch((erro) => console.error(`Falha ao iniciar ${seletor}:`, erro)));
   }
+  manterAncora(Promise.all(carregando));
+}
+
+// Quem chega por um link direto (ex.: ./#jogos) deve parar na seção certa mesmo depois que
+// o conteúdo carregado dos arquivos JSON aumentar a altura das seções anteriores.
+function manterAncora(pronto) {
+  const alvo = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!alvo) return;
+  let rolouSozinho = false;
+  const marcar = () => { rolouSozinho = true; };
+  ['wheel', 'touchstart', 'keydown'].forEach((ev) => window.addEventListener(ev, marcar, { once: true, passive: true }));
+  pronto.then(() => requestAnimationFrame(() => { if (!rolouSozinho) alvo.scrollIntoView({ block: 'start', behavior: 'instant' }); }));
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);

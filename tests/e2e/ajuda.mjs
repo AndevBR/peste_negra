@@ -1,5 +1,14 @@
 // Utilidades compartilhadas pelos testes de navegador.
-import { expect } from '@playwright/test';
+import { test as base, expect } from '@playwright/test';
+
+/** Teste padrão: a abertura cinematográfica já foi vista nesta sessão (é testada à parte em abertura.spec.mjs). */
+export const test = base.extend({
+  context: async ({ context }, use) => {
+    await context.addInitScript(() => { try { sessionStorage.setItem('peste-negra:abertura-vista', '1'); } catch { /* */ } });
+    await use(context);
+  },
+});
+export { expect };
 import { fileURLToPath } from 'node:url';
 
 export const PAGINAS = ['', 'quiz.html', 'glossario.html', 'fontes.html'];
