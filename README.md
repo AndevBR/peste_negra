@@ -236,7 +236,7 @@ Limitações que não podem ser resolvidas no GitHub Pages:
 - Abertura: cada relâmpago é um clarão suave com no máximo duas oscilações, e há sempre mais de 1 segundo entre um relâmpago e outro — abaixo do limite de três flashes por segundo do critério WCAG 2.3.1; som nunca toca sozinho; com redução de movimento a abertura mostra só a cena final, sem animação.
 - SEO: títulos e descrições em português, hierarquia de títulos, Open Graph, dados estruturados (schema.org), `sitemap.xml` e `robots.txt` gerados no build com a URL real (a indexação não é bloqueada; apenas a página 404 tem `noindex`).
 
-## Limitações conhecidas e pendências
+## Limitações conhecidas e Pendências
 
 **Dependem de ação manual:**
 
@@ -251,7 +251,7 @@ Limitações que não podem ser resolvidas no GitHub Pages:
 - Testes em aparelhos físicos (iPhone/Safari e Android) não foram feitos; os testes automatizados usam o Chromium com emulação de celular.
 - Não foi executada auditoria Lighthouse nem leitor de tela real (NVDA, VoiceOver).
 
-**Limitações de conteúdo e do jogo:**
+**Limitações de conteúdo e do jogo:*
 
 - O cenário da abertura e o rato foram criados por código: têm direção de arte cinematográfica, mas não são fotorrealistas.
 
