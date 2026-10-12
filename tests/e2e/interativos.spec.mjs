@@ -114,40 +114,25 @@ test.describe('fontes', () => {
 });
 
 test.describe('QR Code', () => {
-  test('em ambiente local, não gera QR Code para localhost', async ({ page }) => {
+  test('o QR Code do jogo aparece e abre o endereço público do jogo', async ({ page, context }) => {
+    const esperado = 'https://andevbr.github.io/peste_negra/jogos/jornada-medieval/';
     await page.goto('');
-    const caixa = page.locator('[data-qr-codigo]');
-    await expect(caixa).toHaveAttribute('data-qr-estado', 'local');
-    await expect(caixa.locator('svg')).toHaveCount(0);
-    await expect(caixa).toContainText('endereço público');
-  });
+    const img = page.locator('[data-qr-codigo] img');
+    await img.scrollIntoViewIfNeeded();
+    await expect.poll(() => img.evaluate((i) => i.complete && i.naturalWidth)).toBe(304);
+    await expect(img).toHaveAttribute('alt', /QR Code do Jogo da Peste Negra/);
+    await expect(page.locator('[data-qr-url]')).toHaveText(esperado.replace('https://', ''));
+    await expect(page.locator('[data-qr-link]')).toHaveAttribute('href', 'jogos/jornada-medieval/');
 
-  test('o QR Code corresponde à URL pública configurada', async ({ page, context }) => {
-    const URL_PUBLICA = 'https://exemplo.github.io/peste_negra/';
-    await page.route('**/assets/js/config.js', async (route) => {
-      const original = await (await route.fetch()).text();
-      await route.fulfill({
-        contentType: 'text/javascript',
-        body: original.replace("export const SITE_PUBLICO = '';", `export const SITE_PUBLICO = '${URL_PUBLICA}';`),
-      });
-    });
-    await page.goto('');
-    const caixa = page.locator('[data-qr-codigo]');
-    const esperado = `${URL_PUBLICA}jogos/jornada-medieval/`;
-    await expect(caixa).toHaveAttribute('data-qr-url', esperado);
-    await expect(page.locator('[data-qr-url]').last()).toHaveText(esperado);
-    await expect(page.locator('[data-qr-link]')).toHaveAttribute('href', esperado);
-
-    // decodifica a imagem do QR Code renderizada na tela
-    await caixa.scrollIntoViewIfNeeded();
-    const png = await caixa.locator('svg').screenshot();
+    // decodifica o QR Code como a câmera do celular faria
+    const png = await img.screenshot();
     const decodificador = await context.newPage();
     await decodificador.setContent('<canvas></canvas>');
     await decodificador.addScriptTag({ content: readFileSync(CAMINHO_JSQR, 'utf8') });
     const texto = await decodificador.evaluate(async (b64) => {
-      const img = new Image(); img.src = `data:image/png;base64,${b64}`; await img.decode();
-      const c = document.querySelector('canvas'); c.width = img.width; c.height = img.height;
-      const g = c.getContext('2d'); g.drawImage(img, 0, 0);
+      const im = new Image(); im.src = `data:image/png;base64,${b64}`; await im.decode();
+      const c = document.querySelector('canvas'); c.width = im.width; c.height = im.height;
+      const g = c.getContext('2d'); g.drawImage(im, 0, 0);
       const d = g.getImageData(0, 0, c.width, c.height);
       return window.jsQR(d.data, d.width, d.height)?.data ?? null;
     }, png.toString('base64'));

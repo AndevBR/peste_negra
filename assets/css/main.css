@@ -536,6 +536,8 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 .qr { display: grid; grid-template-columns: auto 1fr; gap: var(--esp-6); align-items: center; }
 .qr__codigo { padding: var(--esp-4); background: #fff; border-radius: var(--raio); box-shadow: 0 0 0 1px var(--linha-forte), 0 0 40px rgba(201, 164, 90, .2); width: min(15rem, 70vw); }
 .qr__codigo svg { width: 100%; height: auto; }
+.qr__codigo--imagem { padding: 0; overflow: hidden; }
+.qr__codigo--imagem img { display: block; width: 100%; height: auto; }
 .qr__pendente { padding: var(--esp-4); text-align: center; color: #2a211b; font-size: var(--texto-sm); margin: 0; }
 .qr__url { word-break: break-all; font-size: var(--texto-sm); color: var(--texto-suave); }
 .qr ol { padding-left: 1.3rem; color: var(--texto-suave); font-size: var(--texto-sm); }

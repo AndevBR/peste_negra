@@ -36,9 +36,9 @@ for (const pagina of ['', 'quiz.html', 'glossario.html', 'fontes.html', 'jogos/j
   });
 }
 
-test('build publicado: QR Code usa a URL pública e metadados são absolutos', async ({ page }) => {
+test('build publicado: QR Code do jogo presente e metadados são absolutos', async ({ page }) => {
   await page.goto(base);
-  await expect(page.locator('[data-qr-codigo]')).toHaveAttribute('data-qr-url', `${URL_PUBLICA}jogos/jornada-medieval/`);
+  await expect(page.locator('[data-qr-codigo] img')).toHaveAttribute('src', 'assets/images/qr-jogo.webp');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', URL_PUBLICA);
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', `${URL_PUBLICA}assets/images/og-image.jpg`);
   const robots = await page.request.get(base + 'robots.txt');
