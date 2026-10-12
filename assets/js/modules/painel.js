@@ -21,10 +21,12 @@ export function abrirPainel(textoTitulo, conteudo) {
   if (!preparar()) return;
   origem = document.activeElement;
   titulo.textContent = textoTitulo;
-  corpo.replaceChildren(...conteudo);
-  corpo.scrollTop = 0;
+  corpo.replaceChildren(...conteudo.filter(Boolean)); // itens ausentes (ex.: sem versão no jogo) não viram texto "null"
   if (typeof dialogo.showModal === 'function') dialogo.showModal();
   else dialogo.setAttribute('open', '');
+  // cada personagem abre no topo (com o painel já visível, senão a rolagem não é zerada)
+  dialogo.scrollTop = 0;
+  corpo.scrollTop = 0;
   dialogo.querySelector('[data-fechar]').focus();
 }
 

@@ -112,6 +112,11 @@ test.describe('página inicial', () => {
       await cartao.click();
       await expect(page.locator('#painel h2')).toHaveText(nome);
       await expect(page.locator('#painel')).toContainText('Limites da época');
+      // personagens sem versão no jogo não mostram "null"
+      await expect(page.locator('#painel-corpo')).not.toContainText('null');
+      // abre no topo, mesmo que o anterior tenha sido rolado até o fim
+      expect(await page.locator('#painel').evaluate((d) => d.scrollTop + document.getElementById('painel-corpo').scrollTop)).toBe(0);
+      await page.locator('#painel').evaluate((d) => { d.scrollTop = 99999; document.getElementById('painel-corpo').scrollTop = 99999; });
       await page.locator('#painel [data-fechar]').click();
       await expect(page.locator('#painel')).toBeHidden();
     }
