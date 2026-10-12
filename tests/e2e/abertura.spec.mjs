@@ -18,7 +18,7 @@ test.describe('abertura cinematográfica', () => {
     await expect(abertura).toHaveClass(/fase-3/, { timeout: 6000 });
     const entrar = page.getByRole('button', { name: 'Descubra o que foi a Peste Negra' });
     await expect(entrar).toBeVisible();
-    await expect(abertura).toHaveClass(/fase-5/, { timeout: 10000 });
+    await expect(abertura).toHaveClass(/fase-5/, { timeout: 12000 });
     await expect(entrar).toHaveCSS('opacity', '1');
     await expect(abertura.locator('.abertura__titulo')).toContainText('A PESTE NEGRA');
     await entrar.click();
@@ -47,7 +47,7 @@ test.describe('abertura cinematográfica', () => {
     expect(new Set(amostras.map((a) => a.q)).size).toBeGreaterThanOrEqual(4);
     expect(amostras.at(-1).h).toBeGreaterThan(amostras[0].h * 2);
     // ao final: classe "parado", último quadro (pose de frente) e sem transformação inline
-    await expect(page.locator('[data-abertura]')).toHaveClass(/parado/, { timeout: 6000 });
+    await expect(page.locator('[data-abertura]')).toHaveClass(/parado/, { timeout: 10000 });
     await expect(quadro).toHaveCSS('background-position-x', '100%');
     expect(await doutor.evaluate((el) => el.style.transform)).toBe('');
     await expect(doutor).toHaveCSS('pointer-events', 'none');

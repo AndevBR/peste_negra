@@ -53,10 +53,10 @@ export function iniciarAbertura() {
     chuva.iniciar();
     agendar(250, () => raiz.classList.add('fase-1'));
     agendar(1500, relampago);
-    agendar(2500, () => { raiz.classList.add('fase-2'); caminhada.iniciar(5000); });
+    agendar(2500, () => { raiz.classList.add('fase-2'); caminhada.iniciar(8200); });
     agendar(3700, () => { relampago(); raiz.classList.add('fase-3'); });
-    agendar(6300, () => raiz.classList.add('fase-4'));
-    agendar(7800, () => { raiz.classList.add('fase-5'); if (raiz.contains(document.activeElement) || document.activeElement === document.body) botaoEntrar.focus({ preventScroll: true }); relampagosAmbientes(); });
+    agendar(8400, () => raiz.classList.add('fase-4'));
+    agendar(10800, () => { raiz.classList.add('fase-5'); if (raiz.contains(document.activeElement) || document.activeElement === document.body) botaoEntrar.focus({ preventScroll: true }); relampagosAmbientes(); });
   }
 
   function fechar({ animar = true } = {}) {
@@ -134,7 +134,7 @@ function criarChuva(tela) {
 // dá o último passo e para de frente, com o cajado no chão (pose final, sem repetir).
 const PONTO_DE_FUGA = { x: 760, y: 445, largura: 1584, altura: 672 }; // em cidade-noite.webp
 const QUADROS = 10, CICLO = 8, PASSO_FINAL = 8, POSE_FINAL = 9;
-const PERTO = 1, LONGE = 10, QUADROS_POR_UNIDADE = 5;
+const PERTO = 1, LONGE = 10, QUADROS_POR_UNIDADE = 4.4;
 
 function criarCaminhada(doutor, cidade, raiz) {
   const folha = doutor?.querySelector('.abertura__quadro');
