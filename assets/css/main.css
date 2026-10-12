@@ -620,13 +620,15 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 .trilha { font-size: var(--texto-sm); margin-bottom: var(--esp-3); color: var(--texto-fraco); }
 
 /* ---------- 11. Ratos (decoração ambiental) ---------- */
-.trilha-rato { position: absolute; left: 0; right: 0; bottom: 6px; height: 46px; pointer-events: none; overflow: hidden; z-index: var(--z-ratos); }
+.trilha-rato { position: absolute; left: 0; right: 0; bottom: 4px; height: 54px; pointer-events: none; overflow: hidden; z-index: var(--z-ratos); }
 /* faixa no espaço vazio do menu lateral (só em telas altas e com o menu aberto) */
 .trilha-rato--lateral { position: relative; inset: auto; flex: none; margin-top: auto; display: none; }
-@media (min-width: 961px) and (min-height: 780px) and (prefers-reduced-motion: no-preference) { html:not(.lateral-recolhida) .trilha-rato--lateral { display: block; } html:not(.lateral-recolhida) .trilha-rato--lateral + .lateral__rodape { margin-top: 0; } }
-.rato { position: absolute; bottom: 0; width: 130px; height: 45px; pointer-events: none; background: url('../images/cinema/rato-quadros.webp') 0 0 / 500% 100% no-repeat; animation: passo .4s steps(5, jump-none) infinite; filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .6)) brightness(.9); will-change: transform; }
-.rato.parado { animation-play-state: paused; }
-.rato--esquerda { transform: scaleX(-1); }
+@media (min-width: 961px) and (min-height: 640px) and (prefers-reduced-motion: no-preference) { html:not(.lateral-recolhida) .trilha-rato--lateral { display: block; } html:not(.lateral-recolhida) .trilha-rato--lateral + .lateral__rodape { margin-top: 0; } }
+/* ratos andando (folhas de 24 quadros = 1 passo completo por segundo, recortadas dos vídeos do autor) */
+.rato { position: absolute; left: 0; bottom: 0; height: 52px; pointer-events: none; background: 0 0 / 2400% 100% no-repeat; animation: passo 1s steps(24, jump-none) infinite; filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .6)) brightness(.9); will-change: transform; }
+.rato--direita { aspect-ratio: 257 / 104; background-image: url('../images/cinema/rato-direita.webp'); }
+.rato--esquerda { aspect-ratio: 212 / 104; background-image: url('../images/cinema/rato-esquerda.webp'); }
+@media (max-width: 760px) { .rato { height: 42px; } }
 
 /* ---------- 12. Rodapé ---------- */
 .rodape { background: var(--preto); color: var(--texto-suave); padding-block: var(--esp-7) var(--esp-5); border-top: 1px solid var(--linha); font-size: var(--texto-sm); }

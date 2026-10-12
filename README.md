@@ -206,7 +206,7 @@ npm run map -- ne_50m_land.geojson ne_50m_lakes.geojson   # mapa a partir do Nat
 | Recurso | Arquivo |
 | --- | --- |
 | Abertura (vídeo) | `assets/video/abertura.mp4` e `abertura.webm` (1344×768) e versões `-pequeno` (768 px, para celular); `abertura-inicio.webp` e `abertura-fim.webp` são o primeiro e o último quadro (capa e versão sem movimento) |
-| Rato | `assets/images/cinema/rato-quadros.webp` (5 quadros de corrida para a direita, lado a lado, fundo transparente; para a esquerda o quadro é espelhado) |
+| Ratos | `assets/images/cinema/rato-direita.webp` e `rato-esquerda.webp` (24 quadros lado a lado = 1 passo por segundo, fundo transparente), recortados dos vídeos enviados pelo autor (fundo verde, marca d'água e som removidos) |
 | Bactéria | `assets/images/illustrations/bacteria-yersinia.webp` (1264×846) e `bacteria-yersinia-pequena.webp` |
 | Doutor da Peste | `assets/images/cinema/doutor-*.webp` (640×1120, fundo transparente, figura apoiada embaixo) |
 | Retratos | campo `imagem` em `assets/data/personagens.json` |

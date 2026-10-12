@@ -118,7 +118,7 @@ test.describe('abertura cinematográfica', () => {
 
 testSemAbertura.describe('ratos ambientais', () => {
   testSemAbertura('atravessam as faixas entre seções sem bloquear cliques', async ({ page }) => {
-    await page.goto('?ratos=sempre');
+    await page.goto('');
     const trilha = page.locator('#historia [data-trilha-rato]');
     await trilha.scrollIntoViewIfNeeded();
     const rato = trilha.locator('.rato').first();
@@ -139,9 +139,31 @@ testSemAbertura.describe('ratos ambientais', () => {
     expect(faixa.y).toBeGreaterThanOrEqual(ultimoConteudo.y + ultimoConteudo.height);
   });
 
+  testSemAbertura('andam sem parar: ao sair por um lado, voltam andando para o outro', async ({ page }) => {
+    await page.goto('');
+    const trilha = page.locator('#historia [data-trilha-rato]');
+    await trilha.scrollIntoViewIfNeeded();
+    const rato = trilha.locator('.rato');
+    await expect(rato).toHaveCount(1);
+    await expect(rato).toHaveClass(/rato--(direita|esquerda)/);
+    // a imagem do rato carrega e a animação de passos está rodando
+    expect(await rato.evaluate((r) => getComputedStyle(r).animationName)).toBe('passo');
+    // ao terminar a travessia, o mesmo rato troca de sentido e começa a voltar na hora
+    const [antes, depois, rodando] = await rato.evaluate(async (r) => {
+      const anda = () => r.getAnimations().find((a) => !(a instanceof CSSAnimation));
+      const antes = r.className;
+      anda().finish();
+      await new Promise((ok) => setTimeout(ok, 100));
+      return [antes, r.className, anda()?.playState];
+    });
+    expect(depois).not.toBe(antes);
+    expect(rodando).toBe('running');
+    await expect(trilha.locator('.rato')).toHaveCount(1);
+  });
+
   testSemAbertura('ficam desativados com redução de movimento', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('?ratos=sempre');
+    await page.goto('');
     await expect(page.locator('#historia [data-trilha-rato]')).toBeHidden();
     await page.evaluate(() => document.getElementById('cotidiano').scrollIntoView());
     await page.waitForTimeout(1500);
