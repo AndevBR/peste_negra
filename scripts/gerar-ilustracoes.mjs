@@ -19,15 +19,8 @@ for (const nome of NOMES_PERSONAGENS) salvar(`personagens/${nome}.svg`, retrato(
 
 import * as cenas from './arte/cenas.mjs';
 salvar('illustrations/bacteria-yersinia.svg', cenas.bacteria());
-salvar('illustrations/ciclo-transmissao.svg', cenas.cicloTransmissao());
-salvar('illustrations/formas-peste.svg', cenas.formasPeste());
 for (const [nome, fn] of Object.entries(cenas.CENAS)) salvar(`illustrations/cotidiano-${nome}.svg`, fn());
 salvar('environments/hero-ceu.svg', cenas.heroCeu());
 salvar('environments/hero-cidade-longe.svg', cenas.heroCidadeLonge());
 salvar('environments/hero-cidade-perto.svg', cenas.heroCidadePerto());
 salvar('icons/favicon.svg', cenas.favicon());
-
-import { retratoSombra } from './arte/personagens.mjs';
-for (const nome of ['medico-universitario', 'apotecario', 'cuidadora', 'religioso', 'comerciante', 'coveiro']) {
-  salvar(`personagens/sombra-${nome}.svg`, retratoSombra(nome));
-}

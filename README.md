@@ -83,7 +83,7 @@ Não há casas específicas de “quarentena” no tabuleiro: o tema aparece nas
 │   │   ├── cenas/                # cenas da vida medieval (recortes das imagens do autor e do jogo)
 │   │   ├── originais/            # imagens enviadas pelo autor, preservadas sem alteração
 │   │   ├── characters/           # Doutor da Peste estilizado (SVG, ícone e retrato compacto)
-│   │   ├── personagens/          # retratos em sombra dos ofícios (SVG)
+│   │   ├── personagens/          # retratos dos personagens (WebP, recortados da imagem do autor)
 │   │   ├── illustrations/        # diagramas científicos e mapa (SVG)
 │   │   ├── games/                # capa, sprites e retratos do jogo (WebP)
 │   │   └── icons/                # favicon, ícones e sprite de ícones
@@ -187,31 +187,28 @@ Nenhuma imagem foi copiada de terceiros e **não foi usado gerador de imagens po
 
 | Origem | Onde aparece |
 | --- | --- |
-| **Imagens enviadas pelo autor** (originais preservados em `assets/images/originais/`) | Vida medieval: alimentação, higiene, crenças, quarentena e famílias. Foram apenas recortadas para retirar a moldura e o texto das capturas e convertidas para WebP |
-| **Arte do jogo “Jornada Medieval”** | Retratos da erveira, do flagelante e do cirurgião-barbeiro; cenas de moradias e de mercado; fundos atmosféricos (desfocados); capa do jogo |
-| **Arte cinematográfica criada por código** (`scripts/arte/cinema.mjs`) | Abertura e início do site: céu de tempestade, rua medieval em perspectiva 3D (casas de enxaimel, calçamento molhado, reflexos), versões iluminadas pelo relâmpago, Doutor da Peste com proporções realistas (silhueta e versão iluminada) e o rato animado (6 quadros) |
-| **Ilustrações vetoriais criadas por código** (`scripts/arte/*.mjs`) | Diagramas científicos, mapa (contornos Natural Earth, domínio público), retratos em sombra dos ofícios, ícones |
+| **Imagens enviadas pelo autor** (originais preservados em `assets/images/originais/`) | Doutor da Peste (abertura, início, cartão e páginas internas — fundo removido; a silhueta da abertura é derivada da mesma foto), os 10 retratos de personagens, as 7 cenas da vida medieval e os diagramas das formas da peste e do ciclo de transmissão. Foram apenas recortadas e convertidas para WebP |
+| **Arte do jogo “Jornada Medieval”** | Fundos atmosféricos (desfocados), capa do jogo e sprites “como aparece no jogo” |
+| **Arte criada por código** (`scripts/arte/cinema.mjs`) | Céu de tempestade e rua medieval em perspectiva da abertura (com versões do relâmpago) e o rato animado (6 quadros) |
+| **Ilustrações vetoriais criadas por código** (`scripts/arte/*.mjs`) | Diagrama da bactéria, mapa (contornos Natural Earth, domínio público), ícones |
 
 Para regenerar:
 
 ```bash
-npm run art      # SVGs (diagramas, retratos em sombra, ícones)
+npm run art      # SVGs (diagrama da bactéria, ícones)
 npm run cinema   # WebP da abertura e do rato (usa o Playwright)
 npm run images   # capa do jogo, imagem de compartilhamento e ícones PNG
 npm run map -- ne_50m_land.geojson ne_50m_lakes.geojson   # mapa a partir do Natural Earth
 ```
 
-### Pontos preparados para receber imagens realistas
+### Pontos preparados para trocar imagens
 
-A arte criada por código tem aparência cinematográfica, mas **não é fotorrealista**. Para trocar por ilustrações realistas, basta substituir o arquivo mantendo o nome (ou alterar o caminho indicado):
-
-| Recurso | Arquivo atual | Formato sugerido |
-| --- | --- | --- |
-| Doutor da Peste (abertura e início) | `assets/images/cinema/doutor-luz.webp` e `doutor-silhueta.webp` (+ versões `-pequeno`) | PNG/WebP com fundo transparente, 640×1120, figura inteira de frente |
-| Cenário da abertura | `assets/images/cinema/rua-noite.webp`, `rua-relampago.webp`, `ceu-*.webp` | 1920×1080 (rua com o céu transparente, ou uma única imagem no lugar da rua) |
-| Rato | `assets/images/cinema/rato-quadros.webp` | 6 quadros lado a lado do rato andando para a direita, fundo transparente (proporção 300×110 por quadro) |
-| Retratos dos ofícios sem arte própria (médico universitário, apotecário, cuidadora, religioso, comerciante, coveiro) | campo `imagem` em `assets/data/personagens.json` (hoje `assets/images/personagens/sombra-*.svg`) | Retrato 4:5; altere também `tipoImagem` para `"arte"` |
-| Moradias e ruas / Mercados e comércio | `assets/images/cenas/jogo-rua-interditada.webp` e `jogo-mercado.webp` (cenas das cartas do jogo) | Mesmo estilo das outras cenas da vida medieval, 16:10 |
+| Recurso | Arquivo |
+| --- | --- |
+| Cenário da abertura | `assets/images/cinema/rua-*.webp` e `ceu-*.webp` (1920×1080 e versões `-pequeno`) |
+| Rato | `assets/images/cinema/rato-quadros.webp` (6 quadros lado a lado, fundo transparente) |
+| Doutor da Peste | `assets/images/cinema/doutor-*.webp` (640×1120, fundo transparente, figura apoiada embaixo) |
+| Retratos | campo `imagem` em `assets/data/personagens.json` |
 
 ## Segurança e privacidade
 
@@ -254,8 +251,7 @@ Limitações que não podem ser resolvidas no GitHub Pages:
 
 **Limitações de conteúdo e do jogo:**
 
-- A arte da abertura, o Doutor e o rato foram criados por código: têm direção de arte cinematográfica, mas não são fotorrealistas (veja “Pontos preparados para receber imagens realistas”). Seis ofícios aparecem como retratos em sombra até receberem ilustrações próprias.
-- As cenas de moradias e de mercado usam ilustrações das cartas do jogo, em estilo diferente das cenas enviadas pelo autor.
+- O cenário da abertura e o rato foram criados por código: têm direção de arte cinematográfica, mas não são fotorrealistas.
 
 - Algumas informações gerais sobre ofícios medievais (cirurgiões-barbeiros, erveiras, uroscopia, teoria dos humores) não têm referência específica listada; o site indica isso nos painéis.
 - A lógica do jogo é preservada como foi enviada. Ele usa `user-scalable=no` (impede o zoom por pinça, útil para o jogo, mas uma limitação de acessibilidade) e algumas perguntas simplificam a transmissão (por exemplo, atribuindo-a só a ratos). O site apresenta a visão mais completa na seção “A bactéria responsável” e em “Mitos e verdades”.
