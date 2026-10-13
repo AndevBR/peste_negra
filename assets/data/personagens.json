@@ -99,6 +99,7 @@
       "id": "medico-universitario",
       "nome": "Médicos universitários",
       "imagem": "assets/images/personagens/retrato-medico-universitario.webp",
+      "imagemJogo": "assets/images/games/sprite-medico-universitario.webp",
       "periodo": "Formados em universidades como Paris, Montpellier, Bolonha e Pádua",
       "resumo": "Estudiosos que aprendiam medicina em textos antigos e examinavam a urina dos pacientes.",
       "contexto": [
@@ -123,6 +124,7 @@
       "id": "apotecario",
       "nome": "Apotecários",
       "imagem": "assets/images/personagens/retrato-apotecario.webp",
+      "imagemJogo": "assets/images/games/sprite-apotecario.webp",
       "periodo": "Comuns nas cidades a partir do século XIII",
       "resumo": "Comerciantes que preparavam e vendiam remédios, especiarias e ervas.",
       "contexto": [
@@ -146,6 +148,7 @@
       "id": "cuidadora",
       "nome": "Cuidadores de enfermos",
       "imagem": "assets/images/personagens/retrato-cuidadora.webp",
+      "imagemJogo": "assets/images/games/sprite-cuidadora.webp",
       "periodo": "Em hospitais, conventos e casas, durante toda a epidemia",
       "resumo": "Familiares, religiosas e trabalhadores que davam comida, água e conforto aos doentes.",
       "contexto": [
@@ -169,6 +172,7 @@
       "id": "religioso",
       "nome": "Religiosos e ordens assistenciais",
       "imagem": "assets/images/personagens/retrato-religioso.webp",
+      "imagemJogo": "assets/images/games/sprite-religioso.webp",
       "periodo": "Presentes em toda a Europa cristã",
       "resumo": "Padres, frades e monjas que davam assistência espiritual e material.",
       "contexto": [
@@ -192,6 +196,7 @@
       "id": "comerciante",
       "nome": "Comerciantes e viajantes",
       "imagem": "assets/images/personagens/retrato-comerciante.webp",
+      "imagemJogo": "assets/images/games/sprite-comerciante.webp",
       "periodo": "Pelas rotas de terra e mar entre a Ásia, o Mar Negro e a Europa",
       "resumo": "Mercadores, marinheiros e peregrinos que levavam produtos — e, sem saber, a doença.",
       "contexto": [
@@ -216,6 +221,7 @@
       "id": "coveiro",
       "nome": "Encarregados dos sepultamentos",
       "imagem": "assets/images/personagens/retrato-coveiro.webp",
+      "imagemJogo": "assets/images/games/sprite-coveiro.webp",
       "periodo": "Durante os picos da epidemia, em cidades e vilas",
       "resumo": "Trabalhadores que recolhiam e enterravam os mortos.",
       "contexto": [

@@ -149,6 +149,9 @@ test.describe('jogo de tabuleiro', () => {
     await expect(page).toHaveTitle(/Jornada Medieval/);
     await expect(page.locator('#menu')).toBeVisible();
     await page.locator('#m-botoes button').first().click();
+    // passo 2: o jogador escolhe o personagem (são 10)
+    await expect(page.locator('#m-lista .cartao')).toHaveCount(10);
+    await page.locator('#m-lista .cartao').first().click();
     await expect(page.locator('#menu')).toBeHidden();
     await expect(page.locator('#tela')).toBeVisible();
     const box = await page.locator('#tela').boundingBox();

@@ -25,6 +25,7 @@ import sys
 from PIL import Image
 
 QUALIDADE_SPRITE = 90
+QUALIDADE_SPRITE_WEBP = 82
 QUALIDADE_CARTA = 80
 
 
@@ -57,6 +58,15 @@ def main(entrada, destino):
         return 'data:image/webp;base64,' + webp_base64(base64.b64decode(m.group(1)), QUALIDADE_SPRITE)
 
     html, n_sprites = re.subn(r'data:image/png;base64,([A-Za-z0-9+/=]+)', trocar_sprite, html)
+
+    # 2b) sprites que já vêm em WebP: recomprime só quando fica menor (versões com muitos personagens)
+    def recomprimir(m):
+        novo = webp_base64(base64.b64decode(m.group(1)), QUALIDADE_SPRITE_WEBP)
+        if len(novo) < len(m.group(1)) * 0.9:
+            return 'data:image/webp;base64,' + novo
+        return m.group(0)
+
+    html = re.sub(r'data:image/webp;base64,([A-Za-z0-9+/=]{2000,})', recomprimir, html)
 
     # 3) aviso de carregamento (some quando o script do jogo termina de rodar)
     if 'id="carregando"' not in html:
