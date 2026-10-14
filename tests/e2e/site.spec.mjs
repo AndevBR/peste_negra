@@ -6,7 +6,7 @@ test.describe('carregamento e integridade', () => {
       const v = vigiar(page);
       await page.goto(pagina);
       await expect(page.locator('h1')).toBeVisible();
-      await expect(page.locator('footer')).toContainText('Criado por Anderson Carapeto © 2026');
+      await expect(page.locator('footer')).toContainText('Criado por Anderson Carapeto e Lorena Carapeto © 2026');
     await expect(page.locator('footer')).not.toContainText('Não substitui orientação médica');
       await rolarTudo(page);
       await semImagensQuebradas(page);
