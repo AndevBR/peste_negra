@@ -115,14 +115,14 @@ test.describe('fontes', () => {
 
 test.describe('QR Code', () => {
   test('o QR Code do jogo aparece e abre o endereço público do jogo', async ({ page, context }) => {
-    const esperado = 'https://andevbr.github.io/peste_negra/jogos/jornada-medieval/';
+    const esperado = 'https://andevbr.github.io/peste_negra/#jogo';
     await page.goto('');
     const img = page.locator('[data-qr-codigo] img');
     await img.scrollIntoViewIfNeeded();
-    await expect.poll(() => img.evaluate((i) => i.complete && i.naturalWidth)).toBe(304);
-    await expect(img).toHaveAttribute('alt', /QR Code do Jogo da Peste Negra/);
+    await expect.poll(() => img.evaluate((i) => i.complete && i.naturalWidth)).toBe(297);
+    await expect(img).toHaveAttribute('alt', /QR Code dos Jogos da Peste Negra/);
     await expect(page.locator('[data-qr-url]')).toHaveText(esperado.replace('https://', ''));
-    await expect(page.locator('[data-qr-link]')).toHaveAttribute('href', 'jogos/jornada-medieval/');
+    await expect(page.locator('[data-qr-link]')).toHaveAttribute('href', '#jogo');
 
     // decodifica o QR Code como a câmera do celular faria
     const png = await img.screenshot();
@@ -140,11 +140,39 @@ test.describe('QR Code', () => {
   });
 });
 
+test.describe('jogo da memória', () => {
+  test('abre a partir do site, carrega as mídias externas e volta ao site', async ({ page }) => {
+    await page.goto('');
+    await page.locator('.jogo--memoria').getByRole('link', { name: /Jogar agora/ }).click();
+    await expect(page).toHaveURL(/jogos\/jogo-da-memoria\/$/);
+    await expect(page).toHaveTitle(/Memória da Peste Negra/);
+    // pula a abertura e chega ao baralho (imagem externa, não data:base64)
+    await page.locator('#skipBtn').click().catch(() => {});
+    const deck = page.locator('.deckimg');
+    await expect(deck).toBeVisible({ timeout: 8000 });
+    await expect.poll(() => deck.evaluate((i) => i.complete && i.naturalWidth)).toBeGreaterThan(0);
+    expect(await deck.getAttribute('src')).toMatch(/^midia\//);
+    // começa a partida e confirma que há cartas com verso
+    await page.locator('#startBtn').click();
+    await page.locator('#goBtn').waitFor();
+    await page.locator('#setup button').first().click();
+    await page.locator('#goBtn').click();
+    await expect.poll(() => page.locator('.card, [data-idx]').count()).toBeGreaterThanOrEqual(8);
+    // link de volta ao site
+    await expect(page.locator('#voltarSite')).toBeVisible();
+  });
+
+  test('o jogo da memória é leve o bastante na abertura (index.html < 1 MB)', async ({ request }) => {
+    const r = await request.get('jogos/jogo-da-memoria/');
+    expect((await r.body()).length).toBeLessThan(1024 * 1024);
+  });
+});
+
 test.describe('jogo de tabuleiro', () => {
   test('abre a partir do site, inicia uma partida e lança o dado', async ({ page }) => {
     const v = vigiar(page);
     await page.goto('');
-    await page.locator('.jogo__acoes').getByRole('link', { name: /Jogar agora/ }).click();
+    await page.locator('.jogo:not(.jogo--memoria) .jogo__acoes').getByRole('link', { name: /Jogar agora/ }).click();
     await expect(page).toHaveURL(/jogos\/jornada-medieval\/$/);
     await expect(page).toHaveTitle(/Jornada Medieval/);
     await expect(page.locator('#menu')).toBeVisible();

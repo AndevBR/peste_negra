@@ -514,6 +514,7 @@ html.lateral-recolhida .lateral__link[data-dica]:hover::after, html.lateral-reco
 .jogo:hover .jogo__capa img { transform: scale(1.05); }
 .jogo__capa::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, rgba(18, 16, 15, .95)); }
 .jogo__capa .selo { position: absolute; left: var(--esp-4); bottom: var(--esp-4); z-index: 1; }
+.jogo--memoria .jogo__capa img { object-position: 50% 42%; }
 .jogo__info { padding: var(--esp-6); }
 .jogo__info h3 { color: var(--ouro-claro); font-size: var(--texto-xl); }
 .jogo__info p, .jogo__info li { color: var(--texto-suave); }
